@@ -20,6 +20,17 @@ public class Ingrediente
 	public Cantidad getCantidad(){
 		return cantidad;
 	}
+
+	public int getID() {
+		return nombre.hashCode();
+	}
+	
+	
+	public boolean equals(Ingrediente arg) {
+		if(arg == null)return false;
+		
+		return this.nombre.equals(arg.nombre);
+	}
 	
 	
 }
