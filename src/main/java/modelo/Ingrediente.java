@@ -25,11 +25,14 @@ public class Ingrediente
 		return nombre.hashCode();
 	}
 	
-	
-	public boolean equals(Ingrediente arg) {
-		if(arg == null)return false;
+	@Override
+	public boolean equals(Object arg) {
+		if( arg == null) return false;
+		if(!(arg instanceof  Ingrediente)) return false;
 		
-		return this.nombre.equals(arg.nombre);
+		Ingrediente other = (Ingrediente) arg;
+		
+		return this.nombre.equals(other.nombre);
 	}
 	
 	
