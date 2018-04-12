@@ -9,4 +9,10 @@ public class Menu
 	{
 		this.platos = platos;
 	}
+	
+	
+	public List<Plato> getMenu(){
+		return this.platos;
+	}
+	
 }

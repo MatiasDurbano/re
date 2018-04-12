@@ -11,4 +11,17 @@ public class Plato
 		this.nombre = nombre;
 		this.ingredientes = ingredientes;
 	}
+	
+	
+	public List<Ingrediente> getReceta(){
+		
+		return this.ingredientes;
+		
+	}
+	
+	public String getNombre(){
+		return this.nombre;
+	}
+	
+	
 }
