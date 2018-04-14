@@ -1,7 +1,7 @@
 package modelo;
 
-public enum Medicion {
-	
-	Kg,Lt,Unidad;
 
+public enum Medicion 
+{
+	Kg,Lt,Unidad;
 }

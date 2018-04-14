@@ -1,7 +1,8 @@
 package modelo;
 
-public class Cantidad {
-	
+
+public class Cantidad 
+{
 	private Medicion medicion;
 	private double valor;
 	

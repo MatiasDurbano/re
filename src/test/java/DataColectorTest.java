@@ -32,7 +32,7 @@ public class DataColectorTest {
 		IdentyMap.addIngrediente(ingrediente2);	
 		IdentyMap.addIngrediente(ingrediente3);
 		 //me trae 1 solo plato
-		Assert.assertEquals(true, plato.equals(DataColector.getPlatosPorIngrediente(ingrediente).get(0)));
+		assertEquals(true, plato.equals(DataColector.getPlatosPorIngrediente(ingrediente).get(0)));
 		
 		
 	}
