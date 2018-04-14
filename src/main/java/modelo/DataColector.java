@@ -2,18 +2,53 @@ package modelo;
 
 
 import java.util.ArrayList;
+import java.util.List;
+
+import Interface.ProxyIngredienteInterface;
+import Interface.ProxyPlatoInterface;
+import Proxy.ProxyIngrediente;
+import Proxy.ProxyPlato;
 
 public class DataColector {
 	
+	private static ProxyIngredienteInterface proxyIngrediente ;
+	private ProxyPlatoInterface proxyPlato;
+	private static IdentyMap cache;
 	
-	public static ArrayList<Ingrediente> getIngredientes(){
-		return IdentyMap.getIngredientes();
+	
+	public DataColector() {
+		proxyIngrediente = new ProxyIngrediente();
+		proxyPlato = new ProxyPlato();
+		cache= new IdentyMap();
 	}
 	
+	public static List<Ingrediente> getIngredientes(){
+		List <Ingrediente> ret;
+		
+		ret = cache.getIngredientes();
+		
+		if(ret.isEmpty()) {
+			
+			ret = proxyIngrediente.get();
+			cache.addIngredientes(ret);
+		}
+		
+		return ret;
+		
+	}
 	
-	//cambiarlo a array de ingredientes
-	public static ArrayList<Plato> getPlatosPorIngrediente(Ingrediente arg){
-		return IdentyMap.getPlatosPorIngrediente(arg);
+	public List<Plato> getPlatos(){
+		List <Plato> ret;
+		ret= cache.getPlatos();
+		
+		if(ret.isEmpty()) {
+			
+			ret = proxyPlato.get();
+			cache.addPlatos(ret);
+		}
+		
+		return ret;
+		
 	}
 	
 

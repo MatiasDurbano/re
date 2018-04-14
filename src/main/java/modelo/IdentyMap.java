@@ -2,35 +2,35 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class IdentyMap {
 
-	private static Map<Integer, Ingrediente> ingredientes = new HashMap<Integer,Ingrediente>();;
-	private static Map<Integer, Plato> platos = new HashMap<Integer,Plato>();;
+	private static Map<Integer, Ingrediente> ingredientes;
 	
-	
-	public static void addIngrediente(Ingrediente arg) {
-		
-		ingredientes.put(arg.getID(), arg);
-	}
-	
-	public static void addPlato(Plato arg) {
-		
-		platos.put(arg.getID(), arg);
-	}
+	private static Map<Integer, Plato> platos;
 
-	public static Ingrediente getIngrediente(int key) {
+	public IdentyMap() {
+	
+		ingredientes = new HashMap<Integer,Ingrediente>();
+		platos = new HashMap<Integer,Plato>();;
+	
+	}
+	
+	public Ingrediente getIngrediente(int key) {
 		
 		return ingredientes.get(key);
+		
 	}
 	
-	public static Plato getPlato(int key) {
+	public Plato getPlato(int key) {
 		
 		return platos.get(key);
+		
 	}
 	
-	public static ArrayList<Ingrediente> getIngredientes(){
+	public ArrayList<Ingrediente> getIngredientes(){
 	
 		ArrayList<Ingrediente> _ingredientes = new ArrayList<Ingrediente>();
 		
@@ -42,17 +42,34 @@ public class IdentyMap {
 		
 	}
 	
-	public static ArrayList<Plato> getPlatosPorIngrediente(Ingrediente arg){
+	public ArrayList<Plato> getPlatos(){
 		
 		ArrayList<Plato> _platos = new ArrayList<Plato>();
 		
 		for (Plato plato : platos.values()) {
-		    if(plato.contiene(arg)) _platos.add(plato);
-		    	
+		    _platos.add(plato);	
 		}
 		
 		return _platos;
 		
 	}
+	
+	public void addIngredientes(List<Ingrediente> arg) {
+		ingredientes.clear();
+		
+		for(Ingrediente ingre : arg) {
+			ingredientes.put(ingre.hashCode(), ingre);
+		}
+		
+	}
 
+	
+	public void addPlatos(List<Plato> arg) {
+		platos.clear();
+		
+		for(Plato plato : arg) {
+			platos.put(plato.hashCode(), plato);
+		}
+		
+	}
 }
