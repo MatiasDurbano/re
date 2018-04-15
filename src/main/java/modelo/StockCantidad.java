@@ -37,4 +37,8 @@ public class StockCantidad {
 		return stock.isEmpty();
 	}
 	
+	public boolean contains(Ingrediente arg0) {
+		return stock.containsKey(arg0);
+	}
+	
 }

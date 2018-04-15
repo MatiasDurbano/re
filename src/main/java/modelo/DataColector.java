@@ -8,6 +8,7 @@ import Interface.ProxyIngredienteInterface;
 import Interface.ProxyPlatoInterface;
 import Proxy.ProxyIngrediente;
 import Proxy.ProxyPlato;
+import Validadores.ValidadorStock;
 
 public class DataColector {
 	
@@ -28,7 +29,7 @@ public class DataColector {
 		ret = cache.getStockCantidad();
 		if(ret.isEmpty()) {
 			
-			ret = proxyIngrediente.get();
+			ret = ValidadorStock.SacaRepetido(proxyIngrediente.get());
 			cache.addStockCantidad(ret);
 		}
 		
