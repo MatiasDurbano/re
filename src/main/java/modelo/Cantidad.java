@@ -13,7 +13,7 @@ public class Cantidad
 	}
 
 	public Medicion getMedicion() {
-		return medicion;
+		return this.medicion;
 	}
 
 	public void setMedicion(Medicion medicion) {
@@ -28,5 +28,17 @@ public class Cantidad
 		this.valor = valor;
 	}
 	
+	@Override
+	public boolean equals(Object arg0) {
+		if(arg0 == null) return false;
+		if(!(arg0 instanceof Cantidad)) return false;
+		
+		Cantidad cant= (Cantidad) arg0;
+		
+		if(valor == cant.getValor() && this.medicion.equals(cant.getMedicion())) return true;   
+		 
+		return false;
+		
+	}
 
 }

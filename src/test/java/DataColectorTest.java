@@ -53,17 +53,15 @@ public class DataColectorTest {
 		a = data.getStockIngredientes();
 	    
 		ArrayList<Ingrediente> b = a.getIngredientes();
-		
-		ArrayList<Cantidad> c =new ArrayList<Cantidad>();
-		
-		for(int i=0; i<b.size();i++) {
-			c.add(data.getCantidad(b.get(i)));
-			System.out.println(b.get(i).getNombre()+" "+c.get(i).getValor());
-		}
+		System.out.println(b.get(0).getNombre() + data.getCantidad(b.get(0)).getValor() );
+		Cantidad c= new Cantidad (Medicion.Kg,5.5);
 	    
 		
-		assertEquals(4, c.size());
-		 
+		assertEquals(c, data.getCantidad(b.get(0)));
+		assertFalse(c.equals(data.getCantidad(b.get(1))) );
+		
+		
+		  
 	}
 	
 	
