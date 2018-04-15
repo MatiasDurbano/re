@@ -22,18 +22,25 @@ public class DataColector {
 		cache= new IdentyMap();
 	}
 	
-	public static List<Ingrediente> getIngredientes(){
-		List <Ingrediente> ret;
+	public static StockCantidad getStockIngredientes(){
+		StockCantidad ret;
 		
-		ret = cache.getIngredientes();
-		
+		ret = cache.getStockCantidad();
 		if(ret.isEmpty()) {
 			
 			ret = proxyIngrediente.get();
-			cache.addIngredientes(ret);
+			cache.addStockCantidad(ret);
 		}
 		
 		return ret;
+		
+	}
+	
+
+	public Cantidad getCantidad(Ingrediente arg0) {
+		
+		return cache.getCantidad(arg0);
+
 		
 	}
 	
@@ -51,5 +58,4 @@ public class DataColector {
 		
 	}
 	
-
 }

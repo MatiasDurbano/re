@@ -3,10 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Ingrediente;
+import modelo.StockCantidad;
 
 
 public interface ProxyIngredienteInterface 
 {
-	public List<Ingrediente> get();
+	public  StockCantidad get();
 
 }

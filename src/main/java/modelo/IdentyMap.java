@@ -7,20 +7,20 @@ import java.util.Map;
 
 public class IdentyMap {
 
-	private static Map<Integer, Ingrediente> ingredientes;
+	private static Map<Ingrediente,Cantidad> ingredientes;
 	
 	private static Map<Integer, Plato> platos;
 
 	public IdentyMap() {
 	
-		ingredientes = new HashMap<Integer,Ingrediente>();
+		ingredientes = new HashMap<Ingrediente,Cantidad>();
 		platos = new HashMap<Integer,Plato>();;
 	
 	}
 	
-	public Ingrediente getIngrediente(int key) {
+	public Cantidad getCantidad(Ingrediente arg0) {
 		
-		return ingredientes.get(key);
+		return ingredientes.get(arg0);
 		
 	}
 	
@@ -30,17 +30,19 @@ public class IdentyMap {
 		
 	}
 	
-	public ArrayList<Ingrediente> getIngredientes(){
-	
-		ArrayList<Ingrediente> _ingredientes = new ArrayList<Ingrediente>();
+	public StockCantidad getStockCantidad(){
 		
-		for (Ingrediente ingrediente : ingredientes.values()) {
-		    _ingredientes.add(ingrediente);
+		//mmmmm
+		StockCantidad ret = new StockCantidad();
+		for (Map.Entry<Ingrediente, Cantidad> stockCantidad : ingredientes.entrySet()) {
+			ret.addStock(stockCantidad.getKey(),stockCantidad.getValue());
+			
 		}
 		
-		return _ingredientes;
+		return ret;
 		
 	}
+
 	
 	public ArrayList<Plato> getPlatos(){
 		
@@ -53,14 +55,15 @@ public class IdentyMap {
 		return _platos;
 		
 	}
+	 
+	//REVISAR
+	public void addStockCantidad(StockCantidad arg0) {
+		ArrayList <Ingrediente> ingredientes = arg0.getIngredientes();;
+		
+		for(Ingrediente ingr: ingredientes) {
+			this.ingredientes.put(ingr,arg0.getCantidad(ingr));	
+		}	
 	
-	public void addIngredientes(List<Ingrediente> arg) {
-		ingredientes.clear();
-		
-		for(Ingrediente ingre : arg) {
-			ingredientes.put(ingre.hashCode(), ingre);
-		}
-		
 	}
 
 	

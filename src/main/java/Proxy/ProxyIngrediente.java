@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Interface.ProxyIngredienteInterface;
+import Stub.ProxyIngredienteStub;
 import modelo.Ingrediente;
+import modelo.StockCantidad;
 
 public  class ProxyIngrediente implements ProxyIngredienteInterface{
 
@@ -16,7 +18,7 @@ public  class ProxyIngrediente implements ProxyIngredienteInterface{
 	}
 	
 	@Override
-	public List<Ingrediente> get() {
+	public StockCantidad get() {
 		return proxyStub.get();
 	}
 
