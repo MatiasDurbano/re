@@ -15,7 +15,7 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 	StockCantidad stock;
 	public ProxyIngredienteStub()
 	{
-		stock= new StockCantidad();
+		stock = new StockCantidad();
 		
 		Ingrediente a= new Ingrediente ("papa");
 		Cantidad a1= new Cantidad(Medicion.Kg,-2);
@@ -28,24 +28,16 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 		Ingrediente e= new Ingrediente ("papa");
 		Cantidad e1= new Cantidad(Medicion.Kg,2);
 		
-		
 		stock.addStock(a, a1);
 		stock.addStock(b, b1);
 		stock.addStock(c, c1);
 		stock.addStock(d, d1);
 		stock.addStock(e, e1);
-
 	}
-
-
-
+	
 	@Override
-	public StockCantidad get() {
+	public StockCantidad get() 
+	{
 		return stock;
 	}
-
-	
-
-	
-
 }
