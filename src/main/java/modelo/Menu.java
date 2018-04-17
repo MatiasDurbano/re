@@ -21,7 +21,7 @@ public class Menu
 		return platos;
 	}	
 	
-	public void AgregarMenu(Plato p, Integer i)
+	public void agregarPlato(Plato p, Integer i)
 	{
 		this.platos.put(p, i);
 	}

@@ -14,7 +14,7 @@ public class ValidadorMenu {
 		
 		for(Map.Entry<Plato, Integer> entry: menu.getPlatos().entrySet()) {
 			if(!(ret.getPlatos().containsKey(entry.getKey())) && entry.getValue()>=0){
-				ret.getPlatos().put(entry.getKey(), entry.getValue());
+				ret.agregarPlato(entry.getKey(),entry.getValue());
 			}	
 		}
 		return ret;
