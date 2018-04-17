@@ -27,25 +27,6 @@ public class DataColectorTest {
 		 
 	}
 	
-	
-	@SuppressWarnings("deprecation")
-	@Test
-	public void test2() { 
-		DataColector data= new DataColector();
-		StockCantidad a = new StockCantidad ();
-		a = data.getStockIngredientes();
-	    ArrayList<Ingrediente> b = a.getIngredientes();
-	    
-	    for(Ingrediente c: b) {
-	    	System.out.println( c.getNombre());
-	    }
-		
-		
-		assertEquals("papa", b.get(2).getNombre());
-		 
-	}
-	
-	
 	@Test
 	public void test3() { 
 		DataColector data= new DataColector();

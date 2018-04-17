@@ -16,14 +16,23 @@ public class StockCantidad {
 	}
 	
 	public void addStock(Ingrediente arg0, Cantidad arg1) {
-		stock.put(arg0, arg1);
+		if(stock.containsKey(arg0))RemovedorRepetido.addRepetido(arg0);
+		
+		else{
+			stock.put(arg0, arg1);
+		}
+		
 	}
 	
 	public Cantidad getCantidad(Ingrediente arg0) {
+		
 		return stock.get(arg0);
 	}
 	
 	public ArrayList<Ingrediente> getIngredientes() {
+		
+		stock = RemovedorRepetido.removeRepetido(stock);
+		
 		ArrayList<Ingrediente> ret = new ArrayList<Ingrediente>();
 		
 		for(Map.Entry<Ingrediente, Cantidad> entry : stock.entrySet()) {
@@ -32,6 +41,7 @@ public class StockCantidad {
 		
 		return ret;
 	}
+	
 	
 	public boolean isEmpty() {
 		return stock.isEmpty();
