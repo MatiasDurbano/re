@@ -14,10 +14,10 @@ public class ProxyCacheStub implements ProxyCacheInterface
 	StockCantidad stockCantidadBuffer;
 	List<Plato> listaPlatosBuffer;
 	
-	public ProxyCacheStub ()
+	public ProxyCacheStub (ProxyIngredienteStub proxyIngrediente, ProxyPlatoStub proxyPlato)
 	{
-		this.ingredienteInterfaz = new ProxyIngredienteStub();
-		this.platoInterfaz = new ProxyPlatoStub();
+		this.ingredienteInterfaz = proxyIngrediente;
+		this.platoInterfaz = proxyPlato;
 		this.stockCantidadBuffer = new StockCantidad();
 		this.listaPlatosBuffer = new ArrayList<Plato>();
 		actualizar();

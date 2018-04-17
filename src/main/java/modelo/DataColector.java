@@ -14,10 +14,10 @@ public class DataColector
 	private ProxyPlatoInterface proxyPlato;
 	private ProxyCacheInterface proxyCache;
 	
-	public DataColector() 
+	public DataColector(ProxyIngrediente proxyIngrediente, ProxyPlato proxyPlato) 
 	{
-		proxyIngrediente = new ProxyIngrediente();
-		proxyPlato = new ProxyPlato();
+		proxyIngrediente = new ProxyIngrediente(proxyIngrediente);
+		proxyPlato = new ProxyPlato(proxyPlato);
 		proxyCache = new ProxyCache(this.proxyIngrediente,this.proxyPlato);
 	}
 	

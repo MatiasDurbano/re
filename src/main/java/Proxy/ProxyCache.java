@@ -15,6 +15,7 @@ public class ProxyCache implements ProxyCacheInterface
 	ProxyPlatoInterface platoInterfaz;
 	StockCantidad stockCantidadBuffer;
 	List<Plato> listaPlatosBuffer;
+	
 	public ProxyCache(ProxyIngredienteInterface ingredienteInterfaz, ProxyPlatoInterface platoInterfaz) 
 	{
 		this.ingredienteInterfaz = ingredienteInterfaz;
@@ -37,8 +38,6 @@ public class ProxyCache implements ProxyCacheInterface
 	@Override
 	public void actualizar() 
 	{
-		StockCantidad stockIngrediente = this.ingredienteInterfaz.get();
-		List<Plato> listaPlatos = this.platoInterfaz.get();
 		if(listaPlatosBuffer.isEmpty())
 				this.listaPlatosBuffer = platoInterfaz.get();
 		if(this.stockCantidadBuffer.isEmpty())

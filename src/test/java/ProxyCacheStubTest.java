@@ -22,7 +22,9 @@ public class ProxyCacheStubTest
 	@Test
 	public void testPlatos() 
 	{
-		ProxyCacheStub stub = new ProxyCacheStub();
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub stub = new ProxyCacheStub(proxyIngrediente,proxyPlato);
 		ArrayList<Plato> lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
 		Ingrediente tomate = new Ingrediente("tomate");
@@ -57,8 +59,10 @@ public class ProxyCacheStubTest
 	@Test
 	public void testStock() 
 	{
-		ProxyCacheStub stub = new ProxyCacheStub();
-
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub stub = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
 		StockCantidad stock = new StockCantidad();
 		Ingrediente a= new Ingrediente ("papa");
 		Cantidad a1= new Cantidad(Medicion.Kg,2);
@@ -83,13 +87,19 @@ public class ProxyCacheStubTest
 	@Test
 	public void testActualizar() 
 	{
-		ProxyCacheStub stub = new ProxyCacheStub();
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub stub = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
 		stub.actualizar();
 	}
 	@Test
 	public void testEstaActualizada() 
 	{
-		ProxyCacheStub stub = new ProxyCacheStub();
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub stub = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
 		assertEquals(true, stub.estaActualizada());
 		assertEquals(false, !stub.estaActualizada());
 	}
