@@ -16,9 +16,9 @@ public class AnalizadorPlatos
 		return map;
 	}
 	
-	public static List<Ingrediente> dameIngredientes(Plato plato)
+	public static ArrayList<Ingrediente> dameIngredientes(Plato plato)
 	{
-		List<Ingrediente> lista = new ArrayList<Ingrediente>();
+		ArrayList<Ingrediente> lista = new ArrayList<Ingrediente>();
 		for (Map.Entry<Ingrediente, Cantidad> entry: plato.receta.getReceta().entrySet()) 
 		{
 			lista.add(entry.getKey());
