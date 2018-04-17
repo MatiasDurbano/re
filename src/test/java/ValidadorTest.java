@@ -13,7 +13,7 @@ public class ValidadorTest
 {	
 	@Test
 	public void ingredienteRepetido() 
-	{
+	{ 
 		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
 		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
 		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
@@ -25,7 +25,7 @@ public class ValidadorTest
 		for( Ingrediente ing : a.getIngredientes()) {
 			System.out.println(ing.getNombre()+" " +  a.getCantidad(ing).getValor());
 		}
-		
+		 
 		assertEquals(4,a.getIngredientes().size());
 	}
 }

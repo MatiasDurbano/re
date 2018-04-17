@@ -14,7 +14,7 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 {
 	StockCantidad stock;
 	
-	public ProxyIngredienteStub(int i)
+	public ProxyIngredienteStub(int i) 
 	{
 		stock = new StockCantidad();
 		Ingrediente a= new Ingrediente ("papa");

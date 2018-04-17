@@ -20,7 +20,6 @@ public class RemovedorRepetido {
 	} 
 	
 	public static Map<Ingrediente,Cantidad> removeRepetido(Map<Ingrediente,Cantidad> arg0) {
-		System.out.println(" removedor "+toDelete.size());
 		Map<Ingrediente,Cantidad> ret = arg0;
 		for(Ingrediente ing: toDelete) {
 			ret.remove(ing);
