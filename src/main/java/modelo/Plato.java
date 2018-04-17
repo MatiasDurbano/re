@@ -10,5 +10,6 @@ public class Plato
 	{
 		this.nombre = nombre;
 		this.receta = receta;
+		
 	}
 }
