@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class IdentyMap {
+public class CacheMap {
 
 	private  Map<Ingrediente,Cantidad> ingredientes;
 	
 	private  Map<Integer, Plato> platos;
 
-	public IdentyMap() {
+	public CacheMap() {
 	
 		ingredientes = new HashMap<Ingrediente,Cantidad>();
 		platos = new HashMap<Integer,Plato>();;

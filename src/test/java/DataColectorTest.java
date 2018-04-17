@@ -8,7 +8,7 @@ import org.junit.Test;
 import junit.framework.Assert;
 import modelo.Cantidad;
 import modelo.DataColector;
-import modelo.IdentyMap;
+import modelo.CacheMap;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Plato;
