@@ -6,9 +6,9 @@ import java.util.Map;
 
 public class AnalizadorPlatos 
 {
-	public static Map<Ingrediente, Cantidad> dameIngredientesyCantidad(Plato plato)
+	public static HashMap<Ingrediente, Cantidad> dameIngredientesyCantidad(Plato plato)
 	{
-		Map<Ingrediente, Cantidad> map = new HashMap<Ingrediente,Cantidad>();
+		HashMap<Ingrediente, Cantidad> map = new HashMap<Ingrediente,Cantidad>();
 		for (Map.Entry<Ingrediente, Cantidad> entry: plato.receta.getReceta().entrySet()) 
 		{
 			map.put(entry.getKey(), entry.getValue());
