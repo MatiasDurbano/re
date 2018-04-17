@@ -1,22 +1,23 @@
-package Stub;
-import java.util.ArrayList;
-import java.util.List;
-
-import Interface.ProxyIngredienteInterface;
+import static org.junit.Assert.*;
 import modelo.Cantidad;
+import modelo.DataColector;
 import modelo.Ingrediente;
 import modelo.Medicion;
-import modelo.Plato;
 import modelo.StockCantidad;
 
+import org.junit.Test;
 
-public class ProxyIngredienteStub implements ProxyIngredienteInterface
+import Stub.ProxyIngredienteStub;
+
+
+public class ProxyIngredienteStubTest 
 {
-	StockCantidad stock;
-	
-	public ProxyIngredienteStub(int i)
+	@Test
+	public void test() 
 	{
-		stock = new StockCantidad();
+		ProxyIngredienteStub stub = new ProxyIngredienteStub(1);
+		
+		StockCantidad stock = new StockCantidad();
 		Ingrediente a= new Ingrediente ("papa");
 		Cantidad a1= new Cantidad(Medicion.Kg,2);
 		Ingrediente b= new Ingrediente ("pera");
@@ -33,11 +34,16 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 		stock.addStock(c, c1);
 		stock.addStock(d, d1);
 		stock.addStock(e, e1);
-		
+	
+		assertEquals(true, stub.get().equals(stock));
+		assertEquals(false, stub.get().isEmpty());
 	}
-
-	public ProxyIngredienteStub() {
-		stock = new StockCantidad();
+	@Test
+	public void test2() 
+	{
+		ProxyIngredienteStub stub = new ProxyIngredienteStub();
+		
+		StockCantidad stock = new StockCantidad();
 		Ingrediente a= new Ingrediente ("papa");
 		Cantidad a1= new Cantidad(Medicion.Kg,2);
 		Ingrediente b= new Ingrediente ("pera"); 
@@ -54,31 +60,8 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 		stock.addStock(c, c1);
 		stock.addStock(d, d1);
 		stock.addStock(e, e1);
-		
-	}
 	
-	@Override
-	public StockCantidad get() 
-	{
-		return stock;
+		assertEquals(true, stub.get().equals(stock));
+		assertEquals(false, stub.get().isEmpty());
 	}
-	
-	@Override
-	public boolean equals(Object obj) 
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ProxyIngredienteStub other = (ProxyIngredienteStub) obj;
-		if (stock == null) {
-			if (other.stock != null)
-				return false;
-		} else if (!stock.equals(other.stock))
-			return false;
-		return true;
-	}
-	
 }

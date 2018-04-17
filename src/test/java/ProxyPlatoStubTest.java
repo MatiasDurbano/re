@@ -1,22 +1,23 @@
-package Stub;
+import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import Interface.ProxyPlatoInterface;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Plato;
 import modelo.Receta;
+import org.junit.Test;
+import Stub.ProxyPlatoStub;
 
-public class ProxyPlatoStub implements ProxyPlatoInterface
+public class ProxyPlatoStubTest 
 {
-	List<Plato> lista;
-	public ProxyPlatoStub ()
+	@Test
+	public void test() 
 	{
-		lista = new ArrayList<Plato>();
+		ProxyPlatoStub stub = new ProxyPlatoStub();
+		
+		ArrayList<Plato> lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente fideos = new Ingrediente("fideos");
@@ -43,31 +44,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		
 		lista.add(a);
 		lista.add(b);
-		this.lista = lista;
+		assertEquals(true, stub.get().equals(lista));
+		assertEquals(false, stub.get().isEmpty());
 	}
-	
-	@Override
-	public List<Plato> get() 
-	{
-		return lista;
-	}
-
-	@Override
-	public boolean equals(Object obj) 
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ProxyPlatoStub other = (ProxyPlatoStub) obj;
-		if (lista == null) {
-			if (other.lista != null)
-				return false;
-		} else if (!lista.equals(other.lista))
-			return false;
-		return true;
-	}
-	
 }
