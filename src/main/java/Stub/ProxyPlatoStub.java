@@ -1,7 +1,9 @@
 package Stub;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import Interface.ProxyPlatoInterface;
 import modelo.Cantidad;
 import modelo.Ingrediente;
@@ -14,6 +16,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 	List<Plato> lista;
 	public ProxyPlatoStub ()
 	{
+		lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente fideos = new Ingrediente("fideos");
@@ -40,6 +43,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		
 		lista.add(a);
 		lista.add(b);
+		this.lista = lista;
 	}
 	
 	@Override

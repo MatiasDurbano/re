@@ -12,4 +12,8 @@ public class Plato
 		this.receta = receta;
 		
 	}
+	@Override
+	public String toString() {
+		return "Plato [" + nombre + ", " + receta + "]";
+	}
 }

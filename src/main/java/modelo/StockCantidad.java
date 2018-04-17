@@ -52,5 +52,10 @@ public class StockCantidad {
 	public boolean contains(Ingrediente arg0) {
 		return stock.containsKey(arg0);
 	}
+
+	@Override
+	public String toString() {
+		return "StockCantidad [" + stock + "]";
+	}
 	
 }
