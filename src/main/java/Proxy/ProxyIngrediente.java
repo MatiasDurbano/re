@@ -1,5 +1,4 @@
 package Proxy;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,20 +8,17 @@ import modelo.Ingrediente;
 import modelo.Plato;
 import modelo.StockCantidad;
 
-public  class ProxyIngrediente implements ProxyIngredienteInterface{
-
+public  class ProxyIngrediente implements ProxyIngredienteInterface
+{
 	ProxyIngredienteStub proxyStub;
-	
-	
-	public ProxyIngrediente() {
+	public ProxyIngrediente() 
+	{
 		proxyStub = new ProxyIngredienteStub();
 	}
 	
 	@Override
-	public StockCantidad get() {
+	public StockCantidad get() 
+	{
 		return proxyStub.get();
 	}
-
-
-
 }
