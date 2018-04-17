@@ -12,9 +12,9 @@ import Validadores.ValidadorStock;
 
 public class DataColector {
 	
-	private static ProxyIngredienteInterface proxyIngrediente;
+	private  ProxyIngredienteInterface proxyIngrediente;
 	private ProxyPlatoInterface proxyPlato;
-	private static IdentyMap cache;
+	private IdentyMap cache;
 	
 	
 	public DataColector() {
@@ -23,7 +23,7 @@ public class DataColector {
 		cache= new IdentyMap();
 	}
 	
-	public static StockCantidad getStockIngredientes(){
+	public StockCantidad getStockIngredientes(){
 		StockCantidad ret;
 		
 		ret = cache.getStockCantidad();

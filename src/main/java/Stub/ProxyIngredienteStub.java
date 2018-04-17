@@ -6,6 +6,7 @@ import Interface.ProxyIngredienteInterface;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
+import modelo.Plato;
 import modelo.StockCantidad;
 
 
@@ -42,6 +43,8 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 	public StockCantidad get() {
 		return stock;
 	}
+
+	
 
 	
 
