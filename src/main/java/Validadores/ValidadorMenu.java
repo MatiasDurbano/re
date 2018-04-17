@@ -8,7 +8,8 @@ import modelo.Plato;
 
 public class ValidadorMenu {
 
-	public static Menu SacaRepetido(Menu menu) {
+	public static Menu SacaRepetido(Menu menu) 
+	{
 		Menu ret = new Menu();
 		
 		for(Map.Entry<Plato, Integer> entry: menu.getPlatos().entrySet()) {
@@ -18,4 +19,8 @@ public class ValidadorMenu {
 		}
 		return ret;
 	}
+	public static boolean MenuVacio(Menu menu) 
+	{
+		return menu.getPlatos().isEmpty();
+	}	
 }
