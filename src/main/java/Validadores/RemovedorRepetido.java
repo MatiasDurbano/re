@@ -1,9 +1,10 @@
-package modelo;
+package Validadores;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-import Validadores.ValidadorCantidad;
+import modelo.Cantidad;
+import modelo.Ingrediente;
 
 public class RemovedorRepetido {
 	
