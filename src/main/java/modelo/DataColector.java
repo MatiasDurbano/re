@@ -12,7 +12,7 @@ import Validadores.ValidadorStock;
 
 public class DataColector {
 	
-	private static ProxyIngredienteInterface proxyIngrediente ;
+	private static ProxyIngredienteInterface proxyIngrediente;
 	private ProxyPlatoInterface proxyPlato;
 	private static IdentyMap cache;
 	
@@ -28,11 +28,9 @@ public class DataColector {
 		
 		ret = cache.getStockCantidad();
 		if(ret.isEmpty()) {
-			
 			ret = ValidadorStock.SacaRepetido(proxyIngrediente.get());
 			cache.addStockCantidad(ret);
 		}
-		
 		return ret;
 		
 	}

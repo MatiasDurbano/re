@@ -7,9 +7,9 @@ import java.util.Map;
 
 public class IdentyMap {
 
-	private static Map<Ingrediente,Cantidad> ingredientes;
+	private  Map<Ingrediente,Cantidad> ingredientes;
 	
-	private static Map<Integer, Plato> platos;
+	private  Map<Integer, Plato> platos;
 
 	public IdentyMap() {
 	
