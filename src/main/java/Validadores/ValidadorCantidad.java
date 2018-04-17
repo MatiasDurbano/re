@@ -2,7 +2,7 @@ package Validadores;
 import modelo.Ingrediente;
 import modelo.StockCantidad;
 
-public class ValidadorStock 
+public class ValidadorCantidad 
 {
 	public static StockCantidad SacaRepetido(StockCantidad arg0) 
 	{
@@ -10,11 +10,11 @@ public class ValidadorStock
 		
 		for(Ingrediente ing : arg0.getIngredientes()) 
 		{
-			if(!(ret.contains(ing)) && arg0.getCantidad(ing).getValor()>=0)
+			if( arg0.getCantidad(ing).getValor()>=0)
 			{
 				ret.addStock(ing, arg0.getCantidad(ing));
 			}	
 		}
-		return ret;
+		return ret; 
 	}
 }

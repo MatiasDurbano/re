@@ -25,8 +25,8 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 		Cantidad c1= new Cantidad(Medicion.Kg,2.0);
 		Ingrediente d= new Ingrediente ("cebolla");
 		Cantidad d1= new Cantidad(Medicion.Kg,1.0); 
-		Ingrediente e= new Ingrediente ("papa");
-		Cantidad e1= new Cantidad(Medicion.Kg,2);
+		Ingrediente e= new Ingrediente ("pepepepe");
+		Cantidad e1= new Cantidad(Medicion.Kg,2); 
 		
 		stock.addStock(a, a1);
 		stock.addStock(b, b1);

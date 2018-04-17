@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Validadores.RemovedorRepetido;
+
 public class StockCantidad {
 	
 	Map<Ingrediente,Cantidad> stock;
