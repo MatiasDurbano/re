@@ -21,7 +21,7 @@ public class ValidadorTest {
 			System.out.println(ing.getNombre()+" " + a.getCantidad(ing).getValor());
 		}
 		
-		assertEquals(3,a.getIngredientes().size());
+		assertEquals(4,a.getIngredientes().size());
 		 
 	}
 

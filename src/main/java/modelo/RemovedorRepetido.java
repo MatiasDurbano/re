@@ -3,6 +3,8 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Map;
 
+import Validadores.ValidadorCantidad;
+
 public class RemovedorRepetido {
 	
 	private static ArrayList<Ingrediente> toDelete=new ArrayList<Ingrediente>();

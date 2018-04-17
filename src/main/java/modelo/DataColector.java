@@ -6,6 +6,7 @@ import Interface.ProxyPlatoInterface;
 import Proxy.ProxyCache;
 import Proxy.ProxyIngrediente;
 import Proxy.ProxyPlato;
+import Validadores.ValidadorCantidad;
 
 public class DataColector 
 {
@@ -23,7 +24,7 @@ public class DataColector
 	public StockCantidad getStockIngredientes(){
 		StockCantidad ret;
 		ret = proxyCache.getCantidad();
-		return ret;
+		return ValidadorCantidad.SacaRepetido(ret);
 	}
 	
 	public Cantidad getCantidad(Ingrediente arg0) 
