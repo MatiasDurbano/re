@@ -1,18 +1,19 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
 import Stub.ProxyIngredienteStub;
+import Stub.ProxyPlatoStub;
 import modelo.DataColector;
 import modelo.Ingrediente;
 import modelo.StockCantidad;
 
-public class ValidadorTest {
-	
-	
-	
+public class ValidadorTest 
+{	
 	@Test
-	public void ingredienteRepetido() {
-		ProxyIngredienteStub stock = new ProxyIngredienteStub();
-		DataColector data= new DataColector();
+	public void ingredienteRepetido() 
+	{
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		DataColector data= new DataColector(proxyIngrediente,proxyPlato);
 		 
 		StockCantidad a = data.getStockIngredientes(); 
 		
@@ -22,7 +23,4 @@ public class ValidadorTest {
 		
 		assertEquals(4,a.getIngredientes().size());
 	}
-	
-	
-
 }
