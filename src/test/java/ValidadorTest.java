@@ -1,5 +1,8 @@
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import Stub.ProxyCacheStub;
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
 import modelo.DataColector;
@@ -13,8 +16,10 @@ public class ValidadorTest
 	{
 		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
 		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		DataColector data= new DataColector(proxyIngrediente,proxyPlato);
-		 
+		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
+		DataColector data= new DataColector(proxyCache);
+		
 		StockCantidad a = data.getStockIngredientes(); 
 		
 		for( Ingrediente ing : a.getIngredientes()) {

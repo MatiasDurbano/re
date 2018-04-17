@@ -23,8 +23,9 @@ public class DataColectorTest {
 	{
 		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
 		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
 		
-		DataColector data= new DataColector(proxyIngrediente,proxyPlato);
+		DataColector data= new DataColector(proxyCache);
 		StockCantidad a = new StockCantidad ();
 		a = data.getStockIngredientes();
 	
@@ -36,7 +37,9 @@ public class DataColectorTest {
 	{ 
 		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
 		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		DataColector data= new DataColector(proxyIngrediente,proxyPlato);
+		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
+		DataColector data= new DataColector(proxyCache);
 		
 		StockCantidad a = new StockCantidad ();
 		a = data.getStockIngredientes();

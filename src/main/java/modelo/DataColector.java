@@ -10,13 +10,11 @@ import Validadores.ValidadorCantidad;
 
 public class DataColector 
 {
-	private ProxyIngredienteInterface proxyIngrediente;
-	private ProxyPlatoInterface proxyPlato;
 	private ProxyCacheInterface proxyCache;
 	
-	public DataColector(ProxyIngredienteInterface proxyIngrediente, ProxyPlatoInterface proxyPlato) 
+	public DataColector(ProxyCacheInterface proxyCache) 
 	{
-		proxyCache = new ProxyCache(this.proxyIngrediente,this.proxyPlato);
+		this.proxyCache = proxyCache;
 	}
 	
 	public StockCantidad getStockIngredientes(){
