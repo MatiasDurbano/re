@@ -9,7 +9,7 @@ public class AnalizadorPlatos
 	public static Map<Ingrediente, Cantidad> dameIngredientesyCantidad(Plato plato)
 	{
 		Map<Ingrediente, Cantidad> map = new HashMap<Ingrediente,Cantidad>();
-		for (Map.Entry<Ingrediente, Cantidad> entry: plato.receta.receta.entrySet()) 
+		for (Map.Entry<Ingrediente, Cantidad> entry: plato.receta.getReceta().entrySet()) 
 		{
 			map.put(entry.getKey(), entry.getValue());
 		}
@@ -19,7 +19,7 @@ public class AnalizadorPlatos
 	public static List<Ingrediente> dameIngredientes(Plato plato)
 	{
 		List<Ingrediente> lista = new ArrayList<Ingrediente>();
-		for (Map.Entry<Ingrediente, Cantidad> entry: plato.receta.receta.entrySet()) 
+		for (Map.Entry<Ingrediente, Cantidad> entry: plato.receta.getReceta().entrySet()) 
 		{
 			lista.add(entry.getKey());
 		}
