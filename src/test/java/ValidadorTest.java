@@ -21,9 +21,9 @@ public class ValidadorTest
 		DataColector data= new DataColector(proxyCache);
 		
 		StockCantidad a = data.getStockIngredientes(); 
-		
+		 
 		for( Ingrediente ing : a.getIngredientes()) {
-			System.out.println(ing.getNombre()+" " + a.getCantidad(ing).getValor());
+			System.out.println(ing.getNombre()+" " +  a.getCantidad(ing).getValor());
 		}
 		
 		assertEquals(4,a.getIngredientes().size());
