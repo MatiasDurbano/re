@@ -41,8 +41,8 @@ public class Cantidad
 	}
 
 	@Override
-	public String toString() {
-		return "Cantidad [" + medicion + ", " + valor + "]";
-	}
-
+	public String toString() 
+	{
+		return valor + medicion.toString();
+	}	
 }

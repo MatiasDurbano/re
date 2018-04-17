@@ -55,7 +55,7 @@ public class StockCantidad {
 
 	@Override
 	public String toString() {
-		return "StockCantidad [" + stock + "]";
+		return "\n" + "Cantidades en stock: " + "\n" + stock.toString();
 	}
 
 	@Override

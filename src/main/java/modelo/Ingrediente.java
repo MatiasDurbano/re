@@ -32,6 +32,6 @@ public class Ingrediente
 
 	@Override
 	public String toString() {
-		return "Ingrediente [" + nombre + "]";
+		return nombre;
 	}
 }

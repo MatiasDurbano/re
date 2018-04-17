@@ -24,7 +24,7 @@ public class Receta
 	@Override
 	public String toString() 
 	{
-		return "Receta [" + receta + "]";
+		return receta.toString();
 	}
 
 	@Override

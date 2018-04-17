@@ -14,7 +14,7 @@ public class Plato
 	}
 	@Override
 	public String toString() {
-		return "Plato [" + nombre + ", " + receta + "]";
+		return "\n" + "Plato = " + nombre + "\n" +" Receta ="+ receta;
 	}
 	@Override
 	public boolean equals(Object obj) 
