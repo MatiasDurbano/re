@@ -20,4 +20,10 @@ public class Receta
 	{
 		return receta;
 	}
+
+	@Override
+	public String toString() 
+	{
+		return "Receta [" + receta + "]";
+	}
 }

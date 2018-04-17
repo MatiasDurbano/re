@@ -38,7 +38,11 @@ public class Cantidad
 		if(valor == cant.getValor() && this.medicion.equals(cant.getMedicion())) return true;   
 		 
 		return false;
-		
+	}
+
+	@Override
+	public String toString() {
+		return "Cantidad [" + medicion + ", " + valor + "]";
 	}
 
 }
