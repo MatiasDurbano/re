@@ -8,7 +8,7 @@ import modelo.Plato;
 
 public class ValidadorMenu {
 
-	public static Menu SacaRepetido(Menu menu) 
+	public static Menu SacaRepetidoYCeros(Menu menu) 
 	{
 		Menu ret = new Menu();
 		

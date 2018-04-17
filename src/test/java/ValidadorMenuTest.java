@@ -17,18 +17,11 @@ public class ValidadorMenuTest {
 	public void test() {
 		Menu menu = new Menu();		
 		assertTrue(ValidadorMenu.MenuVacio(menu));
-		assertFalse(menu.getFecha_de_Creacion() == null);
-		
-		
-		
+		assertFalse(menu.getFecha_de_Creacion() == null);		
+		ValidadorMenu.SacaRepetidoYCeros(menu);		
 		for(Map.Entry<Plato, Integer> entry: menu.getPlatos().entrySet())
 		{
 			assertTrue(entry.getValue() >= 0);
-		}
-		
-		
-		
-		
-		
+		}		
 	}
 }
