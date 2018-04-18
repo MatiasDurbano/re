@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class DecididorPlatos {
 	
-	public HashMap<Ingrediente, Cantidad> cantidadIngredientes (Plato plato, DataColector Data){
+	public static HashMap<Ingrediente, Cantidad> cantidadIngredientes (Plato plato, DataColector Data){
 		
 		HashMap<Ingrediente, Cantidad> ret = new HashMap<Ingrediente, Cantidad>();
 		ArrayList<Ingrediente> ingredientes = AnalizadorPlatos.dameIngredientes(plato);
@@ -16,7 +16,7 @@ public class DecididorPlatos {
 		return ret;
 	}
 	
-	public boolean esPosibleArmar (Plato plato, DataColector dataColector) {
+	public static boolean esPosibleArmar (Plato plato, DataColector dataColector) {
 		
 		boolean ret = true;
 		
