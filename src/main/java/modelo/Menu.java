@@ -14,7 +14,6 @@ public class Menu
 	public Menu() 
 	{
 		this.platos = new HashMap<Plato, Integer>();
-		this.fecha_de_creacion = new Date(System.currentTimeMillis());
 	}
 
 	public Map<Plato, Integer> getPlatos() {
@@ -28,5 +27,9 @@ public class Menu
 	public Date getFecha_de_Creacion() 
 	{
 		return this.fecha_de_creacion;
+	}
+	public void asignarFechaActual()
+	{
+		this.fecha_de_creacion = new Date(System.currentTimeMillis());
 	}
 }
