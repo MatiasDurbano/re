@@ -20,7 +20,7 @@ public class DataColector
 	public StockCantidad getStockIngredientes(){
 		StockCantidad ret;
 		ret = proxyCache.getCantidad();
-		return ValidadorCantidad.SacaRepetido(ret);
+		return ValidadorCantidad.quitarMalStock(ret);
 	}
 	
 	public Cantidad getCantidad(Ingrediente arg0) 
