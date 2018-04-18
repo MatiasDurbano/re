@@ -5,18 +5,18 @@ import java.util.HashMap;
 
 public class DecididorPlatos {
 	
-	public HashMap<Ingrediente, Cantidad> cantidadIngredientes (Plato plato,DataColector Data){
+	public HashMap<Ingrediente, Cantidad> cantidadIngredientes (Plato plato, DataColector Data){
 		
 		HashMap<Ingrediente, Cantidad> ret = new HashMap<Ingrediente, Cantidad>();
 		ArrayList<Ingrediente> ingredientes = AnalizadorPlatos.dameIngredientes(plato);
-		DataColector dataColector=Data;
+		DataColector dataColector = Data;
 		for(Ingrediente i: ingredientes) {
 			ret.put(i, dataColector.getCantidad(i));
 		}
 		return ret;
 	}
 	
-	public boolean esPosibleArmar (Plato plato,DataColector dataColector) {
+	public boolean esPosibleArmar (Plato plato, DataColector dataColector) {
 		
 		boolean ret = true;
 		
