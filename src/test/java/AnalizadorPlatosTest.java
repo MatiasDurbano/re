@@ -7,13 +7,35 @@ import org.junit.Test;
 
 import modelo.AnalizadorPlatos;
 import modelo.Cantidad;
+import modelo.DecididorPlatos;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Plato;
 import modelo.Receta;
 
 public class AnalizadorPlatosTest {
-
+	
+	@Test
+	public void noVacio() {
+		
+		Ingrediente tomate = new Ingrediente("tomate");
+		Ingrediente pera = new Ingrediente("pera");
+		Ingrediente cebolla = new Ingrediente("cebolla");
+		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
+		Cantidad seis = new Cantidad(Medicion.Kg, 6);
+		Cantidad cuatro = new Cantidad(Medicion.Kg, 4);
+		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
+		ingredientes.put(tomate, cinco);
+		ingredientes.put(pera, seis);
+		ingredientes.put(cebolla, cuatro);
+		Receta receta = new Receta(ingredientes);
+		String nombre = "Fideos con tuco";
+		Plato plato = new Plato(nombre, receta);
+		
+		ArrayList<Ingrediente> ret = AnalizadorPlatos.dameIngredientes(plato);
+		
+		Assert.assertFalse(ret.isEmpty());
+	}
 	@Test
 	public void dameIngredienteCantidad() {
 		
