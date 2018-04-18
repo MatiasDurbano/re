@@ -49,7 +49,7 @@ public class ValidadorMenuTest {
 		//---
 		
 		menu.agregarPlato(a, 1);
-		
+		menu.asignarFechaActual();
 		assertTrue(menu.getFecha_de_Creacion() != null);		
 		menu = ValidadorMenu.SacaRepetidoYCeros(menu);		
 		for(Map.Entry<Plato, Integer> entry: menu.getPlatos().entrySet())
@@ -57,4 +57,5 @@ public class ValidadorMenuTest {
 			assertTrue(entry.getValue() >= 0);
 		}		
 	}
+		
 }
