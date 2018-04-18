@@ -85,9 +85,55 @@ public class DecididorPlatosTest {
 		prueba.put(tomate, seis);
 		prueba.put(cebolla, uno);
 		
-		System.out.println(prueba.toString());
-		
 		
 		Assert.assertNotEquals(prueba, ret);
+	}
+	
+	@Test
+	public void armarBien() {
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
+		DataColector data= new DataColector(proxyCache);
+		
+		Ingrediente tomate = new Ingrediente("tomate");
+		Ingrediente pera = new Ingrediente("pera");
+		Ingrediente cebolla = new Ingrediente("cebolla");
+		Cantidad uno = new Cantidad(Medicion.Kg, 1);
+		Cantidad dos = new Cantidad(Medicion.Kg, 2);
+		Cantidad tres = new Cantidad(Medicion.Kg, 3);
+		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
+		ingredientes.put(tomate, dos);
+		ingredientes.put(pera, tres);
+		ingredientes.put(cebolla, uno);
+		Receta receta = new Receta(ingredientes);
+		String nombre = "Fideos con tuco";
+		Plato plato = new Plato(nombre, receta);
+	}
+	
+	@Test
+	public void armarMal() {
+		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
+		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
+		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
+		
+		DataColector data= new DataColector(proxyCache);
+		
+		Ingrediente tomate = new Ingrediente("tomate");
+		Ingrediente pera = new Ingrediente("pera");
+		Ingrediente cebolla = new Ingrediente("cebolla");
+		Cantidad uno = new Cantidad(Medicion.Kg, 1);
+		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
+		Cantidad tres = new Cantidad(Medicion.Kg, 3);
+		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
+		ingredientes.put(tomate, cinco);
+		ingredientes.put(pera, tres);
+		ingredientes.put(cebolla, uno);
+		Receta receta = new Receta(ingredientes);
+		String nombre = "Fideos con tuco";
+		Plato plato = new Plato(nombre, receta);
+		
+		Assert.assertFalse(DecididorPlatos.esPosibleArmar(plato, data));
 	}
 }
