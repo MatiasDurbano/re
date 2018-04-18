@@ -87,6 +87,7 @@ public class DecididorPlatosTest {
 		
 		System.out.println(prueba.toString());
 		
+		
 		Assert.assertNotEquals(prueba, ret);
 	}
 }
