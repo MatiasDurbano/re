@@ -1,28 +1,25 @@
 package modelo;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Menu 
 {	
-	private Map<Plato, Integer> platos;	
-	private Date fecha_de_creacion;
-	private Date fecha_de_implementacion;	
+	private List<Plato> platos;	
+	private Date fecha_de_creacion;	
 	
 	public Menu() 
 	{
-		this.platos = new HashMap<Plato, Integer>();
+		this.platos = new ArrayList<Plato>();
 	}
 
-	public Map<Plato, Integer> getPlatos() {
+	public List<Plato> getPlatos() {
 		return platos;
 	}	
 	
-	public void agregarPlato(Plato p, Integer i)
+	public void agregarPlato(Plato p)
 	{
-		this.platos.put(p, i);
+		this.platos.add(p);
 	}
 	public Date getFecha_de_Creacion() 
 	{
