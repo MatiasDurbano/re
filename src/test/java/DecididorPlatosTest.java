@@ -95,21 +95,18 @@ public class DecididorPlatosTest {
 		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
 		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
 		
-		DataColector data= new DataColector(proxyCache);
+		DataColector dataColector= new DataColector(proxyCache);
 		
-		Ingrediente tomate = new Ingrediente("tomate");
-		Ingrediente pera = new Ingrediente("pera");
-		Ingrediente cebolla = new Ingrediente("cebolla");
-		Cantidad uno = new Cantidad(Medicion.Kg, 1);
-		Cantidad dos = new Cantidad(Medicion.Kg, 2);
-		Cantidad tres = new Cantidad(Medicion.Kg, 3);
 		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
-		ingredientes.put(tomate, dos);
-		ingredientes.put(pera, tres);
-		ingredientes.put(cebolla, uno);
+		ingredientes.put(new Ingrediente("milanesa"), new Cantidad(Medicion.Kg, 1));
+		ingredientes.put(new Ingrediente("zapallo"), new Cantidad(Medicion.Kg, 2));
 		Receta receta = new Receta(ingredientes);
-		String nombre = "Fideos con tuco";
-		Plato plato = new Plato(nombre, receta);
+		
+		Plato plato = new Plato("Milanesa con Zapallo", receta);
+		
+		int cantidad = DecididorPlatos.esPosibleArmar(plato, dataColector);
+		
+		Assert.assertEquals(5, cantidad);
 	}
 	
 	@Test
@@ -118,22 +115,17 @@ public class DecididorPlatosTest {
 		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
 		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
 		
-		DataColector data= new DataColector(proxyCache);
+		DataColector dataColector= new DataColector(proxyCache);
 		
-		Ingrediente tomate = new Ingrediente("tomate");
-		Ingrediente pera = new Ingrediente("pera");
-		Ingrediente cebolla = new Ingrediente("cebolla");
-		Cantidad uno = new Cantidad(Medicion.Kg, 1);
-		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
-		Cantidad tres = new Cantidad(Medicion.Kg, 3);
 		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
-		ingredientes.put(tomate, cinco);
-		ingredientes.put(pera, tres);
-		ingredientes.put(cebolla, uno);
+		ingredientes.put(new Ingrediente("milanesa"), new Cantidad(Medicion.Kg, 1));
+		ingredientes.put(new Ingrediente("zapallo"), new Cantidad(Medicion.Kg, 2));
 		Receta receta = new Receta(ingredientes);
-		String nombre = "Fideos con tuco";
-		Plato plato = new Plato(nombre, receta);
 		
-		Assert.assertFalse(DecididorPlatos.esPosibleArmar(plato, data));
+		Plato plato = new Plato("Milanesa con Zapallo", receta);
+		
+		int cantidad = DecididorPlatos.esPosibleArmar(plato, dataColector);
+		
+		Assert.assertFalse(10==cantidad);
 	}
 }
