@@ -4,6 +4,8 @@ import java.util.List;
 
 import Interface.ProxyIngredienteInterface;
 import Interface.ProxyPlatoInterface;
+import Proxy.ProxyIngrediente;
+import Proxy.ProxyPlato;
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
 
@@ -13,17 +15,17 @@ public class Seacher {
 	ProxyPlatoInterface proxyPlato;
 	
 	public Seacher() {
-		proxyIngrediente =new ProxyIngredienteStub();
-		proxyPlato = new ProxyPlatoStub();
+		proxyIngrediente =new ProxyIngrediente(new ProxyIngredienteStub());
+		proxyPlato = new ProxyPlato(new ProxyPlatoStub());
 		
 	}
 	
 	public Object get(Object arg0) {
-		
+	
 		if(arg0 instanceof Ingrediente)
 			return proxyIngrediente.get(arg0);
 		
-		else {
+		else { 
 			return proxyPlato.get(arg0);
 		}
 		

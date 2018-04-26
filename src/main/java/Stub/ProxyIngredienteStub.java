@@ -43,13 +43,7 @@ public class ProxyIngredienteStub implements ProxyIngredienteInterface
 		
 	}
 	
-	
-	@Override
-	public StockCantidad get() 
-	{
-		return stock;
-	}
-	
+	 
 	@Override
 	public boolean equals(Object obj) 
 	{

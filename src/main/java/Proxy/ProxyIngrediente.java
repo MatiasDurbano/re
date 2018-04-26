@@ -11,21 +11,15 @@ import modelo.StockCantidad;
 
 public  class ProxyIngrediente implements ProxyIngredienteInterface
 {
-	ProxyIngrediente proxy;
-	public ProxyIngrediente(ProxyIngrediente proxy) 
+	ProxyIngredienteInterface proxy;
+	public ProxyIngrediente(ProxyIngredienteInterface proxy) 
 	{
 		this.proxy = proxy;
 	}
 	
-	@Override
-	public StockCantidad get() 
-	{
-		return proxy.get();
-	}
 
 	@Override
 	public Cantidad get(Object arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		return proxy.get(arg0);
 	}
 }
