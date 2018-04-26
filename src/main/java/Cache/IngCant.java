@@ -8,9 +8,9 @@ public class IngCant {
 	Cantidad cant;
 	
 	
-	public IngCant(Ingrediente ing, Cantidad cant){
-		this.ing= ing;
-		this.cant= cant;
+	public IngCant(Object ing, Object cant){ 
+		this.ing= (Ingrediente)ing;
+		this.cant= (Cantidad) cant;
 	}
 	
 	public Ingrediente getIng() {
