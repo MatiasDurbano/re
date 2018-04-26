@@ -83,15 +83,7 @@ public class DecididorPlatosTest {
 	
 	@Test
 	public void armarBien() {
-<<<<<<< HEAD
-		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
-		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
-		
-		DataColector dataColector= new DataColector(proxyCache);
-=======
 		DataColector data= new DataColector();
->>>>>>> branch 'master' of https://github.com/MatiasDurbano/re
 		
 		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
 		ingredientes.put(new Ingrediente("milanesa"), new Cantidad(Medicion.Kg, 1));
@@ -100,23 +92,15 @@ public class DecididorPlatosTest {
 		
 		Plato plato = new Plato("Milanesa con Zapallo", receta);
 		
-		int cantidad = DecididorPlatos.esPosibleArmar(plato, dataColector);
+		int cantidad = DecididorPlatos.esPosibleArmar(plato, data);
 		
 		Assert.assertEquals(5, cantidad);
 	}
 	
 	@Test
 	public void armarMal() {
-<<<<<<< HEAD
-		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
-		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
-		
-		DataColector dataColector= new DataColector(proxyCache);
-=======
 
 		DataColector data= new DataColector();
->>>>>>> branch 'master' of https://github.com/MatiasDurbano/re
 		
 		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
 		ingredientes.put(new Ingrediente("milanesa"), new Cantidad(Medicion.Kg, 1));
@@ -125,7 +109,7 @@ public class DecididorPlatosTest {
 		
 		Plato plato = new Plato("Milanesa con Zapallo", receta);
 		
-		int cantidad = DecididorPlatos.esPosibleArmar(plato, dataColector);
+		int cantidad = DecididorPlatos.esPosibleArmar(plato, data);
 		
 		Assert.assertFalse(10==cantidad);
 	}
