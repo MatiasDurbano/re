@@ -1,5 +1,6 @@
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -18,6 +19,7 @@ public class CantidadTest {
 		s = c.toString();
 		assertEquals(c.getMedicion(),Medicion.Lt);
 		assertTrue(c.getValor() == 2);
+		assertFalse(s.equals("hola"));
 	}
 
 }
