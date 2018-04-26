@@ -24,8 +24,8 @@ public class CacheTest {
 		Cantidad exp2= new Cantidad(Medicion.Kg,5.5);
 		
 		
-		assertEquals(true,exp.equals((Cantidad) c.getI(new Ingrediente ("papa"))));
-		assertEquals(true,exp2.equals((Cantidad) c.getI(new Ingrediente ("pera")))); 
+		assertEquals(true,exp.equals((Cantidad) c.get(new Ingrediente ("papa"))));
+		assertEquals(true,exp2.equals((Cantidad) c.get(new Ingrediente ("pera")))); 
 	}
 
 }

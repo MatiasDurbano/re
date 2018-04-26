@@ -16,9 +16,9 @@ public class Cache {
 	//HORRIBLE
 	public Object get(Object arg0) {
 		if(arg0 instanceof Ingrediente) 
-			return cachePlato.get(arg0);
-		else {
 			return cacheIngrediente.get(arg0);
+		else {
+			return cachePlato.get(arg0);
 		} 
 	} 
 	
