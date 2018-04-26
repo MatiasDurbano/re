@@ -12,6 +12,11 @@ public class Plato
 		this.receta = receta;
 		
 	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
 	@Override
 	public String toString() {
 		return "\n" + "Plato = " + nombre + "\n" +" Receta ="+ receta;
