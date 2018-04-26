@@ -35,7 +35,7 @@ public class CreadorDeMenu {
 		Menu ret = new Menu();
 		for(int i=0; i<n ; i++) 
 		{
-			ret.agregarPlato(platos.get(i), 1);
+			ret.agregarPlato(platos.get(i));
 		}		
 		return ret;
 	}
