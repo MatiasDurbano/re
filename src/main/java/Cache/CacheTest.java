@@ -17,6 +17,7 @@ public class CacheTest {
 		Cantidad a1= new Cantidad(Medicion.Kg,2);
 		Ingrediente b= new Ingrediente ("pera"); 
 		Cantidad b1= new Cantidad(Medicion.Kg,5.5);
+		
 		c.add(new IngCant(a,a1));
 		c.add(new IngCant(b,b1));
 		 
@@ -37,8 +38,8 @@ public class CacheTest {
 		Cantidad b1= new Cantidad(Medicion.Kg,5.5);
 		
 		
-		Cantidad exp= new Cantidad(Medicion.Kg,2);
-		Cantidad exp2= new Cantidad(Medicion.Kg,5.5);
+		Cantidad exp= a1;
+		Cantidad exp2= b1;
 		
 		
 		assertEquals(true,exp.equals((Cantidad) c.get(new Ingrediente ("papa"))));

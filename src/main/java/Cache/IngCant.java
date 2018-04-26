@@ -16,7 +16,7 @@ public class IngCant {
 	public Ingrediente getIng() {
 		return ing;
 	}
-	
+
 	public Cantidad getCant() {
 		return cant;
 	}
