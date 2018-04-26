@@ -11,11 +11,11 @@ public class ActualizadorCache implements ActualizadorCacheInterface {
 	CacheInterface cacheIngrediente;
 	CacheInterface cachePlato;
 	
-	public ActualizadorCache() {
+	public ActualizadorCache(CacheInterface arg0, CacheInterface arg1) {
 		//por ahora
-		cacheIngrediente= new CacheIngrediente() ;
-		cachePlato = new CachePlato();
-				
+		cacheIngrediente= arg0 ;
+		cachePlato = arg1;
+	
 	}
 	
 	public void add (Object arg0) {
@@ -24,7 +24,7 @@ public class ActualizadorCache implements ActualizadorCacheInterface {
 	
 		else {
 			cachePlato.add(arg0);
-		}
+		} 
 		
 	}
 

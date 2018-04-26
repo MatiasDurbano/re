@@ -18,7 +18,6 @@ public class Ingrediente
 		Ingrediente obj = (Ingrediente) arg0;
 		return this.nombre.equals(obj.getNombre());
 		
-		
 	}
 	
 	@Override

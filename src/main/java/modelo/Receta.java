@@ -26,22 +26,23 @@ public class Receta
 	{
 		return receta.toString();
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		;
 		Receta other = (Receta) obj;
-		if (receta == null) {
-			if (other.receta != null)
+		Map<Ingrediente,Cantidad> receta2= other.getReceta();
+		
+		for (Map.Entry<Ingrediente, Cantidad> entry: receta.entrySet()) 
+		{
+			if(!(receta2.containsKey(entry.getKey())) || !(receta2.containsValue(entry.getValue()))) {
 				return false;
-		} else if (!receta.equals(other.receta))
-			return false;
+			}
+		}
 		return true;
+		
 	}
 	
 }

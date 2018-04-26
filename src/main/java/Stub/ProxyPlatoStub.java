@@ -46,11 +46,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		this.lista = lista;
 	}
 	
-	@Override
-	public List<Plato> get() 
-	{
-		return lista;
-	}
+
 
 	@Override
 	public boolean equals(Object obj) 
@@ -68,6 +64,23 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		} else if (!lista.equals(other.lista))
 			return false;
 		return true;
+	}
+
+	@Override
+	public Receta get(Object arg0) {
+		Receta ret = null;
+		
+		for(Plato a : lista) {
+			if(arg0.equals(a)) return a.getReceta();
+		}
+		
+		return ret;
+		
+	}
+
+	@Override
+	public List<Plato> load() {
+		return lista;
 	}
 	
 }

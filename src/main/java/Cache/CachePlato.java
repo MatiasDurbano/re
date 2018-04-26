@@ -18,21 +18,31 @@ public class CachePlato implements CacheInterface{
 		platos = new ArrayList<Plato>();
 	}
 	
-	
 
 	@Override
-	public void add(Object arg0) {
-		Plato a = (Plato) arg0;
-		platos.add(a);
+	public void add(Object arg0) { 
+		List<Plato> a = (ArrayList<Plato>) arg0;
+		for(Plato plato : a) {
+			platos.add(plato);
+		}
+		
+		System.out.println(platos.size());
 		
 	}
- 
 	@Override
 	public Object get(Object arg0) {
 		String a = (String) arg0;
+		Object ret= null;
+		
+		System.out.println(platos.size());
+		System.out.println("Platos : "+ a );
 		for(Plato p : platos) {
-			if (a.equals(p.getNombre()))return p;
+			
+			System.out.println(a +" "+ p.getNombre());
+			if (a.equals(p.getNombre())) {
+				return p.getReceta();
+			} 		
 		}
-		return null;
+		return ret;
 	}
 }

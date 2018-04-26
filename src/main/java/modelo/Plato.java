@@ -17,10 +17,15 @@ public class Plato
 		return this.nombre;
 	}
 	
+	public Receta getReceta() {
+		return receta;
+	}
+	
 	@Override
 	public String toString() {
 		return "\n" + "Plato = " + nombre + "\n" +" Receta ="+ receta;
 	}
+	
 	@Override
 	public boolean equals(Object obj) 
 	{

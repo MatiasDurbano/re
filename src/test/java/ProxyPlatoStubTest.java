@@ -44,7 +44,7 @@ public class ProxyPlatoStubTest
 		
 		lista.add(a);
 		lista.add(b);
-		assertEquals(true, stub.get().equals(lista));
-		assertEquals(false, stub.get().isEmpty());
+		assertEquals(true, stub.load().equals(lista));
+		assertEquals(false, stub.load().isEmpty());
 	}
 }
