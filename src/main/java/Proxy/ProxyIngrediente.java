@@ -12,6 +12,7 @@ import modelo.StockCantidad;
 public  class ProxyIngrediente implements ProxyIngredienteInterface
 {
 	ProxyIngredienteInterface proxy;
+	
 	public ProxyIngrediente(ProxyIngredienteInterface proxy) 
 	{
 		this.proxy = proxy;
