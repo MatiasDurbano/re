@@ -16,24 +16,21 @@ public class DecididorPlatos {
 		return ret;
 	}
 	
-	public static boolean esPosibleArmar (Plato plato, DataColector dataColector) {
+	public static int esPosibleArmar (Plato plato, DataColector dataColector) {
 		
-		boolean ret = true;
+		int cantidadMinima = Integer.MAX_VALUE;
 		
 		ArrayList<Ingrediente> ingredientes = AnalizadorPlatos.dameIngredientes(plato);
 		HashMap<Ingrediente, Cantidad> receta = AnalizadorPlatos.dameIngredientesyCantidad(plato);
 		HashMap<Ingrediente, Cantidad> stock = cantidadIngredientes(plato,dataColector);
 		
 		for(Ingrediente i: ingredientes) {
-			
-			if(receta.get(i).getValor() <= stock.get(i).getValor()) {
-				ret = ret & true;
-			}
-			else {
-				ret = ret & false;
+			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
+			if(cuantos < cantidadMinima) {
+				cantidadMinima = cuantos;
 			}
 		}
 		
-		return ret;
+		return cantidadMinima;
 	}
 }
