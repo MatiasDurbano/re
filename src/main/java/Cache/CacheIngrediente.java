@@ -3,7 +3,9 @@ package Cache;
 import java.util.HashMap;
 import java.util.Map;
 
+import Interface.CacheInterface;
 import modelo.Cantidad;
+import modelo.DataTransfer;
 import modelo.Ingrediente;
 import modelo.StockCantidad;
 
@@ -18,8 +20,7 @@ public class CacheIngrediente implements CacheInterface{
 
 	@Override
 	public void add(Object arg0) {
-		IngCant a= (IngCant) arg0;
-		System.out.println(a.ing.getNombre()); 
+		DataTransfer a= (DataTransfer) arg0;
 		ingredientes.put(a.getIng(),a.getCant());
 		
 		

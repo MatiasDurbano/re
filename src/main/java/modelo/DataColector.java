@@ -1,37 +1,29 @@
 package modelo;
-import java.util.List;
-import Interface.ProxyCacheInterface;
-import Interface.ProxyIngredienteInterface;
-import Interface.ProxyPlatoInterface;
-import Proxy.ProxyCache;
-import Proxy.ProxyIngrediente;
-import Proxy.ProxyPlato;
-import Validadores.ValidadorCantidad;
 
-public class DataColector 
+import java.util.List;
+
+import Cache.Cache;
+import Interface.DataColectorInterface;
+
+public class DataColector implements DataColectorInterface 
 {
-	private ProxyCacheInterface proxyCache;
+	private  Cache cache;
 	
-	public DataColector(ProxyCacheInterface proxyCache) 
+	public DataColector() 
 	{
-		this.proxyCache = proxyCache;
+		cache = new Cache();
 	}
 	
-	public StockCantidad getStockIngredientes(){
-		StockCantidad ret;
-		ret = proxyCache.getCantidad();
-		return ValidadorCantidad.quitarMalStock(ret);
+
+	@Override
+	public Cantidad getCantidad(Ingrediente arg0) {
+		return (Cantidad)cache.get(arg0);
+
 	}
-	
-	public Cantidad getCantidad(Ingrediente arg0) 
-	{
-		return proxyCache.getCantidad().getCantidad(arg0);
-	}
-	
-	public List<Plato> getPlatos()
-	{
-		List <Plato> ret;
-		ret= proxyCache.getPlatos();
-		return ret;
+
+	@Override
+	public List<Plato> getPlato() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

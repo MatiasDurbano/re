@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Interface.CacheInterface;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Plato;

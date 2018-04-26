@@ -1,4 +1,4 @@
-package Cache;
+package Interface;
 
 public interface CacheInterface {
 	
