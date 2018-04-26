@@ -72,7 +72,7 @@ public class CacheTest {
 		String as = "Fideos con tuco";
 		Plato a = new Plato(as, ar);
 
-
+ 
 		assertEquals(true, ar.equals(c.get("Fideos con tuco")));
 		
 	}
