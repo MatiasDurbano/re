@@ -4,10 +4,7 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
 
-import Stub.ProxyCacheStub;
-import Stub.ProxyIngredienteStub;
-import Stub.ProxyPlatoStub;
-import modelo.AnalizadorPlatos;
+
 import modelo.Cantidad;
 import modelo.DataColector;
 import modelo.DecididorPlatos;

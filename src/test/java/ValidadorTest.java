@@ -1,14 +1,8 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import Stub.ProxyCacheStub;
-import Stub.ProxyIngredienteStub;
-import Stub.ProxyPlatoStub;
-import Validadores.RemovedorRepetido;
 import Validadores.ValidadorCantidad;
 import modelo.Cantidad;
-import modelo.DataColector;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.StockCantidad;
