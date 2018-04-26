@@ -1,5 +1,8 @@
 package Cache;
 
+import Interface.ActualizadorCacheInterface;
+import Interface.CacheInterface;
+import modelo.DataTransfer;
 import modelo.Ingrediente;
 
 
@@ -16,7 +19,7 @@ public class ActualizadorCache implements ActualizadorCacheInterface {
 	}
 	
 	public void add (Object arg0) {
-		if((arg0 instanceof IngCant))
+		if((arg0 instanceof DataTransfer))
 			cacheIngrediente.add(arg0);
 	
 		else {

@@ -1,4 +1,4 @@
-package Cache;
+package modelo;
 
 import Interface.ProxyIngredienteInterface;
 import Interface.ProxyPlatoInterface;

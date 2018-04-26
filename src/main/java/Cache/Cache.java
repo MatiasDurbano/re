@@ -1,7 +1,10 @@
 package Cache;
 
+import Interface.CacheInterface;
+import modelo.DataTransfer;
 import modelo.Ingrediente;
 import modelo.Plato;
+import modelo.Seacher;
 
 public class Cache {
 	
@@ -41,7 +44,7 @@ public class Cache {
 	
 	private Object actualizar(Object arg0) {
 		Object ret = buscador.get(arg0);
-		add(new IngCant(arg0,ret));
+		add(new DataTransfer(arg0,ret));
 		return ret;
 	}
 

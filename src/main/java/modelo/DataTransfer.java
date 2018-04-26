@@ -1,14 +1,11 @@
-package Cache;
+package modelo;
 
-import modelo.Cantidad;
-import modelo.Ingrediente;
-
-public class IngCant {
+public class DataTransfer {
 	Ingrediente ing;
 	Cantidad cant;
 	
 	
-	public IngCant(Object ing, Object cant){ 
+	public DataTransfer(Object ing, Object cant){ 
 		this.ing= (Ingrediente)ing;
 		this.cant= (Cantidad) cant;
 	}

@@ -1,29 +1,51 @@
+
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Interface.ProxyCacheInterface;
-import Interface.ProxyIngredienteInterface;
-import Interface.ProxyPlatoInterface;
-import Proxy.ProxyCache;
-import Stub.ProxyIngredienteStub;
-import Stub.ProxyPlatoStub;
-import modelo.DataColector;
-import modelo.StockCantidad;
+import Cache.Cache;
+import modelo.Cantidad;
+import modelo.DataTransfer;
+import modelo.Ingrediente;
+import modelo.Medicion;
 
 public class CacheTest {
 
 	@Test
-	public void test() {
-		ProxyCacheInterface cache = new ProxyCache(new ProxyIngredienteStub(),new ProxyPlatoStub());
-		DataColector data = new DataColector(cache);
+	public void enCache() {
+		Cache c = new Cache();
+		Ingrediente a= new Ingrediente ("papa");
+		Cantidad a1= new Cantidad(Medicion.Kg,2);
+		Ingrediente b= new Ingrediente ("pera"); 
+		Cantidad b1= new Cantidad(Medicion.Kg,5.5);
 		
-		StockCantidad stock= data.getStockIngredientes();
+		c.add(new DataTransfer(a,a1));
+		c.add(new DataTransfer(b,b1));
+		 
+		Cantidad exp= new Cantidad(Medicion.Kg,2);
+		Cantidad exp2= new Cantidad(Medicion.Kg,5.5);
 		
-		StockCantidad stock2 = data.getStockIngredientes(); //por cache
 		
-		assertEquals(stock,stock2);
+		assertEquals(true,exp.equals((Cantidad) c.get(new Ingrediente ("papa"))));
+		assertEquals(true,exp2.equals((Cantidad) c.get(new Ingrediente ("pera")))); 
+	}
+	
+	@Test
+	public void enStub() {
+		Cache c = new Cache();
+		Ingrediente a= new Ingrediente ("papa");
+		Cantidad a1= new Cantidad(Medicion.Kg,2);
+		Ingrediente b= new Ingrediente ("pera"); 
+		Cantidad b1= new Cantidad(Medicion.Kg,5.5);
 		
+		
+		Cantidad exp= a1;
+		Cantidad exp2= b1;
+		
+		
+		assertEquals(true,exp.equals((Cantidad) c.get(new Ingrediente ("papa"))));
+		assertEquals(true,exp2.equals((Cantidad) c.get(new Ingrediente ("pera")))); 
 	}
 
 }

@@ -20,11 +20,7 @@ public class DecididorPlatosTest {
 
 	@Test
 	public void cantidadIngredientes() {
-		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
-		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
-		
-		DataColector data= new DataColector(proxyCache);
+		DataColector data= new DataColector();
 		
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente pera = new Ingrediente("pera");
@@ -55,11 +51,7 @@ public class DecididorPlatosTest {
 	
 	@Test
 	public void cantidadIngredientesMal() {
-		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
-		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
-		
-		DataColector data= new DataColector(proxyCache);
+		DataColector data= new DataColector();
 		
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente pera = new Ingrediente("pera");
@@ -91,11 +83,7 @@ public class DecididorPlatosTest {
 	
 	@Test
 	public void armarBien() {
-		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
-		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
-		
-		DataColector data= new DataColector(proxyCache);
+		DataColector data= new DataColector();
 		
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente pera = new Ingrediente("pera");
@@ -114,11 +102,8 @@ public class DecididorPlatosTest {
 	
 	@Test
 	public void armarMal() {
-		ProxyIngredienteStub proxyIngrediente = new ProxyIngredienteStub();
-		ProxyPlatoStub proxyPlato = new ProxyPlatoStub();
-		ProxyCacheStub proxyCache = new ProxyCacheStub(proxyIngrediente,proxyPlato);
-		
-		DataColector data= new DataColector(proxyCache);
+
+		DataColector data= new DataColector();
 		
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente pera = new Ingrediente("pera");
