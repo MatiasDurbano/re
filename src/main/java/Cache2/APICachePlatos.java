@@ -5,17 +5,17 @@ import modelo.Receta;
 
 public class APICachePlatos {
 	
-	Cache<Plato, Receta> cachePlatos;
+	Cache<String, Receta> cachePlatos;
 	
 	public APICachePlatos() {
-		this.cachePlatos = new Cache<Plato, Receta>();
+		this.cachePlatos = new Cache<String, Receta>();
 	}
 	
-	public void put(Plato plato, Receta receta){
+	public void put(String plato, Receta receta){
 		this.cachePlatos.add(plato, receta);
 	}
 	
-	public Receta get(Plato plato) {
+	public Receta get(String plato) {
 		if(this.cachePlatos.get(plato) == null) {
 			return null;
 		}
