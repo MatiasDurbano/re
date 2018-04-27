@@ -12,7 +12,8 @@ public class DB {
 	}
 	
 	public void add(Plato arg0) {
-		platos.add(arg0);	
+		if(platos.contains(arg0))
+			platos.add(arg0);	
 	}
 	
 	
