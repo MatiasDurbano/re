@@ -15,7 +15,7 @@ public class APICacheIngredienteTest {
 		
 		Cache<Ingrediente, Cantidad> cache = new Cache<Ingrediente,Cantidad>();
 		ProxyIngredienteStub stub = new ProxyIngredienteStub();
-		APICacheIngredientes apiCache = new APICacheIngredientes(cache, stub);
+		APICacheIngredientes apiCache = new APICacheIngredientes(cache, stub, 10);
 		
 		Cantidad resultado = new Cantidad(Medicion.Kg, 2);
 		
@@ -35,7 +35,7 @@ public class APICacheIngredienteTest {
 		cachePrueba.add(new Ingrediente("manzana"), new Cantidad(Medicion.Kg, 4));
 		
 		ProxyIngredienteStub stub = new ProxyIngredienteStub();
-		APICacheIngredientes apiCache = new APICacheIngredientes(cachePrueba, stub);
+		APICacheIngredientes apiCache = new APICacheIngredientes(cachePrueba, stub, 10);
 		apiCache.put(new Ingrediente("zanahoria"), new Cantidad(Medicion.Kg, 5));
 		
 		Assert.assertEquals(cacheEsperada, cachePrueba);
@@ -53,7 +53,7 @@ public class APICacheIngredienteTest {
 		cachePrueba.add(new Ingrediente("zanahoria"), new Cantidad(Medicion.Kg, 5));
 		
 		ProxyIngredienteStub stub = new ProxyIngredienteStub();
-		APICacheIngredientes apiCache = new APICacheIngredientes(cachePrueba, stub);
+		APICacheIngredientes apiCache = new APICacheIngredientes(cachePrueba, stub, 10);
 		apiCache.remove(new Ingrediente("zanahoria"));
 		
 		Assert.assertEquals(cacheEsperada, cachePrueba);
