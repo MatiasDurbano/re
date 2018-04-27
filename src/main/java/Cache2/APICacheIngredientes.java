@@ -1,16 +1,16 @@
 package Cache2;
 
-import Proxy.ProxyIngrediente;
+import Interface.ProxyIngredienteInterface;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 
 public class APICacheIngredientes {
 	
 	Cache<Ingrediente, Cantidad> cacheIngredientes;
-	ProxyIngrediente gateway;
+	ProxyIngredienteInterface gateway;
 	PoliticaCacheIngrediente politica;
 	
-	public APICacheIngredientes(Cache<Ingrediente, Cantidad> cacheIngredientes, ProxyIngrediente gateWay) {
+	public APICacheIngredientes(Cache<Ingrediente, Cantidad> cacheIngredientes, ProxyIngredienteInterface gateWay) {
 		this.cacheIngredientes = cacheIngredientes;
 		this.gateway = gateWay;
 		this.politica = new PoliticaCacheIngrediente(10);
@@ -20,7 +20,7 @@ public class APICacheIngredientes {
 		this.cacheIngredientes.add(ingrediente, cantidad);
 	}
 	
-	public void borrar(Ingrediente ingrediente) {
+	public void remove(Ingrediente ingrediente) {
 		this.cacheIngredientes.remove(ingrediente);
 	}
 	
@@ -29,9 +29,11 @@ public class APICacheIngredientes {
 		Cantidad cantidad = this.cacheIngredientes.get(ingrediente);
 		
 		if(cantidad == null) {
+			
+			cantidad = this.gateway.get(ingrediente);
 			Ingrediente eliminar = this.politica.analizar(ingrediente);
 			if(eliminar != null) {
-				this.cacheIngredientes.remove(eliminar);
+				this.remove(eliminar);
 			}
 			this.put(ingrediente, cantidad);
 		}

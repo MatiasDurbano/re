@@ -14,6 +14,7 @@ public class PoliticaCacheIngrediente {
 	List<Boolean> vidas;
 	
 	public PoliticaCacheIngrediente(int cantidadMaxima) {
+		this.primeraVuelta = true;
 		this.cantidadMaximia = cantidadMaxima;
 		this.puntero = 0;
 		this.ingredientes = new ArrayList<Ingrediente>();
@@ -28,6 +29,7 @@ public class PoliticaCacheIngrediente {
 	public Ingrediente analizar(Ingrediente ingrediente) {
 		
 		Ingrediente ret = null;
+		System.out.println("hola");
 		
 		if(primeraVuelta) {
 			this.ingredientes.add(ingrediente);
