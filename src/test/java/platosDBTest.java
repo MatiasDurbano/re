@@ -85,7 +85,7 @@ public class platosDBTest {
 		Receta ar = new Receta(am);
 		String as = "Fideos con tuco";
 		Plato a = new Plato(as, ar);
-		
+		 
 		//carne al horno con papas , Receta: carne (5), papas (4)
 		Ingrediente carne = new Ingrediente("carne");
 		Ingrediente papas = new Ingrediente("papas");
