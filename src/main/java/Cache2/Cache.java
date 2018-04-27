@@ -19,4 +19,8 @@ public class Cache<T,S> implements CacheInterface<T,S> {
 	public void add(T clave, S valor) {
 		this.resguardo.put(clave, valor);		
 	}
+	
+	public void remove(T clave) {
+		this.resguardo.remove(clave);
+	}
 }
