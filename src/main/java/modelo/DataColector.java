@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.List;
 
-import Cache.Cache;
+import Cache2.Cache;
 import Interface.DataColectorInterface;
 
 public class DataColector implements DataColectorInterface 
