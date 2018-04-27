@@ -59,9 +59,6 @@ public class platosDBTest {
 		lista.add(a);
 		lista.add(b);
 		
-		System.out.println("Platos :"+ data.getPlato().size());
-		
-		
 		assertEquals(true,lista.equals(data.getPlato()));
 			
 	}
