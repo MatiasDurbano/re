@@ -53,11 +53,14 @@ public class platosDBTest {
 		bm.put(carne, cinco);
 		bm.put(papas, cuatro);
 		Receta br = new Receta(am);
-		String bs = "Carne al horno con papas";
+		String bs = "pollo con papa";
 		Plato b = new Plato(bs, br);
 		
 		lista.add(a);
 		lista.add(b);
+		
+		System.out.println("Platos :"+ data.getPlatos().size());
+		
 		
 		assertEquals(true,lista.equals(data.getPlatos()));
 			
@@ -69,9 +72,8 @@ public class platosDBTest {
 		DB db= new DB();
 		ApiDB api = new ApiDB(db);
 		
-		DataCollector data = new Collector(api);
 		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
-		
+		DataCollector data = new Collector(api);
 		
 		List<Plato>lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
@@ -95,11 +97,16 @@ public class platosDBTest {
 		bm.put(carne, cinco);
 		bm.put(papas, cuatro);
 		Receta br = new Receta(am);
-		String bs = "Carne al horno con papas";
+		String bs = "pollo con papa";
 		Plato b = new Plato(bs, br);
 		
 		
-		Ingrediente fideo = new Ingrediente("fideo");
+		Map<Ingrediente, Cantidad> vacio = new HashMap<Ingrediente, Cantidad>();
+		String st = "PEPEPE";
+		Plato c = new Plato(st, new Receta(vacio));
+		
+		
+		Ingrediente fideo = new Ingrediente("");
 		//tuco
 		Cantidad uno = new Cantidad(Medicion.Kg, 1);
 		Cantidad dos = new Cantidad(Medicion.Unidad, 2);
@@ -107,15 +114,23 @@ public class platosDBTest {
 		bm.put(fideo, uno);
 		bm.put(tomate, dos);
 		Receta re = new Receta(am);
-		String st = "Carne al horno con papas";
-		Plato c = new Plato(st, re);
+		String str = "";
+		Plato d = new Plato(str, re);
 		
+		
+
 		lista.add(a);
 		lista.add(b);
 		lista.add(c);
-		 
+		lista.add(d);
+		
 		
 		assertEquals(false,lista.equals(data.getPlatos()));
+		assertEquals(true,2==data.getPlatos().size());
+		
+		assertEquals(true,data.getPlatos().contains(a));
+		assertEquals(true,data.getPlatos().contains(b));
+		assertEquals(false,data.getPlatos().contains(c));
 			
 	}
 

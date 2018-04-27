@@ -25,10 +25,9 @@ public class ControllerDB {
 		List<Plato> platos = getPlatos();
 		
 		for(Plato p : platos)
-		{ 
 			if(ValidadorPlato.isRight(p))
 				ApiPlatos.add(p);
-		}
+
 	}
 	
 	
