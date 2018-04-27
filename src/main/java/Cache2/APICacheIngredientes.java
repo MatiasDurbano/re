@@ -7,8 +7,8 @@ public class APICacheIngredientes {
 	
 	Cache<Ingrediente, Cantidad> cacheIngredientes;
 	
-	public APICacheIngredientes() {
-		this.cacheIngredientes = new Cache<Ingrediente, Cantidad>();
+	public APICacheIngredientes(Cache<Ingrediente, Cantidad> cacheIngredientes) {
+		this.cacheIngredientes = cacheIngredientes;
 	}
 	
 	public void put(Ingrediente ingrediente, Cantidad cantidad) {
