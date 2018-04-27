@@ -1,6 +1,5 @@
 package modelo;
 
-import Proxy.ProxyIngrediente;
 
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
