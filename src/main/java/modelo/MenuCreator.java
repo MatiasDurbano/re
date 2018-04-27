@@ -2,13 +2,14 @@ package modelo;
 
 import java.util.List;
 
-public class CreadorDeMenu {
+public class MenuCreator {
 	
 	private Menu menu;
 	private List<Plato> platos;
 	private boolean menuTerminado;
+	private OrdenadorPlatos ordenador;
 	
-	public CreadorDeMenu() 
+	public MenuCreator() 
 	{
 		this.menu = new Menu();
 		menu.asignarFechaActual();
