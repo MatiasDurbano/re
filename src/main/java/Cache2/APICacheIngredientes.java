@@ -20,7 +20,7 @@ public class APICacheIngredientes {
 		this.cacheIngredientes.add(ingrediente, cantidad);
 	}
 	
-	public void borrar(Ingrediente ingrediente) {
+	public void remove(Ingrediente ingrediente) {
 		this.cacheIngredientes.remove(ingrediente);
 	}
 	
@@ -31,12 +31,9 @@ public class APICacheIngredientes {
 		if(cantidad == null) {
 			
 			cantidad = this.gateway.get(ingrediente);
-			
-			System.out.println(cantidad.toString());
-			
 			Ingrediente eliminar = this.politica.analizar(ingrediente);
 			if(eliminar != null) {
-				this.cacheIngredientes.remove(eliminar);
+				this.remove(eliminar);
 			}
 			this.put(ingrediente, cantidad);
 		}

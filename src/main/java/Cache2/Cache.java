@@ -23,4 +23,21 @@ public class Cache<T,S> implements CacheInterface<T,S> {
 	public void remove(T clave) {
 		this.resguardo.remove(clave);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cache other = (Cache) obj;
+		if (resguardo == null) {
+			if (other.resguardo != null)
+				return false;
+		} else if (!resguardo.equals(other.resguardo))
+			return false;
+		return true;
+	}
 }
