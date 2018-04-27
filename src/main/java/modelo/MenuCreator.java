@@ -7,7 +7,7 @@ public class MenuCreator {
 	private Menu menu;
 	private List<Plato> platos;
 	private boolean menuTerminado;
-	private OrdenadorPlatos ordenador;
+	private Ranker ordenador;
 	
 	public MenuCreator() 
 	{

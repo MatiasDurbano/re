@@ -7,12 +7,13 @@ import java.util.Map;
 public class Solverfetcher {
 		
 	private List<Plato> platos;
-	private Map<Ingrediente,Cantidad> stock;
+	private StockCantidad stock;
+	private Map<Ingrediente,Cantidad> stock2;
 	private DataColector datacolector;
 	
 	public Solverfetcher(DataColector datacolector) {	
 		this.datacolector = datacolector;
-		this.stock = new HashMap<Ingrediente, Cantidad>();
+		this.stock = new StockCantidad();
 	}
 	
 	public void obtenerPlatos() {
@@ -29,12 +30,12 @@ public class Solverfetcher {
 	}
 	
 	public void agregarStock(Ingrediente i) {
-		if(!stock.containsKey(i)) {
-			stock.put(i, datacolector.getCantidad(i));
+		if(!stock.contains(i)) {
+			stock.addStock(i, datacolector.getCantidad(i));
 		}		
 	}
 	
-	public Map<Ingrediente,Cantidad> getStock(){
+	public StockCantidad getStock(){
 		return stock;		
 	}
 	
