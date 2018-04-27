@@ -6,7 +6,8 @@ import java.util.Map;
 
 import Interface.DataColectorInterface;
 
-public class Solverfetcher {
+public class Solverfetcher 
+{
 		
 	private List<Plato> platos;
 	private StockCantidad stock;
