@@ -8,7 +8,7 @@ import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
 
-public class APICacheTest {
+public class APICacheIngredienteTest {
 	
 	@Test
 	public void get() {
