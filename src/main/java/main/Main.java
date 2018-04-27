@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Programa programa = new Programa();		
+		App programa = new App();		
 		programa.iniciar();
 	}
 
