@@ -1,7 +1,5 @@
 import org.junit.Assert;
 import org.junit.Test;
-
-import main.InyectorDependencias;
 import main.Main;
 public class mainTest 
 {
