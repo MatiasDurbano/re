@@ -5,9 +5,9 @@ import java.util.List;
 public class ApiDB {
 	
 	
-	DB platos;
+	InternalDB platos;
 	
-	public ApiDB(DB arg0) {
+	public ApiDB(InternalDB arg0) {
 		
 		platos = arg0;
 	}

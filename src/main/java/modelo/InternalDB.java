@@ -3,11 +3,11 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DB {
+public class InternalDB {
 	
 	List<Plato> platos;
 	
-	public DB() {
+	public InternalDB() {
 		platos = new ArrayList<Plato>();
 	}
 	
