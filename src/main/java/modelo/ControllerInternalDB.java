@@ -5,12 +5,12 @@ import java.util.List;
 import Interface.ProxyPlatoInterface;
 import Validadores.ValidadorPlato;
 
-public class ControllerDB {
+public class ControllerInternalDB {
 	
 	private ApiDB ApiPlatos;
 	private ProxyPlatoInterface proxyPlato;
 	
-	public ControllerDB(ApiDB arg0, ProxyPlatoInterface arg1) {
+	public ControllerInternalDB(ApiDB arg0, ProxyPlatoInterface arg1) {
 		ApiPlatos = arg0;
 		proxyPlato = arg1;
 		actualizar();

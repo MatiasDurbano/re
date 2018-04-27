@@ -13,14 +13,14 @@ import Stub.ProxyPlatoStub;
 import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
-import modelo.ControllerDB;
+import modelo.ControllerInternalDB;
 import modelo.InternalDB;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Plato;
 import modelo.Receta;
 
-public class platosDBTest {
+public class ControllerInternalDBTest {
 
 	@Test
 	public void platosCorrecto() {
@@ -29,7 +29,7 @@ public class platosDBTest {
 		ApiDB api = new ApiDB(db);
 		
 		DataColectorInterface data = new Collector(api, null);
-		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
+		ControllerInternalDB controller = new ControllerInternalDB(api,new ProxyPlatoStub());
 		
 		List<Plato>lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
@@ -69,9 +69,9 @@ public class platosDBTest {
 		InternalDB db= new InternalDB();
 		ApiDB api = new ApiDB(db);
 		
-		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
+		ControllerInternalDB controller = new ControllerInternalDB(api,new ProxyPlatoStub());
 		DataColectorInterface data = new Collector(api, null);
-		
+		 
 		List<Plato>lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
 		Ingrediente tomate = new Ingrediente("tomate");

@@ -3,7 +3,7 @@ package main;
 import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
-import modelo.ControllerDB;
+import modelo.ControllerInternalDB;
 import modelo.Ingrediente;
 import modelo.InternalDB;
 import modelo.MenuCreator;
@@ -28,7 +28,7 @@ public class InyectorDependencias
 		//creacion DB interna
 		InternalDB db= new InternalDB();
 		ApiDB api = new ApiDB(db);
-		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
+		ControllerInternalDB controller = new ControllerInternalDB(api,new ProxyPlatoStub());
 		
 		//creacion de Collector
 		DataColectorInterface colector = new Collector(api, apiCache);
