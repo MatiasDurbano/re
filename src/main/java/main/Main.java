@@ -4,22 +4,13 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
-		App app = InyectorDependencias.crearAPP();		
+		App app = InyectorDependencias.crearAPP();
 		app.iniciar();
 	}
 	
-	public static boolean run()
+	public static boolean run(String[] args)
 	{
-		//para coverage
-		String[] args = new String[10];
-		try 
-		{
-			main(args);
-		} 
-		catch (Exception e) 
-		{
-			return false;	
-		}
+		main(args);
 		return true;
 	}
 }

@@ -8,8 +8,7 @@ public class mainTest
 	public void testArmarInstancia() 
 	{
 		String[] args = new String[10];
-		Main.main(args);
 		
-		Assert.assertTrue(Main.run());
+		Assert.assertTrue(Main.run(args));
 	}
 }
