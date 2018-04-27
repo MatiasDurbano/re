@@ -14,7 +14,7 @@ import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
 import modelo.ControllerDB;
-import modelo.DB;
+import modelo.InternalDB;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Plato;
@@ -25,7 +25,7 @@ public class platosDBTest {
 	@Test
 	public void platosCorrecto() {
 		
-		DB db= new DB();
+		InternalDB db= new InternalDB();
 		ApiDB api = new ApiDB(db);
 		
 		DataCollector data = new Collector(api);
@@ -69,7 +69,7 @@ public class platosDBTest {
 	@Test
 	public void platoIncorrecto() {
 		
-		DB db= new DB();
+		InternalDB db= new InternalDB();
 		ApiDB api = new ApiDB(db);
 		
 		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
