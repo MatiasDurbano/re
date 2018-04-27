@@ -9,6 +9,7 @@ public class mainTest
 	{
 		String[] args = new String[10];
 		Main.main(args);
+		
 		Assert.assertTrue(Main.run());
 	}
 }
