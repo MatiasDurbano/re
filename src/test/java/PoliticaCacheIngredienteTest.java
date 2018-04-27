@@ -20,6 +20,7 @@ public class PoliticaCacheIngredienteTest {
 		Ingrediente manzana = new Ingrediente("manzana");
 		
 		PoliticaCacheIngrediente politica = new PoliticaCacheIngrediente(3);
+		Assert.assertEquals(3, politica.getCantidadMaximia());
 		Ingrediente aEliminar = politica.analizar(pera);
 		Assert.assertTrue(politica.isPrimeraVuelta());
 		ingredientesEsperados.add(pera);
@@ -71,6 +72,33 @@ public class PoliticaCacheIngredienteTest {
 		vidasEsperadas.add(Boolean.FALSE);
 		
 		Assert.assertEquals(ingredientesEsperados, politica.getIngredientes());
+		Assert.assertEquals(vidasEsperadas, politica.getVidas());
+		Assert.assertEquals(1, politica.getPuntero());
+		
+		politica.actualizar(banana);
+		
+		vidasEsperadas.clear();
+		vidasEsperadas.add(Boolean.TRUE);
+		vidasEsperadas.add(Boolean.TRUE);
+		vidasEsperadas.add(Boolean.FALSE);
+		
+		Assert.assertEquals(vidasEsperadas, politica.getVidas());
+		
+		Ingrediente mandarina = new Ingrediente("mandarina");
+		politica.analizar(mandarina);
+		
+		ingredientesEsperados.clear();
+		ingredientesEsperados.add(uva);
+		ingredientesEsperados.add(banana);
+		ingredientesEsperados.add(mandarina);
+		
+		Assert.assertEquals(ingredientesEsperados, politica.getIngredientes());
+		
+		vidasEsperadas.clear();
+		vidasEsperadas.add(Boolean.TRUE);
+		vidasEsperadas.add(Boolean.FALSE);
+		vidasEsperadas.add(Boolean.TRUE);
+		
 		Assert.assertEquals(vidasEsperadas, politica.getVidas());
 	}
 }
