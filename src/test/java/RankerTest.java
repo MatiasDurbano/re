@@ -10,6 +10,7 @@ import modelo.Plato;
 import modelo.Ranker;
 public class RankerTest {
 	
+	@Test
 	public void test() {
 		List<Plato> platos = BateriaDeTest.damePlatos();
 		List<Plato> platos2;

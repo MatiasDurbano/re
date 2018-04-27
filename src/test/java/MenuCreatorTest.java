@@ -11,6 +11,7 @@ import modelo.MenuCreator;
 import modelo.Plato;
 public class MenuCreatorTest {	
 	
+	@Test
 	public static void test() {
 		List<Plato> platos = BateriaDeTest.damePlatos();
 		List<Plato> platos2;
@@ -25,9 +26,5 @@ public class MenuCreatorTest {
 	    
 	    assertTrue(platos.get(1).equals(m.getPlatos().get(0)));		
 	}
-	public static void main (String [ ] args) {
-		test();
-	}
-	
 
 }
