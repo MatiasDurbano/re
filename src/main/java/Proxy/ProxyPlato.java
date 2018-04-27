@@ -22,7 +22,7 @@ public class ProxyPlato implements ProxyPlatoInterface
 	}
 	
 	@Override
-	public List<Plato> load(){
-		return proxy.load();
+	public List<Plato> getPlatos(){
+		return proxy.getPlatos();
 	}
 }

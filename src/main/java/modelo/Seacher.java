@@ -31,8 +31,8 @@ public class Seacher {
 		
 	}
 	
-	public List<Plato> load(){
-		return proxyPlato.load();
+	public List<Plato> getPlatos(){
+		return proxyPlato.getPlatos();
 	}
 
 }

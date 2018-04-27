@@ -26,6 +26,7 @@ public class Plato
 		return "\n" + "Plato = " + nombre + "\n" +" Receta ="+ receta;
 	}
 	
+	//TODO: pensar si esto seria asi
 	@Override
 	public boolean equals(Object obj) 
 	{
@@ -47,6 +48,7 @@ public class Plato
 		} else if (!receta.equals(other.receta))
 			return false;
 		return true;
+		
 	}
 	
 }

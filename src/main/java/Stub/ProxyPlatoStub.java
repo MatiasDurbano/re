@@ -79,7 +79,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 	}
 
 	@Override
-	public List<Plato> load() {
+	public List<Plato> getPlatos() {
 		return lista;
 	}
 	
