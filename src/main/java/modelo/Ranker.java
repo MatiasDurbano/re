@@ -13,11 +13,7 @@ public class Ranker {
 	}
 	public List<Plato> ordenar(Map<Plato,Integer> p) {
 		List ret = new ArrayList<Plato>();
-		Map<Plato,Integer> aux = new HashMap<Plato,Integer>();
-		
-		for(Map.Entry<Plato, Integer> entry : p.entrySet()) {
-			aux.put(entry.getKey(), entry.getValue());
-		}
+		Map<Plato,Integer> aux =this.clonar(p);
 		
 		while(!aux.isEmpty()) {
 			Plato maxPlato = Collections.max(aux.entrySet(), Map.Entry.comparingByValue()).getKey();    			
@@ -27,4 +23,12 @@ public class Ranker {
 		return ret;				
 	}
 
+	public Map<Plato,Integer> clonar(Map<Plato,Integer> map){
+		Map<Plato,Integer> aux = new HashMap<Plato,Integer>();
+		for(Map.Entry<Plato, Integer> entry : map.entrySet()) {
+			aux.put(entry.getKey(), entry.getValue());
+		}		
+		return aux;
+		
+	}
 }

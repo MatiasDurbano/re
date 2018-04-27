@@ -1,6 +1,5 @@
 package modelo;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +7,6 @@ public class Solverfetcher {
 		
 	private List<Plato> platos;
 	private StockCantidad stock;
-	private Map<Ingrediente,Cantidad> stock2;
 	private DataColector datacolector;
 	
 	public Solverfetcher(DataColector datacolector) {	
