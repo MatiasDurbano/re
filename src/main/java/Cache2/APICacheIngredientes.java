@@ -21,7 +21,7 @@ public class APICacheIngredientes {
 	public Cantidad get(Ingrediente ingrediente) {
 		
 		if(this.cacheIngredientes.get(ingrediente) == null) {
-			return null;
+			return gateway.get(ingrediente);
 		}
 		else {
 			return this.cacheIngredientes.get(ingrediente);
