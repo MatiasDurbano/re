@@ -1,6 +1,6 @@
 package main;
 
-public class Programa {	
+public class App {	
 	
 	public void iniciar() {
 		
