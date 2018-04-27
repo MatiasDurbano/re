@@ -1,4 +1,4 @@
-package modelo;
+/*package modelo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,4 +33,4 @@ public class DecididorPlatos {
 		
 		return cantidadMinima;
 	}
-}
+}*/

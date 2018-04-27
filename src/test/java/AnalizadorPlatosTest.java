@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import modelo.AnalizadorPlatos;
 import modelo.Cantidad;
-import modelo.DecididorPlatos;
 import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Plato;

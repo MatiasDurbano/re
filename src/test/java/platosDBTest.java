@@ -14,7 +14,6 @@ import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
 import modelo.ControllerDB;
-import modelo.DataColector;
 import modelo.InternalDB;
 import modelo.Ingrediente;
 import modelo.Medicion;

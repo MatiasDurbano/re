@@ -1,4 +1,4 @@
-import java.util.HashMap;
+/*import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -15,7 +15,7 @@ import modelo.Receta;
 
 public class DecididorPlatosTest {
 
-	/*@Test
+	@Test
 	public void cantidadIngredientes() {
 		DataColector data= new DataColector();
 		
@@ -109,5 +109,5 @@ public class DecididorPlatosTest {
 		int cantidad = DecididorPlatos.esPosibleArmar(plato, data);
 		
 		Assert.assertFalse(10==cantidad);
-	}*/
-}
+	}
+}*/
