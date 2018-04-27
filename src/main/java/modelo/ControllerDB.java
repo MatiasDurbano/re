@@ -3,6 +3,7 @@ package modelo;
 import java.util.List;
 
 import Interface.ProxyPlatoInterface;
+import Validadores.ValidadorPlato;
 
 public class ControllerDB {
 	
@@ -21,11 +22,13 @@ public class ControllerDB {
 	}
 	
 	private void actualizar() {
-		List<Plato> platos = proxyPlato.getPlatos();
+		List<Plato> platos = getPlatos();
 		
 		for(Plato p : platos)
-			ApiPlatos.add(p);
-		
+		{ 
+			if(ValidadorPlato.isRight(p))
+				ApiPlatos.add(p);
+		}
 	}
 	
 	

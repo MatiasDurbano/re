@@ -72,6 +72,7 @@ public class platosDBTest {
 		DataCollector data = new Collector(api);
 		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
 		
+		
 		List<Plato>lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
 		Ingrediente tomate = new Ingrediente("tomate");
@@ -112,6 +113,7 @@ public class platosDBTest {
 		lista.add(a);
 		lista.add(b);
 		lista.add(c);
+		 
 		
 		assertEquals(false,lista.equals(data.getPlatos()));
 			
