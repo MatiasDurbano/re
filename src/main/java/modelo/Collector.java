@@ -1,19 +1,29 @@
 package modelo;
 
 import java.util.List;
+import Cache2.APICacheIngredientes;
+import Interface.DataColectorInterface;
 
-import Interface.DataCollector;
-
-public class Collector implements DataCollector{
-	
+public class Collector implements DataColectorInterface
+{
 	ApiDB apiDB;
+	APICacheIngredientes apiCache;
 	
-	public Collector(ApiDB arg0) {
-		this.apiDB = arg0;
-	}
-	
-	public List<Plato> getPlatos(){
-		return apiDB.get();
+	public Collector(ApiDB apiDB, APICacheIngredientes apiCache) 
+	{
+		this.apiDB = apiDB;
+		this.apiCache =  apiCache;
 	}
 
+	@Override
+	public Cantidad getCantidad(Ingrediente arg0) 
+	{
+		return this.apiCache.get(arg0);
+	}
+
+	@Override
+	public List<Plato> getPlato() 
+	{
+		return this.apiDB.get();
+	}
 }

@@ -7,13 +7,14 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import Interface.DataCollector;
+import Interface.DataColectorInterface;
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
 import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
 import modelo.ControllerDB;
+import modelo.DataColector;
 import modelo.InternalDB;
 import modelo.Ingrediente;
 import modelo.Medicion;
@@ -28,7 +29,7 @@ public class platosDBTest {
 		InternalDB db= new InternalDB();
 		ApiDB api = new ApiDB(db);
 		
-		DataCollector data = new Collector(api);
+		DataColectorInterface data = new Collector(api, null);
 		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
 		
 		List<Plato>lista = new ArrayList<Plato>();
@@ -59,10 +60,10 @@ public class platosDBTest {
 		lista.add(a);
 		lista.add(b);
 		
-		System.out.println("Platos :"+ data.getPlatos().size());
+		System.out.println("Platos :"+ data.getPlato().size());
 		
 		
-		assertEquals(true,lista.equals(data.getPlatos()));
+		assertEquals(true,lista.equals(data.getPlato()));
 			
 	}
 	
@@ -73,7 +74,7 @@ public class platosDBTest {
 		ApiDB api = new ApiDB(db);
 		
 		ControllerDB controller = new ControllerDB(api,new ProxyPlatoStub());
-		DataCollector data = new Collector(api);
+		DataColectorInterface data = new Collector(api, null);
 		
 		List<Plato>lista = new ArrayList<Plato>();
 		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
@@ -125,12 +126,11 @@ public class platosDBTest {
 		lista.add(d);
 		
 		
-		assertEquals(false,lista.equals(data.getPlatos()));
-		assertEquals(true,2==data.getPlatos().size());
-		
-		assertEquals(true,data.getPlatos().contains(a));
-		assertEquals(true,data.getPlatos().contains(b));
-		assertEquals(false,data.getPlatos().contains(c));
+		assertEquals(false,lista.equals(data.getPlato()));
+		assertEquals(true,2==data.getPlato().size());
+		assertEquals(true,data.getPlato().contains(a));
+		assertEquals(true,data.getPlato().contains(b));
+		assertEquals(false,data.getPlato().contains(c));
 			
 	}
 

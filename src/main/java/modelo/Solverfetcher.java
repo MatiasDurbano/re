@@ -4,15 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Interface.DataColectorInterface;
+
 public class Solverfetcher {
 		
 	private List<Plato> platos;
 	private StockCantidad stock;
 	private Map<Ingrediente,Cantidad> stock2;
-	private DataColector datacolector;
+	private DataColectorInterface datacolector;
 	
-	public Solverfetcher(DataColector datacolector) {	
-		this.datacolector = datacolector;
+	public Solverfetcher(DataColectorInterface data) {	
+		this.datacolector = data;
 		this.stock = new StockCantidad();
 	}
 	
