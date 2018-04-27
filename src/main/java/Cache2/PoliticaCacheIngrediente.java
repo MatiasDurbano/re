@@ -7,11 +7,11 @@ import modelo.Ingrediente;
 
 public class PoliticaCacheIngrediente {
 	
-	boolean primeraVuelta;
-	int cantidadMaximia;
-	int puntero;
-	List<Ingrediente> ingredientes;
-	List<Boolean> vidas;
+	private boolean primeraVuelta;
+	private int cantidadMaximia;
+	private int puntero;
+	private List<Ingrediente> ingredientes;
+	private List<Boolean> vidas;
 	
 	public PoliticaCacheIngrediente(int cantidadMaxima) {
 		this.primeraVuelta = true;
@@ -29,7 +29,6 @@ public class PoliticaCacheIngrediente {
 	public Ingrediente analizar(Ingrediente ingrediente) {
 		
 		Ingrediente ret = null;
-		System.out.println("hola");
 		
 		if(primeraVuelta) {
 			this.ingredientes.add(ingrediente);
@@ -62,5 +61,25 @@ public class PoliticaCacheIngrediente {
 		}
 		
 		return ret;
+	}
+
+	public boolean isPrimeraVuelta() {
+		return primeraVuelta;
+	}
+
+	public int getCantidadMaximia() {
+		return cantidadMaximia;
+	}
+
+	public int getPuntero() {
+		return puntero;
+	}
+
+	public List<Ingrediente> getIngredientes() {
+		return ingredientes;
+	}
+
+	public List<Boolean> getVidas() {
+		return vidas;
 	}
 }

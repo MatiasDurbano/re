@@ -10,10 +10,10 @@ public class APICacheIngredientes {
 	ProxyIngredienteInterface gateway;
 	PoliticaCacheIngrediente politica;
 	
-	public APICacheIngredientes(Cache<Ingrediente, Cantidad> cacheIngredientes, ProxyIngredienteInterface gateWay) {
+	public APICacheIngredientes(Cache<Ingrediente, Cantidad> cacheIngredientes, ProxyIngredienteInterface gateWay, int maximo) {
 		this.cacheIngredientes = cacheIngredientes;
 		this.gateway = gateWay;
-		this.politica = new PoliticaCacheIngrediente(10);
+		this.politica = new PoliticaCacheIngrediente(maximo);
 	}
 	
 	public void put(Ingrediente ingrediente, Cantidad cantidad) {
