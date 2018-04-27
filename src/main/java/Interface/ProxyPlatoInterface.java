@@ -8,5 +8,5 @@ public interface ProxyPlatoInterface
 {	
 	public Receta get(Object arg0);
 	
-	public List<Plato> load();
+	public List<Plato> getPlatos();
 }
