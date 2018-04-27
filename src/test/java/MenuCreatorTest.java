@@ -12,7 +12,7 @@ import modelo.Plato;
 public class MenuCreatorTest {	
 	
 	@Test
-	public static void test() {
+	public void test() {
 		List<Plato> platos = BateriaDeTest.damePlatos();
 		List<Plato> platos2;
 		Map<Plato,Integer> map = new HashMap<Plato,Integer>();
