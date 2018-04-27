@@ -38,12 +38,34 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		bm.put(carne, cinco);
 		bm.put(papas, cuatro);
 		Receta br = new Receta(am);
-		String bs = "Carne al horno con papas";
+		String bs = "pollo con papa";
 		Plato b = new Plato(bs, br);
+		
+		
+		//platos malos
+		Map<Ingrediente, Cantidad> vacio = new HashMap<Ingrediente, Cantidad>();
+		String st = "PEPEPE";
+		Plato c = new Plato(st, new Receta(vacio));
+		
+		
+		Ingrediente fideo = new Ingrediente("");
+		//tuco
+		Cantidad uno = new Cantidad(Medicion.Kg, 1);
+		Cantidad dos = new Cantidad(Medicion.Unidad, 2);
+		Map<Ingrediente, Cantidad> bm2 = new HashMap<Ingrediente, Cantidad>();
+		bm.put(fideo, uno);
+		bm.put(tomate, dos);
+		Receta re = new Receta(am);
+		String str = "";
+		Plato d = new Plato(str, re);
+		
+		
 		
 		lista.add(a);
 		lista.add(b);
-		this.lista = lista;
+		lista.add(c);
+		lista.add(d);
+		this.lista = lista; 
 	}
 	
 
