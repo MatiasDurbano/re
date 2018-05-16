@@ -36,7 +36,7 @@ public class InyectorDependencias
 		Solverfetcher fetcher = new Solverfetcher(colector);
 		Solver solver = new Solver();
 		MenuCreator menuCreator = new MenuCreator();
-		App app = new App(colector,fetcher,solver,menuCreator);
+		App app = new App(colector);
 		
 		return app;
 	}

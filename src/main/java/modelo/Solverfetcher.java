@@ -10,7 +10,6 @@ public class Solverfetcher
 		
 	private List<Plato> platos;
 	private StockCantidad stock;
-	private Map<Ingrediente,Cantidad> stock2;
 	private DataColectorInterface datacolector;
 	
 	public Solverfetcher(DataColectorInterface data) {	
@@ -20,6 +19,12 @@ public class Solverfetcher
 	
 	public void obtenerPlatos() {
 		platos = datacolector.getPlato();
+	}
+	
+	public void obtenerStock(List<Plato> l) {
+		for (Plato p :  l) {
+			this.obtenerIngrediente(p);
+		}
 	}
 	
 	public void obtenerIngrediente(Plato p) {

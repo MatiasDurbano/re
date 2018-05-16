@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -22,23 +23,23 @@ public class SolverTest {
 		
 		StockCantidad data= new StockCantidad();
 		
+		Ingrediente fideo = new Ingrediente("fideo");
 		Ingrediente tomate = new Ingrediente("tomate");
-		Ingrediente pera = new Ingrediente("pera");
 		Ingrediente cebolla = new Ingrediente("cebolla");
-		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
-		Cantidad seis = new Cantidad(Medicion.Kg, 6);
-		Cantidad cuatro = new Cantidad(Medicion.Kg, 4);
+		Cantidad uno = new Cantidad(Medicion.Kg, 1);
+		Cantidad tres = new Cantidad(Medicion.Kg, 3);
+		Cantidad dos = new Cantidad(Medicion.Kg, 2);
 		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
-		data.addStock(tomate, cinco);
-		data.addStock(pera, seis);
-		data.addStock(cebolla, cuatro);
+		data.addStock(fideo, uno);
+		data.addStock(tomate, tres);
+		data.addStock(cebolla, dos);
 		
-		ingredientes.put(tomate, cinco);
-		ingredientes.put(pera, seis);
-		ingredientes.put(cebolla, cuatro);
+		ingredientes.put(fideo, uno);
+		ingredientes.put(tomate, tres);
+		ingredientes.put(cebolla, dos);
 		
 		Receta receta = new Receta(ingredientes);
-		String nombre = "Fideos con tuco";
+		String nombre = "fideos con tuco";
 		
 		Plato plato = new Plato(nombre, receta);
 		
@@ -49,10 +50,11 @@ public class SolverTest {
 		
 		solver.puntuarPlatos(p,data);
 		
-		Map<Plato,Integer> platosYcantidad = solver.getPlatosYcantidad();
+		Map<Plato,Integer> platosYcantidad = new HashMap<Plato,Integer>();
+		platosYcantidad = solver.getPlatosYcantidad();
 		
-		//assertTrue(platosYcantidad.get("Fideos con tuco").intValue()<10);		
-		
+		Integer i = platosYcantidad.get(plato);
+		assertTrue(i <= 1);		
 	}
 
 }
