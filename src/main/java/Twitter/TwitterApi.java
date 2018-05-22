@@ -10,10 +10,10 @@ import twitter4j.TwitterException;
 import twitter4j.User;
 
 public class TwitterApi {
-	TwitterConfiguration configuration;
-	Twitter twitter;
-	Status status;
-	User user;
+	private TwitterConfiguration configuration;
+	private Twitter twitter;
+	private Status status;
+	private User user;
 	
 	public TwitterApi(TwitterConfiguration arg0) throws TwitterException {
 		configuration = arg0;

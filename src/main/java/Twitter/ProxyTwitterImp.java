@@ -1,6 +1,4 @@
 package Twitter;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import twitter4j.Status;
