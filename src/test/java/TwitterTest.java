@@ -11,7 +11,7 @@ public class TwitterTest {
 	@Test
 	public void test() throws TwitterException {
 		ProxyTwitter twitter= new ProxyTwitterImp("elconito94");
-		assertEquals(3,twitter.getTweet().size());
+		assertEquals( 3 ,twitter.getTweet().size()); 
 	}
 
 }

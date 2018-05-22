@@ -6,7 +6,7 @@ import Interface.ProxyIngredienteInterface;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
-import modelo.Plato;
+
 import modelo.StockCantidad;
 
 
