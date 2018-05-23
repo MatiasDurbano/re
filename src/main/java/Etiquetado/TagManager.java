@@ -9,6 +9,7 @@ public class TagManager {
 	ProxyEtiquetadoInterface proxyEtiquetado;
 	
 	public TagManager(ProxyEtiquetadoInterface proxyEtiquetado) {
+		this.tagger = new Tagger();
 		this.proxyEtiquetado = proxyEtiquetado;
 	}
 	

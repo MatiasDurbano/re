@@ -1,18 +1,42 @@
 package Historial;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import modelo.Menu;
 import modelo.Plato;
 
 public class MenuLogger {
 	
 	MenuRecord registroMenus;
+	ProxyRecordInterface proxyRecord;
 	
-	public MenuLogger (int tamañoMaximo) {
+	public MenuLogger (int tamañoMaximo, ProxyRecordInterface proxyRecord) {
 		this.registroMenus = new MenuRecord(tamañoMaximo);
+		this.proxyRecord = proxyRecord;
 	}
 	
 	public void registrar(Menu menu) {
 		this.registroMenus.agregar(menu);
+	}
+	
+	public void load() {
+		List<Menu> menues = this.proxyRecord.getMenues();
+		for(Menu menu: menues) {
+			this.registrar(menu);
+		}
+	}
+	
+	public void update() {
+		
+		List<Menu> aActualizar = new ArrayList<Menu>();
+		Menu[] menus = this.obtenerMenus();
+		
+		for(int i = 0; i < menus.length; i ++) {
+			aActualizar.add(menus[i]);
+		}
+		
+		this.proxyRecord.writeMenues(aActualizar);
 	}
 	
 	public int platosEncontrados(Plato plato) {
