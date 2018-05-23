@@ -21,8 +21,11 @@ public class DataConfig {
 	}
 
 	public void setCachesize(String cachesize) {
-		if(cachesize == null) this.cachesize=5;
-		this.cachesize = Integer.parseInt(cachesize);
+        try {
+            this.cachesize = Integer.parseInt(cachesize);
+        } catch (NumberFormatException excepcion) {
+            this.cachesize = 5;
+        }
 	}
 	
 }
