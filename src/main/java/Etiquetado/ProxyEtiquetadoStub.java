@@ -12,6 +12,7 @@ public class ProxyEtiquetadoStub implements ProxyEtiquetadoInterface {
 	
 	public ProxyEtiquetadoStub() {
 		this.listado = new HashMap<Ingrediente, Etiqueta>();
+		this.listado.put(new Ingrediente("fideos"), new Etiqueta("celiaco"));
 	}
 
 	@Override
