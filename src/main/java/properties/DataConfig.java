@@ -20,12 +20,8 @@ public class DataConfig {
 		return cachesize;
 	}
 
-	public void setCachesize(String cachesize) {
-        try {
-            this.cachesize = Integer.parseInt(cachesize);
-        } catch (NumberFormatException excepcion) {
-            this.cachesize = 5;
-        }
-	}
+	public void setCachesize(Integer cachesize) {
+            this.cachesize = cachesize;
+     }
 	
 }

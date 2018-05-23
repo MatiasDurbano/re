@@ -21,20 +21,32 @@ public class PropertiesLoader {
 	public void readProperties() {
 		try {
 			FileReader file = fileSercher.getFileAddress();
-		properties.load(file);
-		String filtro = properties.getProperty("filter");
-		if(filtro == null) {
-			System.out.println("tipo de filtro no definido");
-		}
-		data.setFilter(filtro);
-		String cache = properties.getProperty("cachesize");
-		data.setCachesize(cache);
-		}
-		catch (IOException e){
+			properties.load(file);			
+			this.readFilter();
+			this.readCacheSize();
+			}
+		catch (IOException e) {
 			System.out.println("no se puede leer el archivo properties");
 		}
 	}
-		
+	
+	public void readFilter() {
+		String filtro = properties.getProperty("filter");
+		if(filtro == null) 	
+			System.out.println("tipo de filtro no definido");				
+		data.setFilter(filtro);
+	}
+	
+	public void readCacheSize() {
+		String charSize = properties.getProperty("cachesize");
+		try {
+            Integer cache = Integer.parseInt(charSize);
+            data.setCachesize(cache);            
+        } catch (NumberFormatException excepcion) {
+            System.out.println("No se pudo cargar tamaño de cache");
+        }
+	}
+	
 	public DataConfig getDataConfig() {
 		return data;
 	}
