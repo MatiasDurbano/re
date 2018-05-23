@@ -18,7 +18,7 @@ public class TwitterConfiguration {
 	final private String OAuthAccessToken ="489600798-0FsdR9M4oT2Imd9uaQWQryzNFESEsOSBa6Rfa0Tw";
 	final private String AccessTokenSecret = "bFs1J80brFYaPsvVv2f6c6lFudlYVuFKfUuNKUrcEGN0Z";
 	
-	public TwitterConfiguration(String arg0) throws TwitterException{
+	public TwitterConfiguration(String usuario) throws TwitterException{
 		config  = new ConfigurationBuilder();
 		config.setDebugEnabled(true)
 		  .setOAuthConsumerKey(ConsumerKey)
@@ -27,7 +27,7 @@ public class TwitterConfiguration {
 		  .setOAuthAccessTokenSecret(AccessTokenSecret);
 		tf = new TwitterFactory(config.build());
 		twitter = tf.getInstance();
-		this.user = arg0;
+		this.user = usuario;
 	}
 	
 	public Twitter getTwitter() {
