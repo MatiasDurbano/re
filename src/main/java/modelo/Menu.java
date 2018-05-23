@@ -29,4 +29,13 @@ public class Menu
 	{
 		this.fecha_de_creacion = new Date(System.currentTimeMillis());
 	}
+	@Override
+	public boolean equals(Object other) {
+		Menu o = (Menu) other;
+		if(this.platos.equals(o.getPlatos())) {
+			return true;
+		}
+		return false;
+	}
+	
 }
