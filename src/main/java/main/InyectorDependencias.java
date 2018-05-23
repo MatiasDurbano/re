@@ -1,5 +1,6 @@
 package main;
 
+import properties.PropertiesLoader;
 import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
@@ -19,10 +20,24 @@ public class InyectorDependencias
 {
 	public static App crearAPP() 
 	{
+		PropertiesLoader propertyData = new PropertiesLoader();
+		String filtroSeleccionado = propertyData.getDataConfig().getFilter();
+		if (filtroSeleccionado == null)
+		{
+			//no Crear Filtro
+		}
+		else
+		{
+			//Crear Filtro Seleccionado
+			//aca se usaria el Class.forname
+		}
+		
 		//Creacion de cache
 		Cache<Ingrediente, Cantidad> cache = new Cache<Ingrediente,Cantidad>();
 		ProxyIngredienteStub stub = new ProxyIngredienteStub();
-		int tamanoBufferCache = 10;
+		
+		int tamanoBufferCache = propertyData.getDataConfig().getCachesize();
+		
 		APICacheIngredientes apiCache = new APICacheIngredientes(cache, stub, tamanoBufferCache);
 		
 		//creacion DB interna
