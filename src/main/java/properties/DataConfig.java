@@ -3,7 +3,7 @@ package properties;
 public class DataConfig {
 	
 	private String filter;
-	private String cachesize;
+	private Integer cachesize;
 	
 	public DataConfig() {
 	}
@@ -16,12 +16,13 @@ public class DataConfig {
 		this.filter = filter;
 	}
 
-	public String getCachesize() {
+	public Integer getCachesize() {
 		return cachesize;
 	}
 
 	public void setCachesize(String cachesize) {
-		this.cachesize = cachesize;
+		if(cachesize == null) this.cachesize=5;
+		this.cachesize = Integer.parseInt(cachesize);
 	}
 	
 }
