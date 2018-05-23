@@ -17,4 +17,10 @@ public class ProxyTwitterImp implements ProxyTwitter {
 		return twitter.obtenerTwitters();
 	}
 
+	@Override
+	public void publicarTweet(String arg0) throws TwitterException {
+		twitter.publicarTwit(arg0);
+		
+	}
+
 }

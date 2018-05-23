@@ -21,8 +21,8 @@ public class TwitterApi {
 		user = twitter.showUser(arg0.getUser());
 	}
 	
-	public void publicarTwit(String usuario) throws TwitterException {
-		status = twitter.updateStatus(usuario);
+	public void publicarTwit(String arg0) throws TwitterException {
+		status = twitter.updateStatus(arg0);
 	}
 	
 	
