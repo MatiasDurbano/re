@@ -28,6 +28,7 @@ public class PropertiesLoader {
 		}
 		data.setFilter(filtro);
 		String cache = properties.getProperty("cachesize");
+		if(cache == null) cache = "5"; // si no encuentra el valor para el tamaño de la cache, setea por defecto 5
 		data.setCachesize(cache);
 		}
 		catch (IOException e){
