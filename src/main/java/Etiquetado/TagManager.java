@@ -6,9 +6,9 @@ import modelo.Ingrediente;
 public class TagManager {
 	
 	Tagger tagger;
-	ProxyEtiquetadoInterface proxyEtiquetado;
+	ProxyEtiquetado proxyEtiquetado;
 	
-	public TagManager(ProxyEtiquetadoInterface proxyEtiquetado) {
+	public TagManager(ProxyEtiquetado proxyEtiquetado) {
 		this.tagger = new Tagger();
 		this.proxyEtiquetado = proxyEtiquetado;
 	}

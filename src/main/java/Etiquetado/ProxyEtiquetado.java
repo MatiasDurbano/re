@@ -2,7 +2,7 @@ package Etiquetado;
 
 import modelo.Etiqueta;
 
-public interface ProxyEtiquetadoInterface {
+public interface ProxyEtiquetado {
 	
 	public Etiqueta getEtiqueta(Object x);
 }

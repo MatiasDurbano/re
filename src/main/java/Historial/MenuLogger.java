@@ -16,18 +16,18 @@ public class MenuLogger {
 		this.proxyRecord = proxyRecord;
 	}
 	
-	public void registrar(Menu menu) {
+	public void update(Menu menu) {
 		this.registroMenus.agregar(menu);
 	}
 	
 	public void load() {
 		List<Menu> menues = this.proxyRecord.getMenues();
 		for(Menu menu: menues) {
-			this.registrar(menu);
+			this.update(menu);
 		}
 	}
 	
-	public void update() {
+	public void save() {
 		
 		List<Menu> aActualizar = new ArrayList<Menu>();
 		Menu[] menus = this.obtenerMenus();

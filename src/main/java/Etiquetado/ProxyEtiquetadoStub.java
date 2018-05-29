@@ -6,7 +6,7 @@ import java.util.Map;
 import modelo.Etiqueta;
 import modelo.Ingrediente;
 
-public class ProxyEtiquetadoStub implements ProxyEtiquetadoInterface {
+public class ProxyEtiquetadoStub implements ProxyEtiquetado {
 	
 	Map<Ingrediente, Etiqueta> listado;
 	
