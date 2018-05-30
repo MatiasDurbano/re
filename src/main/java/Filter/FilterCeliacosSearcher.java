@@ -6,9 +6,9 @@ public class FilterCeliacosSearcher
 {
 	FilterCeliacosStub filterSource;
 	
-	public FilterCeliacosSearcher()
+	public FilterCeliacosSearcher(FilterCeliacosStub filterSource)
 	{
-		filterSource = new FilterCeliacosStub();
+		this.filterSource = filterSource;
 	}
 	
 	public List<Ingrediente> updateList()

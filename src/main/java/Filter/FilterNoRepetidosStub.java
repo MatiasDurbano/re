@@ -13,26 +13,9 @@ public class FilterNoRepetidosStub
 {
 	List<Plato> list;
 	
-	public FilterNoRepetidosStub()
+	public FilterNoRepetidosStub(List<Plato> list)
 	{
-		list = new ArrayList<Plato>();
-		//INGREDIENTES HARDCODEADOS
-		//FIDEOS CON TUCO
-		Ingrediente tomate = new Ingrediente("tomate");
-		Ingrediente pera = new Ingrediente("pera");
-		Ingrediente cebolla = new Ingrediente("cebolla");
-		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
-		Cantidad seis = new Cantidad(Medicion.Kg, 6);
-		Cantidad cuatro = new Cantidad(Medicion.Kg, 4);
-		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
-		ingredientes.put(tomate, cinco);
-		ingredientes.put(pera, seis);
-		ingredientes.put(cebolla, cuatro);
-		Receta receta = new Receta(ingredientes);
-		String nombre = "Fideos con tuco";
-		Plato plato = new Plato(nombre, receta);
-		
-		list.add(plato);
+		this.list = list;
 	}
 	public List<Plato> getFilterData() 
 	{

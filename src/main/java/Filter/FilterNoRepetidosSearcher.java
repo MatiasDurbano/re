@@ -6,9 +6,9 @@ public class FilterNoRepetidosSearcher
 {
 	FilterNoRepetidosStub filterSource;
 	
-	public FilterNoRepetidosSearcher()
+	public FilterNoRepetidosSearcher(FilterNoRepetidosStub filterSource)
 	{
-		filterSource = new FilterNoRepetidosStub();
+		this.filterSource = filterSource;
 	}
 	
 	public List<Plato> updateList()

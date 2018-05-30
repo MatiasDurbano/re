@@ -1,6 +1,7 @@
 package Filter;
 import java.util.ArrayList;
 import java.util.List;
+
 import modelo.AnalizadorPlatos;
 import modelo.Ingrediente;
 import modelo.Plato;
@@ -19,6 +20,10 @@ public class FilterCeliacos implements GenericFilter
 	@Override
 	public boolean isFiltered(Plato p) 
 	{
+		if(p.equals(null))
+		{
+			throw new NullPointerException("FilterCeliacos/isFiltered = No se pueden filtra el plato porque es null");
+		}
 		ArrayList<Ingrediente> listIngredientes = AnalizadorPlatos.dameIngredientes(p);
 		for (int i = 0; i < listIngredientes.size(); i++)
 		{

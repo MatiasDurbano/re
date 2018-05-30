@@ -17,6 +17,10 @@ public class FilterNoRepetidos implements GenericFilter
 	@Override
 	public boolean isFiltered(Plato p) 
 	{
+		if(p.equals(null))
+		{
+			throw new NullPointerException("FilterNoRepetidos/isFiltered = No se pueden filtra el plato porque es null");
+		}
 		if(platoNoPermitido(p))
 			return true;
 	return false;

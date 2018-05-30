@@ -1,6 +1,7 @@
 package Filter;
 import java.util.ArrayList;
 import java.util.List;
+
 import modelo.Plato;
 
 public class FilterAplicator 
@@ -17,6 +18,10 @@ public class FilterAplicator
 	}
 	public List<Plato> listFiltering(List<Plato> list)
 	{
+		if(list.equals(null))
+		{
+			throw new NullPointerException("FilterAplicator/listFiltering = No se pueden filtrar porque la lista es null");
+		}
 		actualizarFilters();
 		List<Plato> aux = new ArrayList<Plato>();
 		for (int i = 0; i < list.size(); i++) 

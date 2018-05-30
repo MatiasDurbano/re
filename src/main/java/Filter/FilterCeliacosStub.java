@@ -7,13 +7,9 @@ public class FilterCeliacosStub implements FilterGateway
 {
 	List<Ingrediente> list;
 	
-	public FilterCeliacosStub()
+	public FilterCeliacosStub(List<Ingrediente> list)
 	{
-		list = new ArrayList<Ingrediente>();
-		
-		//INGREDIENTES HARDCODEADOS
-		Ingrediente ing1 = new Ingrediente("tomate");
-		list.add(ing1);
+		this.list = list;
 	}
 	
 	@Override
