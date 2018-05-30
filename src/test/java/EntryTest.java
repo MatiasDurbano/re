@@ -12,11 +12,9 @@ public class EntryTest {
 
 	@Test
 	public void test() throws TwitterException {
-		ProxyTwitter twitter= new ProxyTwitterImp("elconito94");
+		ProxyTwitter twitter= new ProxyTwitterImp();
 		BateriaDeTest bateria = new BateriaDeTest();
 		Entry entry = new Entry(bateria.damePlatos());
-		
-		
 		
 		assertEquals(1,entry.verificadorDeFormato(twitter.getTweet()).size());
 			

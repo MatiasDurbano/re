@@ -8,12 +8,12 @@ public class ProxyTwitterImp implements ProxyTwitter {
 	
 	TwitterApi twitter;
 	
-	public ProxyTwitterImp(String arg0) throws TwitterException{
-		twitter = new TwitterApi(new TwitterConfiguration(arg0));
+	public ProxyTwitterImp(){
+		twitter = new TwitterApi(new TwitterConfiguration());
 	}
 
 	@Override
-	public List<Status> getTweet() throws TwitterException {
+	public List<Status> getTweet(){
 		return twitter.obtenerTwitters();
 	}
 

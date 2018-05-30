@@ -17,6 +17,17 @@ public class LocalFileSearch implements PropertiesFileSearch{
 		return ret;
 
 	}
+
+	@Override
+	public void setAddress(String arg0) {
+		try {
+			FileReader ret = new FileReader(arg0);
+		} catch (FileNotFoundException e) {
+			System.out.println("error en el set del adress");
+			e.printStackTrace();
+		}
+		 
+	}
 	
 
 }

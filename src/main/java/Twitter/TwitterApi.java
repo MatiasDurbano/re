@@ -13,12 +13,12 @@ public class TwitterApi {
 	private TwitterConfiguration configuration;
 	private Twitter twitter;
 	private Status status;
-	private User user;
 	
-	public TwitterApi(TwitterConfiguration arg0) throws TwitterException {
+	
+	public TwitterApi(TwitterConfiguration arg0) {
 		configuration = arg0;
 		twitter= configuration.getTwitter();
-		user = twitter.showUser(arg0.getUser());
+
 	}
 	
 	public void publicarTwit(String arg0) throws TwitterException {
@@ -27,19 +27,24 @@ public class TwitterApi {
 	
 	
 	
-	public List<Status> obtenerTwitters() throws TwitterException {
+	@SuppressWarnings("finally")
+	public List<Status> obtenerTwitters()  {
 		
 		List<Status> statuses = new ArrayList<Status>();
+		try {
+			
 		String user;
         user = twitter.verifyCredentials().getScreenName();
         statuses = twitter.getUserTimeline();
      
-         System.out.println("Mostrando @" + user);
-         for (Status status : statuses) {
-             System.out.println("@" + status.getUser().getScreenName() + " - " + status.getText());
-          }
          return statuses;
          
+		} catch (TwitterException  e) {
+			System.out.println("error, codigo: "+ e.getErrorCode()+ " usuario no existente");
+		}
+		finally {
+			return statuses;
+		}
 	}
 	
 	

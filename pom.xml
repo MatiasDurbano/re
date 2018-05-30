@@ -36,9 +36,8 @@
     	<artifactId>twitter4j-stream</artifactId>
     	<version>4.0.6</version>
 		</dependency>
-	  
-	  
-</dependencies>
+		
+  </dependencies>
 
 	<build>
 		
