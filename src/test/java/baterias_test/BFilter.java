@@ -17,30 +17,15 @@ import Filter.FilterNoRepetidos;
 import Filter.FilterNoRepetidosSearcher;
 import Filter.FilterNoRepetidosStub;
 
-public class bateriaFilter 
+public class BFilter 
 {
-	static FilterAplicator filterApli;
-	
-	static FilterAplicator getFilterCombinado()
+	public static FilterAplicator FilterCombinado()
 	{
-		Ingrediente tomate = new Ingrediente("tomate");
-		Ingrediente pera = new Ingrediente("pera");
-		Ingrediente cebolla = new Ingrediente("cebolla");
-		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
-		Cantidad seis = new Cantidad(Medicion.Kg, 6);
-		Cantidad cuatro = new Cantidad(Medicion.Kg, 4);
-		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
-		ingredientes.put(tomate, cinco);
-		ingredientes.put(pera, seis);
-		ingredientes.put(cebolla, cuatro);
-		Receta receta = new Receta(ingredientes);
-		String nombre = "Fideos con tuco";
-		Plato plato = new Plato(nombre, receta);
-		
+		FilterAplicator filterApli;
 		ArrayList<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
-		listaIngredientes.add(tomate);
+		listaIngredientes.add(new Ingrediente("tomate"));
 		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
-		listaPlatos.add(plato);
+		listaPlatos.add(fideosConTuco());
 		
 		FilterNoRepetidosStub stubNoRepetidos = new FilterNoRepetidosStub(listaPlatos);
 		FilterNoRepetidosSearcher searcher = new FilterNoRepetidosSearcher(stubNoRepetidos);
@@ -56,51 +41,85 @@ public class bateriaFilter
 		return filterApli;
 	}
 	
-	static FilterAplicator getFilterCeliacos()
+	public static FilterAplicator FilterAplicatorCeliacos(String ingrediente)
 	{
-		Ingrediente tomate = new Ingrediente("tomate");
+		FilterAplicator filterApli;
 		
+		filterApli = new FilterAplicator();
+		filterApli.addFilter(FilterCeliacos(ingrediente));
+		return filterApli;
+	}
+	
+	public static FilterCeliacos FilterCeliacos(String ingrediente)
+	{
 		ArrayList<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
-		listaIngredientes.add(tomate);
+		listaIngredientes.add(new Ingrediente(ingrediente));
 		
 		FilterCeliacosStub stub = new FilterCeliacosStub(listaIngredientes);
 		FilterCeliacosSearcher searcher2 = new FilterCeliacosSearcher(stub);
 		FilterCeliacos filterCeliacos = new FilterCeliacos(searcher2);
 		
-		filterApli = new FilterAplicator();
-		filterApli.addFilter(filterCeliacos);
-		return filterApli;
+		return filterCeliacos;
 	}
-	
-	static FilterNoRepetidos getFilterNoRepetidos()
+	public static FilterNoRepetidos FilterNoRepetidos()
 	{
-		Ingrediente tomate = new Ingrediente("tomate");
-		Ingrediente pera = new Ingrediente("pera");
-		Ingrediente cebolla = new Ingrediente("cebolla");
-		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
-		Cantidad seis = new Cantidad(Medicion.Kg, 6);
-		Cantidad cuatro = new Cantidad(Medicion.Kg, 4);
-		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
-		ingredientes.put(tomate, cinco);
-		ingredientes.put(pera, seis);
-		ingredientes.put(cebolla, cuatro);
-		Receta receta = new Receta(ingredientes);
-		String nombre = "Fideos con tuco";
-		Plato plato = new Plato(nombre, receta);
-	
 		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
-		listaPlatos.add(plato);
+		listaPlatos.add(fideosConTuco());
 		
 		FilterNoRepetidosStub stubNoRepetidos = new FilterNoRepetidosStub(listaPlatos);
 		FilterNoRepetidosSearcher searcher = new FilterNoRepetidosSearcher(stubNoRepetidos);
 		FilterNoRepetidos filterNoRepetidos = new FilterNoRepetidos(searcher);
 		return filterNoRepetidos;
 	}
-	
-	static ArrayList<Plato> getListaPlatosVacia()
+	public static FilterAplicator filterAplicatorVacio()
+	{
+		FilterAplicator filterApli;
+		filterApli = new FilterAplicator();
+		return filterApli;
+		
+	}
+	public static ArrayList<Plato> ListaPlatosVacia()
 	{
 		ArrayList<Plato> lista = new ArrayList<Plato>();
 		return lista;
+	}
+	
+	public static ArrayList<Plato> ListaPlatos()
+	{
+		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
+		listaPlatos.add(fideosConTuco());
+		listaPlatos.add(polloConPapas());
+		
+		return listaPlatos;
+	}
+	
+	public static Plato fideosConTuco()
+	{
+		Ingrediente tomate = new Ingrediente("tomate");
+		Ingrediente pera = new Ingrediente("fideos");
+		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
+		Cantidad seis = new Cantidad(Medicion.Kg, 6);
+		Map<Ingrediente, Cantidad> ingredientes = new HashMap<Ingrediente, Cantidad>();
+		ingredientes.put(tomate, cinco);
+		ingredientes.put(pera, seis);
+		Receta receta = new Receta(ingredientes);
+		String nombre = "Fideos con tuco";
+		Plato plato = new Plato(nombre, receta);
+		return plato;
+	}
+	public static Plato polloConPapas()
+	{
+		Ingrediente pollo = new Ingrediente("pollo");
+		Ingrediente papas = new Ingrediente("fideos");
+		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
+		Cantidad seis = new Cantidad(Medicion.Kg, 6);
+		Map<Ingrediente, Cantidad> ingredientes2 = new HashMap<Ingrediente, Cantidad>();
+		ingredientes2.put(pollo, cinco);
+		ingredientes2.put(papas, seis);
+		Receta receta2 = new Receta(ingredientes2);
+		String nombre2 = "Pollo con papas";
+		Plato plato2 = new Plato(nombre2, receta2);
+		return plato2;
 	}
 	
 	/*
