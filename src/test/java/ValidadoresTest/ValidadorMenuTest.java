@@ -1,24 +1,30 @@
-import static org.junit.Assert.*;
-import java.util.ArrayList;
+package ValidadoresTest;
+
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import java.util.HashMap;
 import java.util.Map;
+
+import org.junit.Test;
+
+import Validadores.ValidadorMenu;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
+import modelo.Menu;
 import modelo.Plato;
 import modelo.Receta;
-import org.junit.Test;
-import Stub.ProxyPlatoStub;
 
-public class ProxyPlatoStubTest 
-{
+public class ValidadorMenuTest {
+
 	@Test
-	public void test() 
-	{
-		ProxyPlatoStub stub = new ProxyPlatoStub();
+	public void test() {
+		Menu menu = new Menu();		
+		assertTrue(ValidadorMenu.MenuVacio(menu));
 		
-		ArrayList<Plato> lista = new ArrayList<Plato>();
-		//Plato fideos con tuco , Receta: tomate (10), fideos (8)
+		//---
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente fideos = new Ingrediente("fideos");
 		Cantidad diez = new Cantidad(Medicion.Kg, 10);
@@ -30,7 +36,6 @@ public class ProxyPlatoStubTest
 		String as = "Fideos con tuco";
 		Plato a = new Plato(as, ar);
 		
-		//carne al horno con papas , Receta: carne (5), papas (4)
 		Ingrediente carne = new Ingrediente("carne");
 		Ingrediente papas = new Ingrediente("papas");
 		Cantidad cinco = new Cantidad(Medicion.Kg, 5);
@@ -40,11 +45,14 @@ public class ProxyPlatoStubTest
 		bm.put(papas, cuatro);
 		Receta br = new Receta(am);
 		String bs = "Carne al horno con papas";
-		Plato b = new Plato(bs, br);
+		Plato b = new Plato(bs, br);		
+				
+		//---
 		
-		lista.add(a);
-		lista.add(b);
-		/*assertEquals(true, stub.getPlatos().equals(lista));
-		assertEquals(false, stub.getPlatos().isEmpty());*/
+		menu.agregarPlato(a);
+		menu.asignarFechaActual();
+		assertTrue(menu.getFecha_de_Creacion() != null);		
+		menu = ValidadorMenu.SacaRepetido(menu);			
 	}
+		
 }
