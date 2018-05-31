@@ -19,7 +19,7 @@ public class Entry {
 			String text = status.getText().toLowerCase();
 			for(Plato plato : platos) {
 				if(text.contains(plato.getNombre().toLowerCase())){
-					if(text.contains("muy bueno")||text.contains("malo")) {
+					if(text.contains("buenisimo")||text.contains("rico")||text.contains("feo")||text.contains("horrible")) {
 						ret.add(status);
 					}
 				}

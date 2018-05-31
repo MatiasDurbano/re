@@ -27,6 +27,9 @@ public class ReaderJsontTwitter {
 			properties.load(file);			
 			this.readJson1();
 			this.readJson2();
+			
+			this.readJson3();
+			this.readJson4();
 			}
 		catch (IOException e) {
 			System.out.println("no se puede leer el archivo properties");
@@ -49,8 +52,21 @@ public class ReaderJsontTwitter {
 			System.out.println("json2 no definido");
 		System.out.println(json2);
         data.addJson(json2);   
-      
-      
+	}
+	
+	public void readJson3() {
+		String json3 = properties.getProperty("json3");
+		if(json3 == null) 	
+			System.out.println("json3 no definido");
+		System.out.println(json3);
+        data.addJson(json3);   
+	}
+	public void readJson4() {
+		String json4 = properties.getProperty("json4");
+		if(json4 == null) 	
+			System.out.println("json4 no definido");
+		System.out.println(json4);
+        data.addJson(json4);   
 	}
 	
 	public DataJsonTwitter getData() {

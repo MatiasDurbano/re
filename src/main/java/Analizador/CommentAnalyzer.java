@@ -19,15 +19,17 @@ public class CommentAnalyzer {
 		List<Informant> InformantGrupal = new ArrayList<Informant>();
 		
 		for(Status statues : arg0) {
-			String text = statues.getText();
-			for(Plato plat : platos ) {
-				if(text.contains(plat.getNombre().toLowerCase())) {
-					if(puntuador(plat,text)!= null) {
-						InformantIndividual.add(new Informant(plat,puntuador(plat,text)));
+			String text = statues.getText().toLowerCase();
+
+			for(Plato plat : platos ){
+				String nombrePlato= plat.getNombre().toLowerCase();
+				
+				if(text.contains(nombrePlato)) {
+					if(puntuador(text)!= null) {
+						InformantIndividual.add(new Informant(plat,puntuador(text)));
 					}
 				}
 			}
-		
 		}
 		
 		for( Informant informants : InformantIndividual) {
@@ -48,26 +50,24 @@ public class CommentAnalyzer {
 				ret= ret+ informants.getPuntaje();
 				cantApar++;
 			}
-		}
+		} 
 		return ret/cantApar;
-		
-		
 	}
 	
 	
-	private Double puntuador(Plato arg0,String arg1) {
-		if (arg1.contains("muy bueno")){
+	private Double puntuador(String arg1) {
+		if (arg1.contains("buenisimo")){
 			return 3.0;
 		}
-		if (arg1.contains("bueno")){
+		if (arg1.contains("rico")){
 			return 2.0;
 		}
 		
-		if (arg1.contains("malo")){
+		if (arg1.contains("feo")){
 			return -2.0;
 		}
 		
-		if (arg1.contains("muy malo")){
+		if (arg1.contains("horrible")){
 			return -3.0;
 		}
 		else {

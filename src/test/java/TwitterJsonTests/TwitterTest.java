@@ -1,23 +1,18 @@
+package TwitterJsonTests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Twitter.Entry;
 import Twitter.ProxyTwitter;
 import Twitter.ProxyTwitterImp;
-import baterias_test.BateriaDeTest;
 import twitter4j.TwitterException;
 
-public class EntryTest {
+public class TwitterTest {
 
 	@Test
 	public void test() throws TwitterException {
 		ProxyTwitter twitter= new ProxyTwitterImp();
-		BateriaDeTest bateria = new BateriaDeTest();
-		Entry entry = new Entry(bateria.damePlatos());
-		
-		assertEquals(1,entry.verificadorDeFormato(twitter.getTweet()).size());
-			
-	} 
+		assertEquals( 2 ,twitter.getTweet().size()); 
+	}
 
 }
