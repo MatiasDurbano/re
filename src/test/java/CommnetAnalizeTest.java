@@ -9,6 +9,7 @@ import Analizador.CommentAnalyzer;
 import Analizador.Informant;
 import Twitter.ProxyTwitter;
 import Twitter.ProxyTwitterImp;
+import baterias_test.BateriaDeTest;
 import twitter4j.Status;
 
 public class CommnetAnalizeTest {

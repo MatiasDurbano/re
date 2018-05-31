@@ -22,10 +22,11 @@ public class TwitterConfiguration {
 		
 		config  = new ConfigurationBuilder();
 		config.setDebugEnabled(true)
-		  .setOAuthConsumerKey(data.getConsumerKey())
-		  .setOAuthConsumerSecret(data.getConsumerSecret())
-		  .setOAuthAccessToken(data.getOAuthAccessToken())
-		  .setOAuthAccessTokenSecret(data.getAccessTokenSecret());
+		.setOAuthConsumerKey(data.getConsumerKey())
+        .setOAuthConsumerSecret(data.getConsumerSecret())
+        .setOAuthAccessToken(data.getOAuthAccessToken())
+        .setOAuthAccessTokenSecret(data.getAccessTokenSecret())
+        .setJSONStoreEnabled(true);
 		tf = new TwitterFactory(config.build());
 		twitter = tf.getInstance();
 		

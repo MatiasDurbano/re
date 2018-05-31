@@ -5,7 +5,7 @@ import org.junit.Test;
 import Twitter.Entry;
 import Twitter.ProxyTwitter;
 import Twitter.ProxyTwitterImp;
-import twitter4j.Status;
+import baterias_test.BateriaDeTest;
 import twitter4j.TwitterException;
 
 public class EntryTest {
@@ -18,6 +18,6 @@ public class EntryTest {
 		
 		assertEquals(1,entry.verificadorDeFormato(twitter.getTweet()).size());
 			
-	}
+	} 
 
 }

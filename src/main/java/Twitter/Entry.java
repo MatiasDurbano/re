@@ -18,9 +18,10 @@ public class Entry {
 		for(Status status: arg0) {
 			String text = status.getText().toLowerCase();
 			for(Plato plato : platos) {
-				if(text.contains(plato.getNombre().toLowerCase()) && text.contains("muy bueno")
-						|| text.contains("malo")) {
-					ret.add(status); 
+				if(text.contains(plato.getNombre().toLowerCase())){
+					if(text.contains("muy bueno")||text.contains("malo")) {
+						ret.add(status);
+					}
 				}
 			}
 		}
