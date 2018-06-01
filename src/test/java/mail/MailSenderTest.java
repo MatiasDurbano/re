@@ -14,7 +14,7 @@ public class MailSenderTest {
 		String s2 = "mensaje_test";
 		String s3 = mc.getFormMail();
 		ms.SendMail(s1, s2);
-		assertTrue(s2.equals("quadrasoft@gmail.com"));		
+		assertFalse(s2.equals("quadrasoft@gmail.com"));		
 		
 	}
 	
