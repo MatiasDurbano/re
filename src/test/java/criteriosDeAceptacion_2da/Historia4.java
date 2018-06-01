@@ -34,10 +34,10 @@ public class Historia4
 	}
 	
 	//4-  Llamo al método isFiltered(Null) de FilterNoRepetidosFiltrador, se genera una excepción “NullPointerException”.
-	//@Test
-	//public void filterNull() throws NullPointerException
-	//{
-	//	thrown.expect(NullPointerException.class);
-	//	BFilter.FilterNoRepetidos().isFiltered(null);
-	//}
+	@Test
+	public void filterNull() throws NullPointerException
+	{
+		thrown.expect(NullPointerException.class);
+		BFilter.FilterNoRepetidos().isFiltered(null);
+	}
 }

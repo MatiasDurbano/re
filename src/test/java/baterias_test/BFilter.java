@@ -1,6 +1,4 @@
 package baterias_test;
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +45,7 @@ public class BFilter
 		FilterCeliacosStub stub = new FilterCeliacosStub(listaIngredientes);
 		FilterCeliacosSearcher searcher2 = new FilterCeliacosSearcher(stub);
 		FilterCeliacos filterCeliacos = new FilterCeliacos(searcher2);
+		filterCeliacos.updateFilterData();
 		
 		return filterCeliacos;
 	}
@@ -61,8 +60,11 @@ public class BFilter
 		ProxyRecordStub proxyRecordStub = new ProxyRecordStub();
 		proxyRecordStub.writeMenues(menues);
 		MenuLogger stubNoRepetidos = new MenuLogger(tamañoMaximo, proxyRecordStub);
+		stubNoRepetidos.update(menues.get(0));
+		
 		FilterNoRepetidosSearcher searcher = new FilterNoRepetidosSearcher(stubNoRepetidos);
 		FilterNoRepetidos filterNoRepetidos = new FilterNoRepetidos(searcher);
+		filterNoRepetidos.updateFilterData();
 		
 		return filterNoRepetidos;
 	}
