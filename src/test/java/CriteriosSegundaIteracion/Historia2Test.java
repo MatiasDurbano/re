@@ -9,7 +9,7 @@ import Historial.MenuLogger;
 import Historial.MenuRecord;
 import Historial.ProxyRecordStub;
 
-public class Historia2 {
+public class Historia2Test {
 	
 	@Test
 	public void MenuRecordAgregar() {
