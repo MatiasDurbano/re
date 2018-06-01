@@ -45,7 +45,7 @@ public class ProxyRecordStub implements ProxyRecordInterface {
 		Plato b = new Plato(st2,re2);
 		
 		Menu menuPrueba2 = new Menu();
-		menuPrueba1.agregarPlato(b);
+		menuPrueba2.agregarPlato(b);
 		
 
 		Ingrediente repollo = new Ingrediente("repollo");
@@ -60,7 +60,7 @@ public class ProxyRecordStub implements ProxyRecordInterface {
 		Plato c = new Plato(st3,re3);
 		
 		Menu menuPrueba3 = new Menu();
-		menuPrueba1.agregarPlato(c);
+		menuPrueba3.agregarPlato(c);
 		
 		this.menues.add(menuPrueba1);
 		this.menues.add(menuPrueba2);
