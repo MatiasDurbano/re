@@ -1,11 +1,13 @@
 package Filter;
 import java.util.ArrayList;
 import java.util.List;
+
+import modelo.Menu;
 import modelo.Plato;
 
 public class FilterNoRepetidos implements GenericFilter
 {
-	List<Plato> noPermitidos;
+	ArrayList<Plato> noPermitidos;
 	FilterNoRepetidosSearcher searcher;
 	
 	public FilterNoRepetidos(FilterNoRepetidosSearcher searcher)
@@ -21,20 +23,12 @@ public class FilterNoRepetidos implements GenericFilter
 		{
 			throw new NullPointerException("FilterNoRepetidos/isFiltered = No se pueden filtra el plato porque es null");
 		}
-		if(platoNoPermitido(p))
-			return true;
-	return false;
-	}
-
-	private boolean platoNoPermitido(Plato p) 
-	{
-		for (int i = 0; i < noPermitidos.size(); i++)
+		for (Plato noPermitido : noPermitidos)
 		{
-			Plato aux = noPermitidos.get(i);
-			if (p.equals(aux))
+			if (p.equals(noPermitido))
 				return true;
 		}
-		return false;
+	return false;
 	}
 
 	@Override

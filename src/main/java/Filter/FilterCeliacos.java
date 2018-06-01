@@ -25,10 +25,9 @@ public class FilterCeliacos implements GenericFilter
 			throw new NullPointerException("FilterCeliacos/isFiltered = No se pueden filtra el plato porque es null");
 		}
 		ArrayList<Ingrediente> listIngredientes = AnalizadorPlatos.dameIngredientes(p);
-		for (int i = 0; i < listIngredientes.size(); i++)
+		for (Ingrediente ingrediente : listIngredientes)
 		{
-			Ingrediente aux = listIngredientes.get(i);
-			if(poseeIngredienteNoPermitido(aux))
+			if(poseeIngredienteNoPermitido(ingrediente))
 				return true;
 		}
 		return false;
@@ -36,10 +35,9 @@ public class FilterCeliacos implements GenericFilter
 
 	private boolean poseeIngredienteNoPermitido(Ingrediente ingrediente) 
 	{
-		for (int i = 0; i < noPermitidos.size(); i++)
+		for (Ingrediente noPermitido : noPermitidos)
 		{
-			Ingrediente aux = noPermitidos.get(i);
-			if (ingrediente.equals(aux))
+			if (ingrediente.equals(noPermitido))
 				return true;
 		}
 		return false;
