@@ -123,7 +123,7 @@ public class ControllerInternalDBTest {
 		
 		
 		assertEquals(false,lista.equals(data.getPlato()));
-		assertEquals(true,2==data.getPlato().size());
+		assertEquals(true,3==data.getPlato().size());
 		assertEquals(true,data.getPlato().contains(a));
 		assertEquals(true,data.getPlato().contains(b));
 		assertEquals(false,data.getPlato().contains(c));

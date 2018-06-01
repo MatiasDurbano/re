@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import CriteriosSegundaIteracion.BateriaDeTest;
 import Interface.ProxyPlatoInterface;
+import main.FilterSelector;
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
@@ -65,6 +67,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		lista.add(b);
 		lista.add(c);
 		lista.add(d);
+		lista.add(FilterSelector.polloConPure());
 		this.lista = lista; 
 	}
 	
