@@ -51,4 +51,9 @@ public class PropertiesLoader {
 		return data;
 	}
 	
+	public void setDirProperties(String dir) {
+		this.fileSercher.setAddress(dir);
+	}
+	
+	
 }
