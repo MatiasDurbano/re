@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
@@ -17,9 +16,7 @@ import Filter.FilterCeliacosSearcher;
 import Filter.FilterCeliacosStub;
 import Filter.FilterNoRepetidos;
 import Filter.FilterNoRepetidosSearcher;
-import Filter.FilterNoRepetidosStub;
 import Historial.MenuLogger;
-import Historial.ProxyRecordInterface;
 import Historial.ProxyRecordStub;
 
 public class BFilter 
@@ -54,9 +51,25 @@ public class BFilter
 	}
 	public static FilterNoRepetidos FilterNoRepetidos()
 	{
-		int tamañoMaximo = 5;
+		int tamañoMaximo = 1;
 		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
 		listaPlatos.add(fideosConTuco());
+		List<Menu> menues = new ArrayList<Menu>();
+		menues.add(new Menu(listaPlatos));
+
+		ProxyRecordStub proxyRecordStub = new ProxyRecordStub();
+		proxyRecordStub.writeMenues(menues);
+		MenuLogger stubNoRepetidos = new MenuLogger(tamañoMaximo, proxyRecordStub);
+		FilterNoRepetidosSearcher searcher = new FilterNoRepetidosSearcher(stubNoRepetidos);
+		FilterNoRepetidos filterNoRepetidos = new FilterNoRepetidos(searcher);
+		
+		return filterNoRepetidos;
+	}
+	
+	public static FilterNoRepetidos FilterNoRepetidosVacio()
+	{
+		int tamañoMaximo = 5;
+		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
 		List<Menu> menues = new ArrayList<Menu>();
 		menues.add(new Menu(listaPlatos));
 
