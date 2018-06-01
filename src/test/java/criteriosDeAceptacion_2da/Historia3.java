@@ -1,3 +1,4 @@
+package criteriosDeAceptacion_2da;
 
 import static org.junit.Assert.*;
 import java.util.List;

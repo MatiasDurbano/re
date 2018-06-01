@@ -1,3 +1,4 @@
+package criteriosDeAceptacion_2da;
 
 import org.junit.Assert;
 import org.junit.Rule;
