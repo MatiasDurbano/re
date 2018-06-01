@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import Analizador.CommentAnalyzer;
 import Analizador.SearchEngineTweetsMock;
-import PuntuadorTwitter.PuntuadorTwitter;
+import Puntuador.PuntuadorTwitter;
 import baterias_test.BateriaDeTest;
 import modelo.Plato;
 
@@ -21,7 +21,7 @@ public class PuntuadorTwitterTest {
 		CommentAnalyzer comment= new CommentAnalyzer(new SearchEngineTweetsMock());
 		puntuador = new PuntuadorTwitter(comment,10);
 		
-	}
+	} 
 	
 	@Test
 	public void test() {

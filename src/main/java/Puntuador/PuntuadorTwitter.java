@@ -1,4 +1,4 @@
-package PuntuadorTwitter;
+package Puntuador;
 
 import java.util.HashMap;
 import java.util.List;
