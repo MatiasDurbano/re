@@ -16,6 +16,11 @@ public class MenuLogger {
 		this.proxyRecord = proxyRecord;
 	}
 	
+	public MenuLogger (MenuRecord menuRecord, ProxyRecordInterface proxyRecord) {
+		this.registroMenus = menuRecord;
+		this.proxyRecord = proxyRecord;
+	}
+	
 	public void update(Menu menu) {
 		this.registroMenus.agregar(menu);
 	}
@@ -54,5 +59,13 @@ public class MenuLogger {
 	
 	public Menu[] obtenerMenus() {
 		return this.registroMenus.menus;
+	}
+
+	public MenuRecord getRegistroMenus() {
+		return registroMenus;
+	}
+
+	public ProxyRecordInterface getProxyRecord() {
+		return proxyRecord;
 	}
 }

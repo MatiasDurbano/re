@@ -13,6 +13,11 @@ public class TagManager {
 		this.proxyEtiquetado = proxyEtiquetado;
 	}
 	
+	public TagManager(Tagger tagger, ProxyEtiquetado proxyEtiquetado) {
+		this.tagger = tagger;
+		this.proxyEtiquetado = proxyEtiquetado;
+	}
+	
 	public Etiqueta buscar(Ingrediente ingrediente) {
 		Etiqueta ret = this.tagger.buscar(ingrediente);
 		

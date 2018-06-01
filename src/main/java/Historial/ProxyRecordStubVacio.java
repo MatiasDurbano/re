@@ -6,15 +6,12 @@ import java.util.List;
 import baterias_test.BateriaDeTest;
 import modelo.Menu;
 
-public class ProxyRecordStub implements ProxyRecordInterface {
+public class ProxyRecordStubVacio implements ProxyRecordInterface {
 	
 	List<Menu> menues;
 	
-	public ProxyRecordStub() {
+	public ProxyRecordStubVacio() {
 		this.menues = new ArrayList<Menu>();
-		this.menues.add(BateriaDeTest.menuPrueba1());
-		this.menues.add(BateriaDeTest.menuPrueba2());
-		this.menues.add(BateriaDeTest.menuPrueba3());
 	}
 
 	@Override
@@ -26,4 +23,5 @@ public class ProxyRecordStub implements ProxyRecordInterface {
 	public void writeMenues(List<Menu> x) {
 		this.menues = x;
 	}
+
 }
