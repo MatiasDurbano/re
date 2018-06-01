@@ -12,7 +12,7 @@ public class Ranker {
 		
 	}
 	public List<Plato> ordenar(Map<Plato,Integer> p) {
-		List ret = new ArrayList<Plato>();
+		List<Plato> ret = new ArrayList<Plato>();
 		Map<Plato,Integer> aux =this.clonar(p);
 		
 		while(!aux.isEmpty()) {

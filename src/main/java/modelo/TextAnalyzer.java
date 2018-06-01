@@ -33,6 +33,8 @@ public class TextAnalyzer {
 		List<String> ret = new ArrayList<String>();
 		StringTokenizer st = new StringTokenizer(x);
 	    while (st.hasMoreTokens()) {
+	    	if(!(st.nextToken().contains(".") || st.nextToken().contains(",") || st.nextToken().contains("!")
+	    			|| st.nextToken().equals("/")))
 	        ret.add(st.nextToken());
 	    }
 	    return ret;
@@ -63,5 +65,9 @@ public class TextAnalyzer {
 			}
 		}
 		return ret;
+	}
+	
+	public static void eliminarSignos(String x) {
+		//x.replaceAll(regex, replacement)
 	}
 }
