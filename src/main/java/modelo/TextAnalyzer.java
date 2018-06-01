@@ -33,8 +33,6 @@ public class TextAnalyzer {
 		List<String> ret = new ArrayList<String>();
 		StringTokenizer st = new StringTokenizer(x);
 	    while (st.hasMoreTokens()) {
-	    	if(!(st.nextToken().contains(".") || st.nextToken().contains(",") || st.nextToken().contains("!")
-	    			|| st.nextToken().equals("/")))
 	        ret.add(st.nextToken());
 	    }
 	    return ret;
