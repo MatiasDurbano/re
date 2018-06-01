@@ -42,5 +42,20 @@ public class Menu
 		}
 		return false;
 	}
+	public boolean contains(Plato p) {
+		for(Plato i : this.platos) {
+			if(i.equals(p)) return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public String toString() {
+		String ret = "Menu:";
+			for(Plato i : this.platos) {
+				ret= ret+i.toString();
+			}
+		return ret;
+	}
 	
 }

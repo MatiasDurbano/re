@@ -39,9 +39,9 @@ public class MailApi {
 	      msg.setText(body, "UTF-8");
 	      msg.setSentDate(new Date());
 	      msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
-	      System.out.println("Message is ready");
+	      //System.out.println("Message is ready");
     	  Transport.send(msg);
-	      System.out.println("EMail Sent Successfully!!");
+	      //System.out.println("EMail Sent Successfully!!");
 	    }
 	    catch (Exception e) {
 	      e.printStackTrace();

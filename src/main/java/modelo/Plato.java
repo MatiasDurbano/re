@@ -23,7 +23,7 @@ public class Plato
 	
 	@Override
 	public String toString() {
-		return "\n" + "Plato = " + nombre + "\n" +" Receta ="+ receta;
+		return "\n" + "Plato = " + nombre + "\n" +" Receta ="+ receta.toString();
 	}
 	
 	//TODO: pensar si esto seria asi
