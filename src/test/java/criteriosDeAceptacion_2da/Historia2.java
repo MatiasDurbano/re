@@ -6,7 +6,6 @@ import org.junit.Test;
 import Historial.MenuLogger;
 import Historial.MenuRecord;
 import Historial.ProxyRecordStub;
-import baterias_test.BateriaDeTest;
 import baterias_test.BateriaMenuLogger;
 
 public class Historia2 {

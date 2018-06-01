@@ -3,7 +3,7 @@ package Historial;
 import java.util.ArrayList;
 import java.util.List;
 
-import baterias_test.BateriaDeTest;
+import criteriosDeAceptacion_2da.BateriaDeTest;
 import modelo.Menu;
 
 public class ProxyRecordStubVacio implements ProxyRecordInterface {

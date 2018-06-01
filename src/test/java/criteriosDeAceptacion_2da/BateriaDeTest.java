@@ -1,4 +1,7 @@
-package baterias_test;
+package criteriosDeAceptacion_2da;
+
+
+
 
 
 import java.util.ArrayList;

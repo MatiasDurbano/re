@@ -9,7 +9,6 @@ import org.junit.Test;
 import Analizador.CommentAnalyzer;
 import Analizador.Informant;
 import Analizador.SearchEngineTweetsMock;
-import baterias_test.BateriaDeTest;
 import modelo.Plato;
 import twitter4j.TwitterException;
 

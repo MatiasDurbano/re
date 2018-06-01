@@ -7,7 +7,6 @@ import Etiquetado.ProxyEtiquetado;
 import Etiquetado.ProxyEtiquetadoStub;
 import Etiquetado.TagManager;
 import Etiquetado.Tagger;
-import baterias_test.BateriaDeTest;
 import baterias_test.BateriaTagManagger;
 import modelo.Etiqueta;
 import modelo.Ingrediente;

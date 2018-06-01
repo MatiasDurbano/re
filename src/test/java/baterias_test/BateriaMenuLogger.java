@@ -5,6 +5,7 @@ import Historial.MenuRecord;
 import Historial.ProxyRecordInterface;
 import Historial.ProxyRecordStub;
 import Historial.ProxyRecordStubVacio;
+import criteriosDeAceptacion_2da.BateriaDeTest;
 import modelo.Etiqueta;
 import modelo.Ingrediente;
 
