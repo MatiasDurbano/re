@@ -4,9 +4,9 @@ import java.util.List;
 import modelo.Ingrediente;
 public class FilterCeliacosSearcher 
 {
-	FilterCeliacosStub filterSource;
+	FilterGateway filterSource;
 	
-	public FilterCeliacosSearcher(FilterCeliacosStub filterSource)
+	public FilterCeliacosSearcher(FilterGateway filterSource)
 	{
 		this.filterSource = filterSource;
 	}
