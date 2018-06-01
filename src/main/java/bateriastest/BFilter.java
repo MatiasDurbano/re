@@ -16,7 +16,7 @@ import Filter.FilterCeliacosStub;
 import Filter.FilterNoRepetidos;
 import Filter.FilterNoRepetidosSearcher;
 import Historial.MenuLogger;
-import Stub.ProxyRecordStub;
+import Historial.ProxyRecordStub;
 
 public class BFilter 
 {
