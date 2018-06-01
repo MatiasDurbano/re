@@ -56,7 +56,6 @@ public class SolverTest
 		
 		Double i = platosYcantidad.get(plato);
 		
-		boolean a = true;
-		assertTrue(a);
+		assertFalse(i <= 1.0);
 	}
 }
