@@ -10,6 +10,7 @@ import org.junit.Test;
 import Interface.DataColectorInterface;
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
+import main.FilterSelector;
 import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
@@ -58,6 +59,7 @@ public class ControllerInternalDBTest {
 		
 		lista.add(a);
 		lista.add(b);
+		lista.add(FilterSelector.polloConPure());
 		
 		assertEquals(true,lista.equals(data.getPlato()));
 			
