@@ -23,7 +23,7 @@ public class Historia11 {
 		
 		MailConfig mc = new MailConfig();
 		MailSender ms = new MailSender(mc);
-		String s1 = "Recomendacion de Menu";
+		String s1 = "Recomendacion Test junit (ignorar)";
 		String s2 = MailMessage.crearMensaje(menu);
 		String s3 = mc.getFormMail();		
 		boolean test1 = ms.SendMail(s1, s2);
@@ -41,7 +41,7 @@ public class Historia11 {
 		MailConfig mc = new MailConfig();
 		mc.setFormMail("correofalso@g@gmail.com"); //cambio el correo enviador
 		MailSender ms = new MailSender(mc);
-		String s1 = "Recomendacion de Menu";
+		String s1 = "Recomendacion Test junit (ignorar)";
 		String s2 = MailMessage.crearMensaje(menu);
 		String s3 = mc.getFormMail();		
 		boolean test2 = ms.SendMail(s1, s2);
