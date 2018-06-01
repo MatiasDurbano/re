@@ -1,15 +1,8 @@
-
-
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Test;
-
 import Validadores.ValidadorMenu;
 import modelo.Cantidad;
 import modelo.Ingrediente;
@@ -18,10 +11,11 @@ import modelo.Menu;
 import modelo.Plato;
 import modelo.Receta;
 
-public class ValidadorMenuTest {
-
+public class ValidadorMenuTest 
+{
 	@Test
-	public void test() {
+	public void test() 
+	{
 		Menu menu = new Menu();		
 		assertTrue(ValidadorMenu.MenuVacio(menu));
 		
@@ -48,8 +42,6 @@ public class ValidadorMenuTest {
 		String bs = "Carne al horno con papas";
 		Plato b = new Plato(bs, br);		
 				
-		//---
-		
 		menu.agregarPlato(a);
 		menu.asignarFechaActual();
 		assertTrue(menu.getFecha_de_Creacion() != null);		

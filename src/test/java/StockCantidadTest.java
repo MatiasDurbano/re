@@ -7,10 +7,11 @@ import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.StockCantidad;
 
-public class StockCantidadTest {
-
+public class StockCantidadTest 
+{
 	@Test
-	public void equalsTest() {
+	public void equalsTest() 
+	{
 		StockCantidad a =new StockCantidad();
 		StockCantidad b = null;
 		StockCantidad c=new StockCantidad();
@@ -24,8 +25,6 @@ public class StockCantidadTest {
 		assertEquals(false, a.equals(b));
 		assertEquals(true, a.equals(c));
 		assertEquals(false, a.equals(d));
-		
-		
 	}
 
 	@Test
@@ -43,7 +42,8 @@ public class StockCantidadTest {
 	}
 	
 	@Test
-	public void Contains() {
+	public void Contains() 
+	{
 		StockCantidad a =new StockCantidad();
 		StockCantidad c=new StockCantidad();
 		
@@ -52,12 +52,11 @@ public class StockCantidadTest {
 		assertEquals(true, a.contains(new Ingrediente("papa")));
 		
 		assertEquals(false, c.contains(new Ingrediente("papa")));
-		
-		
 	}
 	
 	@Test
-	public void getCantidad() {
+	public void getCantidad() 
+	{
 		StockCantidad a =new StockCantidad();
 		StockCantidad c=new StockCantidad();
 		Cantidad t =  new Cantidad(Medicion.Kg,2);
@@ -65,13 +64,12 @@ public class StockCantidadTest {
 		
 		assertEquals(true,t.equals(a.getCantidad(new Ingrediente("papa"))));
 		
-		assertEquals(false,t.equals(c.getCantidad(new Ingrediente("papa"))));
-		
-		
+		assertEquals(false,t.equals(c.getCantidad(new Ingrediente("papa"))));	
 	}
 	
 	@Test
-	public void getIngredientes() {
+	public void getIngredientes() 
+	{
 		StockCantidad a =new StockCantidad();
 		StockCantidad c=new StockCantidad();
 		Cantidad t =  new Cantidad(Medicion.Kg,2);
@@ -82,8 +80,6 @@ public class StockCantidadTest {
 		assertEquals(true,a.getIngredientes().contains(new Ingrediente("papa")));
 		assertEquals(true,a.getIngredientes().contains(new Ingrediente("pera")));
 		assertEquals(true,a.getIngredientes().contains(new Ingrediente("tomate")));
-		assertEquals(false,a.getIngredientes().contains(new Ingrediente("repollo")));
-		
-		
+		assertEquals(false,a.getIngredientes().contains(new Ingrediente("repollo")));	
 	}
 }

@@ -10,7 +10,8 @@ import modelo.Ingrediente;
 public class TagManagerTest {
 	
 	@Test
-	public void buscar() {
+	public void buscar() 
+	{
 		ProxyEtiquetado proxyEtiquetado = new ProxyEtiquetadoStub();
 		TagManager tagManager = new TagManager(proxyEtiquetado);
 		Assert.assertEquals(new Etiqueta("celiaco"), tagManager.buscar(new Ingrediente("fideos")));

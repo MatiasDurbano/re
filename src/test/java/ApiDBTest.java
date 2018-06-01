@@ -15,10 +15,11 @@ import modelo.Medicion;
 import modelo.Plato;
 import modelo.Receta;
 
-public class ApiDBTest {
-
+public class ApiDBTest 
+{
 	@Test
-	public void test() {
+	public void test() 
+	{
 		InternalDB db= new InternalDB();
 		ApiDB api = new ApiDB(db);
 		
@@ -46,7 +47,5 @@ public class ApiDBTest {
 		assertEquals(true,api.get().size()==1);
 		
 		assertEquals(true,api.get().get(0).equals(a));
-		
 	}
-
 }
