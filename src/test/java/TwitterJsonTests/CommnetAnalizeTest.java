@@ -1,3 +1,4 @@
+package TwitterJsonTests;
 
 import static org.junit.Assert.*;
 
