@@ -14,7 +14,7 @@ import modelo.Plato;
 import twitter4j.TwitterException;
 
 
-public class Historia8 {
+public class Historia8Test {
 	
 	Plato fideo;
 	Plato arroz;

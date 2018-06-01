@@ -8,7 +8,7 @@ import org.junit.rules.ExpectedException;
 
 import bateriastest.BFilter;
 
-public class Historia4 
+public class Historia4Test 
 {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();

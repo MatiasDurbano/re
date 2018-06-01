@@ -12,7 +12,7 @@ import mail.MailSender;
 import modelo.Menu;
 import modelo.Plato;
 
-public class Historia11 {
+public class Historia11Test {
 	
 	@Test
 	public void test1() {

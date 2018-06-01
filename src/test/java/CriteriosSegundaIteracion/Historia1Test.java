@@ -12,7 +12,7 @@ import bateriastest.BateriaTagManagger;
 import modelo.Etiqueta;
 import modelo.Ingrediente;
 
-public class Historia1 {
+public class Historia1Test {
 	
 	@Test
 	public void test1() {

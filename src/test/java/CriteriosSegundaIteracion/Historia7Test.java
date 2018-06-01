@@ -8,7 +8,7 @@ import org.junit.Test;
 import propertiesTwitter.DataConfig;
 import propertiesTwitter.PropertiesLoader;
 
-public class Historia7 {
+public class Historia7Test {
 
 	@Test
 	public void test() {

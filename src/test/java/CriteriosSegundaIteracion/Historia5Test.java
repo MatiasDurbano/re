@@ -15,7 +15,7 @@ import Twitter.TwitterConfiguration;
 import propertiesTwitter.PropertiesLoader;
 import twitter4j.TwitterException;
 
-public class Historia5 {
+public class Historia5Test {
 
 	PropertiesLoader properties;
 	

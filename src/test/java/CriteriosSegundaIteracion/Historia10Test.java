@@ -10,7 +10,7 @@ import Analizador.SearchEngineTweetsMock;
 import Puntuador.PuntuadorTwitter;
 import modelo.Plato;
 
-public class Historia10 {
+public class Historia10Test {
 	
 	Plato fideo;
 	Plato arroz;

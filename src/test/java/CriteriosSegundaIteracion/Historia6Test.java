@@ -15,7 +15,7 @@ import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;
 
-public class Historia6 {
+public class Historia6Test {
 
 	List<String> jsons;
 	List<Status> test1;
