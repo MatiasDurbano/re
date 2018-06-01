@@ -16,12 +16,10 @@ public class ManagerPuntuadores {
 	}
 	
 	
-	public Map <Plato,Double> puntuarTwitter(List<Plato> arg0) {
-		for(Plato platos : arg0) {
-			puntuadorTwitter.pedirPuntaje(platos);
-		}
+	public double puntuarTwitter(Plato arg0) {
 		
-		return puntuadorTwitter.getMap();
+		return puntuadorTwitter.pedirPuntaje(arg0);
+	
 	}
 
 }
