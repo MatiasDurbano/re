@@ -8,5 +8,7 @@ public class Main
 	{	
 		App app = InyectorDependencias.crearAPP();
 		app.iniciar();
+		app.iniciar();
+		app.iniciar();
 	}
 }

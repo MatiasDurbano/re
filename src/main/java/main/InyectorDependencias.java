@@ -11,19 +11,16 @@ import modelo.ControllerInternalDB;
 import modelo.Ingrediente;
 import modelo.InternalDB;
 import modelo.MenuCreator;
-import modelo.Solver;
-import modelo.Solverfetcher;
 import Cache2.APICacheIngredientes;
 import Cache2.Cache;
 import Filter.FilterAplicator;
-import Filter.GenericFilter;
 import Interface.DataColectorInterface;
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
 
 public class InyectorDependencias 
 {
-	public static App crearAPP() throws InstantiationException, IllegalAccessException 
+	public static App crearAPP()
 	{
 		PropertiesLoader propertyData = new PropertiesLoader();
 		PropertiesLoaderTwitter propertyTwitter = new PropertiesLoaderTwitter();
@@ -31,19 +28,13 @@ public class InyectorDependencias
 		String filtroSeleccionado = propertyData.getDataConfig().getFilter();
 		FilterAplicator filterAplicator = new FilterAplicator();
 		String rutaAFiltros = "Filter.";
-		if (filtroSeleccionado != null)
+		if (filtroSeleccionado.getBytes()[0] == '1')
 		{
-			filtroSeleccionado = rutaAFiltros + filtroSeleccionado; 
-			try 
-			{
-				Class clazz = Class.forName(filtroSeleccionado);
-				GenericFilter filter = (GenericFilter) clazz.newInstance();
-				filterAplicator.addFilter(filter);
-			} 
-			catch (Exception e) 
-			{
-				System.out.println("FILTRO NO AGREGADO");
-			}
+			filterAplicator.addFilter(FilterSelector.FilterCeliacos("tomate"));
+		}
+		if (filtroSeleccionado.getBytes()[1] == '1')
+		{
+			filterAplicator.addFilter(FilterSelector.FilterNoRepetidos());
 		}
 		
 		//Creacion de cache
@@ -56,6 +47,8 @@ public class InyectorDependencias
 		
 		//creacion DB interna
 		InternalDB db= new InternalDB();
+		db.add(FilterSelector.fideosConTuco());
+		db.add(FilterSelector.polloConPapas());
 		ApiDB api = new ApiDB(db);
 		ControllerInternalDB controller = new ControllerInternalDB(api,new ProxyPlatoStub());
 		

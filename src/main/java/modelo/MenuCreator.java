@@ -28,6 +28,7 @@ public class MenuCreator
 				menu.agregarPlato(platos.get(i));
 			}			
 		}
+		this.platos.clear();
 		return this.menu;
 	}
 	

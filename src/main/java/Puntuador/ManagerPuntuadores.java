@@ -21,7 +21,7 @@ public class ManagerPuntuadores
 	public double puntuarPlato(Plato arg0, StockCantidad stock) 
 	{
 		double aux =puntuadorTwitter.pedirPuntaje(arg0);
-		aux = aux + puntuadorCantidad.pedirPuntaje(arg0,stock);
+		//aux = aux + puntuadorCantidad.pedirPuntaje(arg0,stock);
 		
 		return aux;
 	}
