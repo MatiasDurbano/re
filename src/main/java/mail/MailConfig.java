@@ -10,7 +10,6 @@ public class MailConfig {
 		this.formMail = "quadrasoft.ungs@gmail.com";
 		this.password = "159ungs159";
 		this.toMail = "quadrasoft.ungs@gmail.com";
-		
 	}
 
 	public String getFormMail() {
