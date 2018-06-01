@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import CriteriosSegundaIteracion.BateriaDeTest;
 import modelo.Plato;
 import modelo.Ranker;
 public class RankerTest {
