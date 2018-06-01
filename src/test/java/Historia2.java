@@ -1,4 +1,4 @@
-package criteriosDeAceptacion2da;
+
 
 
 import org.junit.Assert;
