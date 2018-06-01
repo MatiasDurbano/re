@@ -4,6 +4,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import baterias_test.BFilter;
+
 public class Historia4 
 {
 	@Rule

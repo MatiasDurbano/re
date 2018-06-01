@@ -1,3 +1,4 @@
+package baterias_test;
 
 
 import java.util.ArrayList;
@@ -7,7 +8,6 @@ import java.util.Map;
 
 import Interface.ProxyIngredienteInterface;
 import Interface.ProxyPlatoInterface;
-import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
 import modelo.Cantidad;
 import modelo.Ingrediente;
