@@ -31,6 +31,10 @@ public class BateriaMenuLogger {
 	
 	public static ProxyRecordInterface ProxyRecordStubEscenario3() {
 		ProxyRecordInterface ret = new ProxyRecordStubVacio();
-		return ret;
+		ProxyRecordStub ret1 = new ProxyRecordStub();
+		ret1.agregar(BateriaDeTest.menuPrueba3());
+		ret1.agregar(BateriaDeTest.menuPrueba4());
+		ret1.agregar(BateriaDeTest.menuPrueba5());
+		return ret1;
 	}
 }

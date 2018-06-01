@@ -66,6 +66,10 @@ public class ProxyRecordStub implements ProxyRecordInterface {
 		this.menues.add(menuPrueba2);
 		this.menues.add(menuPrueba3);
 	}
+	
+	public void agregar(Menu menu) {
+		this.menues.add(menu);
+	}
 
 	@Override
 	public List<Menu> getMenues() {

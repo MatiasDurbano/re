@@ -150,6 +150,20 @@ public class BateriaDeTest
 		return c;
 	}
 	
+	public static Plato polloConTomate() {
+		Ingrediente pollo = new Ingrediente("pollo");
+		Ingrediente tomate = new Ingrediente("tomate");
+		Cantidad uno = new Cantidad(Medicion.Kg, 1);
+		Cantidad tres = new Cantidad(Medicion.Kg,3);
+		Map<Ingrediente, Cantidad> r3 = new HashMap<Ingrediente, Cantidad>();
+		r3.put(pollo, uno);
+		r3.put(tomate, tres);
+		Receta re3 = new Receta(r3);
+		String st3 = "pollo con pure";
+		Plato c = new Plato(st3,re3);
+		return c;
+	}
+	
 	public static Plato polloConPure() {
 		Ingrediente pollo = new Ingrediente("pollo");
 		Ingrediente papa = new Ingrediente("papa");
@@ -185,6 +199,12 @@ public class BateriaDeTest
 	public static Menu menuPrueba4() {
 		Menu ret = new Menu();
 		ret.agregarPlato(polloConPure());
+		return ret;
+	}
+	
+	public static Menu menuPrueba5() {
+		Menu ret = new Menu();
+		ret.agregarPlato(polloConTomate());
 		return ret;
 	}
 	
