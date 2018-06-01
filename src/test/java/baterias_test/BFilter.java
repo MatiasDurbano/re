@@ -2,11 +2,13 @@ package baterias_test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import modelo.Cantidad;
 import modelo.Ingrediente;
 import modelo.Medicion;
+import modelo.Menu;
 import modelo.Plato;
 import modelo.Receta;
 import Filter.FilterAplicator;
@@ -16,37 +18,26 @@ import Filter.FilterCeliacosStub;
 import Filter.FilterNoRepetidos;
 import Filter.FilterNoRepetidosSearcher;
 import Filter.FilterNoRepetidosStub;
+import Historial.MenuLogger;
+import Historial.ProxyRecordInterface;
+import Historial.ProxyRecordStub;
 
 public class BFilter 
 {
 	public static FilterAplicator FilterCombinado()
 	{
-		FilterAplicator filterApli;
-		ArrayList<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
-		listaIngredientes.add(new Ingrediente("tomate"));
-		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
-		listaPlatos.add(fideosConTuco());
+		FilterAplicator filterApli= new FilterAplicator();
+		filterApli.addFilter(FilterCeliacos("tomate"));
+		filterApli.addFilter(FilterNoRepetidos());
 		
-		FilterNoRepetidosStub stubNoRepetidos = new FilterNoRepetidosStub(listaPlatos);
-		FilterNoRepetidosSearcher searcher = new FilterNoRepetidosSearcher(stubNoRepetidos);
-		FilterNoRepetidos filterNoRepetidos = new FilterNoRepetidos(searcher);
-
-		FilterCeliacosStub stub = new FilterCeliacosStub(listaIngredientes);
-		FilterCeliacosSearcher searcher2 = new FilterCeliacosSearcher(stub);
-		FilterCeliacos filterCeliacos = new FilterCeliacos(searcher2);
-		
-		filterApli = new FilterAplicator();
-		filterApli.addFilter(filterCeliacos);
-		filterApli.addFilter(filterNoRepetidos);
 		return filterApli;
 	}
 	
 	public static FilterAplicator FilterAplicatorCeliacos(String ingrediente)
 	{
-		FilterAplicator filterApli;
-		
-		filterApli = new FilterAplicator();
+		FilterAplicator filterApli= new FilterAplicator();
 		filterApli.addFilter(FilterCeliacos(ingrediente));
+		
 		return filterApli;
 	}
 	
@@ -63,18 +54,23 @@ public class BFilter
 	}
 	public static FilterNoRepetidos FilterNoRepetidos()
 	{
+		int tamañoMaximo = 5;
 		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
 		listaPlatos.add(fideosConTuco());
-		
-		FilterNoRepetidosStub stubNoRepetidos = new FilterNoRepetidosStub(listaPlatos);
+		List<Menu> menues = new ArrayList<Menu>();
+		menues.add(new Menu(listaPlatos));
+
+		ProxyRecordStub proxyRecordStub = new ProxyRecordStub();
+		proxyRecordStub.writeMenues(menues);
+		MenuLogger stubNoRepetidos = new MenuLogger(tamañoMaximo, proxyRecordStub);
 		FilterNoRepetidosSearcher searcher = new FilterNoRepetidosSearcher(stubNoRepetidos);
 		FilterNoRepetidos filterNoRepetidos = new FilterNoRepetidos(searcher);
+		
 		return filterNoRepetidos;
 	}
 	public static FilterAplicator filterAplicatorVacio()
 	{
-		FilterAplicator filterApli;
-		filterApli = new FilterAplicator();
+		FilterAplicator filterApli= new FilterAplicator();
 		return filterApli;
 		
 	}
@@ -121,51 +117,4 @@ public class BFilter
 		Plato plato2 = new Plato(nombre2, receta2);
 		return plato2;
 	}
-	
-	/*
-	Escenario 1 (Vacío):
-		FilterAplicator no posee cargado ningún Filter, se lo llamará FilterAplicatorVacio.
-		Se posee la lista de Platos listaPlatos con los platos = <Fideos Con Tuco> y <Pollo con papas>
-
-	1 - Llamo al método listFiltering(listaPlatos) usando el FilterAplicatorVacio, devolvera listaPlatos sin filtrado alguno.
-
-	Escenario 2 (Filtrado):
-	FilterAplicatorCeliacos posee activado el FilterCeliacos
-	FilterCeliacos posee un FilterCeliacosStub = StubCeliacos1 el cual consiste de un ingrediente a filtrar “tomate”.
-
-	2- Llamo al metodo listFiltering(listaPlatos) usando el FilterAplicatorCeliacos, me devuelve una lista con el plato <Pollo con papas>
-
-	Escenario 3 (Sin Filtrado):
-	FilterCeliacos posee ahora un FilterCeliacosStub = StubCeliacos2 el cual consiste de una lista con un  ingrediente “Pescado”.
-
-	3- Llamo al metodo listFiltering(listaPlatos) usando el StubCeliacos2, me devuelve listaPlatos sin filtrado alguno.
-
-	Escenario 4 (Null):
-	Se tendrá un FilterAplicatorCeliacos = FilterAplicatorCeliacos , el cual poseerá un FilterNoRepetidosStub con una lista que contiene el plato <Pollo con papas>
-
-	4.1-  Llamo al método listFiltering(Null) de FilterAplicatorCeliacos , se genera una excepción “NullPointerException”.
-
-	4.2 Llamo al metodo isFiltered(Null) de FilterCeliacos, se genera una excepcion “NullPointerException”.
-
-	Escenario 1 (Vacío):
-		Se poseerá un plato = <Fideos Con Tuco>.
-		Se tendra un FilterNoRepetidos = FilterNoRepetidosVacio, el cual poseerá un FilterNoRepetidosStub con una lista vacía de platos.
-
-		1 - Llamo al método isFiltered(<Fideos con Tuco>) de FilterNoRepetidos y me devuelve False.
-
-		Escenario 2 (Filtrado):
-		Se tendra un FilterNoRepetidos = FilterNoRepetidosFiltrador, el cual poseerá un FilterNoRepetidosStub con una lista que contiene el plato <Fideos con Tuco>
-
-		2-  Llamo al método isFiltered(<Fideos con Tuco>) de FilterNoRepetidos y me devuelve True.
-
-		Escenario 3 (Sin Filtrado):
-		Se tendra un FilterNoRepetidos = FilterNoRepetidosNoFiltrador, el cual poseerá un FilterNoRepetidosStub con una lista que contiene el plato <Pollo con papas>
-
-		3-  Llamo al método isFiltered(<Fideos con Tuco>) de FilterNoRepetidosNoFiltrador y me devuelve False.
-
-		Escenario 4 (Null):
-		Se tendra un FilterNoRepetidos = FilterNoRepetidosNoFiltrador, el cual poseerá un FilterNoRepetidosStub con una lista que contiene el plato <Pollo con papas>
-
-		4-  Llamo al método isFiltered(Null) de FilterNoRepetidosFiltrador, se genera una excepción “NullPointerException”.
-*/
 }

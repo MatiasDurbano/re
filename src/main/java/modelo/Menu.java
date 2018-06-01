@@ -12,6 +12,11 @@ public class Menu
 	{
 		this.platos = new ArrayList<Plato>();
 	}
+	public Menu(List<Plato> platos) 
+	{
+		this.platos = platos;
+		asignarFechaActual();
+	}
 
 	public List<Plato> getPlatos() {
 		return platos;

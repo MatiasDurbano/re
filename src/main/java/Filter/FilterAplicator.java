@@ -24,26 +24,25 @@ public class FilterAplicator
 		}
 		actualizarFilters();
 		List<Plato> aux = new ArrayList<Plato>();
-		for (int i = 0; i < list.size(); i++) 
+		for (Plato plato : list) 
 		{
-			Plato platoAUX = list.get(i);
-			if(!needFiltering (platoAUX))
-				aux.add(platoAUX);
+			if(!needFiltering (plato))
+				aux.add(plato);
 		}
 		return aux;
 	}
 	private void actualizarFilters()
 	{
-		for (int i = 0; i < filters.size(); i++) 
+		for (GenericFilter filter : filters) 
 		{
-			filters.get(i).updateFilterData();
+			filter.updateFilterData();
 		}
 	}
 	private boolean needFiltering(Plato plato) 
 	{
 		boolean acumulator = false;
-		for (int i = 0; i < this.filters.size(); i++) 
-			acumulator = acumulator || filters.get(i).isFiltered(plato);
+		for (GenericFilter filter : filters) 
+			acumulator = acumulator || filter.isFiltered(plato);
 		return acumulator;
 	}
 }
