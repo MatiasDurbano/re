@@ -1,4 +1,4 @@
-package TwitterJsonTests;
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import JsonTwitter.ReaderJsontTwitter;
 import Twitter.Entry;
-import baterias_test.BateriaDeTest;
 import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;

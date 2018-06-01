@@ -1,4 +1,4 @@
-package criteriosDeAceptacion_2da;
+
 import static org.junit.Assert.*;
 import java.util.List;
 import modelo.Plato;
@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import baterias_test.BFilter;
 
 public class Historia3 
 {

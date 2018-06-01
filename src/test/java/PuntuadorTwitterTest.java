@@ -6,7 +6,6 @@ import org.junit.Test;
 import Analizador.CommentAnalyzer;
 import Analizador.SearchEngineTweetsMock;
 import Puntuador.PuntuadorTwitter;
-import baterias_test.BateriaDeTest;
 import modelo.Plato;
 
 public class PuntuadorTwitterTest {

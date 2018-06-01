@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import baterias_test.BateriaDeTest;
 import modelo.Menu;
 import modelo.MenuCreator;
 import modelo.Plato;
