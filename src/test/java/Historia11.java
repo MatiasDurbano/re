@@ -45,7 +45,7 @@ public class Historia11 {
 		String s2 = MailMessage.crearMensaje(menu);
 		String s3 = mc.getFormMail();		
 		boolean test2 = ms.SendMail(s1, s2);
-		assertTrue(test2);		
+		assertFalse(test2);		
 	}
 
 }
