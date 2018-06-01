@@ -9,6 +9,7 @@ import modelo.Plato;
 import modelo.Solver;
 import modelo.Solverfetcher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Cache2.APICacheIngredientes;
@@ -38,15 +39,17 @@ public class App
 	{
 		fetcher.obtenerPlatos();
 		List<Plato> platos = fetcher.getPlatos();
-		filterAplicator.listFiltering(platos);
+		//System.out.println(platos.toString());
+		List<Plato> x = filterAplicator.listFiltering(platos);
 		
-		fetcher.obtenerStock(platos);
+		fetcher.obtenerStock(x);
 		solver.puntuarPlatos(fetcher.getPlatos(), fetcher.getStock());
 		menuCreator.ordenar(solver.getPlatosYcantidad());
 		
 		Menu menu;
 		menu = menuCreator.crearMenu(3);
 		
+		//System.out.println(menu);
 		sender.SendMail("Recomendacion de Menu", MailMessage.crearMensaje(menu));
 	}
 }

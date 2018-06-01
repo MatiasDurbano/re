@@ -9,7 +9,7 @@ public class MailConfig {
 	public MailConfig() {
 		this.formMail = "quadrasoft.ungs@gmail.com";
 		this.password = "159ungs159";
-		this.toMail = "matiasgabrieldurbano@gmail.com";
+		this.toMail = "quadrasoft.ungs@gmail.com";
 	}
 
 	public String getFormMail() {

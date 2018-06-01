@@ -75,6 +75,7 @@ public class FilterSelector
 	{
 		int tamañoMaximo = 5;
 		ArrayList<Plato> listaPlatos = new ArrayList<Plato>();
+		listaPlatos.add(fideosConTuco());
 		List<Menu> menues = new ArrayList<Menu>();
 		menues.add(new Menu(listaPlatos));
 
@@ -145,8 +146,22 @@ public class FilterSelector
 		r3.put(pollo, uno);
 		r3.put(papa, tres);
 		Receta re3 = new Receta(r3);
-		String st3 = "pollo con pure";
+		String st3 = "Pollo con pure";
 		Plato c = new Plato(st3,re3);
 		return c;
+	}
+
+	public static Plato arrozConTuco() {
+		Ingrediente arroz = new Ingrediente("arroz");
+		Ingrediente tomate = new Ingrediente("tomate");
+		Cantidad dos = new Cantidad(Medicion.Kg, 2);
+		Cantidad tres = new Cantidad(Medicion.Kg, 3);
+		Map<Ingrediente, Cantidad> r2 = new HashMap<Ingrediente, Cantidad>();
+		r2.put(tomate, dos);
+		r2.put(arroz, tres);
+		Receta re2 = new Receta(r2);
+		String st2 = "Arroz con tuco";
+		Plato b = new Plato(st2,re2);
+		return b;
 	}
 }
