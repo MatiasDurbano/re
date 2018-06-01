@@ -36,8 +36,8 @@ public class MailSender {
 		};		
 	}
 	
-	public void SendMail(String subject, String message) {
+	public boolean SendMail(String subject, String message) {
 		session = Session.getInstance(props, auth);	
-		MailApi.sendEmail(session, mConfig.getToMail(),subject, message);
+		return MailApi.sendEmail(session, mConfig.getToMail(),subject, message);
 	}
 }
