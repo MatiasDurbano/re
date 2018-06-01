@@ -1,7 +1,7 @@
 package Twitter;
 
 import propertiesTwitter.DataConfig;
-import propertiesTwitter.PropertiesLoader;
+import propertiesTwitter.PropertiesLoaderTwitter;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
@@ -14,9 +14,9 @@ public class TwitterConfiguration {
 	private TwitterFactory tf ;
 	private Twitter twitter;
 
-	PropertiesLoader properties ;
+	PropertiesLoaderTwitter properties ;
 		
-	public TwitterConfiguration(PropertiesLoader arg0) {
+	public TwitterConfiguration(PropertiesLoaderTwitter arg0) {
 		properties = arg0;
 		DataConfig data= properties.getDataConfig();
 		

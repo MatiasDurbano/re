@@ -12,17 +12,17 @@ import Twitter.ProxyTwitter;
 import Twitter.ProxyTwitterImp;
 import Twitter.TwitterApi;
 import Twitter.TwitterConfiguration;
-import propertiesTwitter.PropertiesLoader;
+import propertiesTwitter.PropertiesLoaderTwitter;
 import twitter4j.TwitterException;
 
 public class Historia5Test {
 
-	PropertiesLoader properties;
+	PropertiesLoaderTwitter properties;
 	
 	@Before
 	
 	public void before() {
-		properties = new PropertiesLoader();
+		properties = new PropertiesLoaderTwitter();
 	}
 	
 	@Test

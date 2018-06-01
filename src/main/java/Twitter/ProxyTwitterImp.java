@@ -1,7 +1,7 @@
 package Twitter;
 import java.util.List;
 
-import propertiesTwitter.PropertiesLoader;
+import propertiesTwitter.PropertiesLoaderTwitter;
 import twitter4j.Status;
 import twitter4j.TwitterException;
 
@@ -10,7 +10,7 @@ public class ProxyTwitterImp implements ProxyTwitter {
 	TwitterApi twitter;
 	
 	public ProxyTwitterImp(){
-		twitter = new TwitterApi(new TwitterConfiguration(new PropertiesLoader()));
+		twitter = new TwitterApi(new TwitterConfiguration(new PropertiesLoaderTwitter()));
 	}
 
 	@Override

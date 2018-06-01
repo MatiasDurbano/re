@@ -8,13 +8,13 @@ import propertiesTwitter.AbsolutFileSearch;
 import propertiesTwitter.DataConfig;
 import properties.PropertiesFileSearch;
 
-public class PropertiesLoader {
+public class PropertiesLoaderTwitter {
 	
 	private PropertiesFileSearch fileSercher;
 	private Properties properties;
 	private DataConfig data;
 	
-	public PropertiesLoader() {
+	public PropertiesLoaderTwitter() {
 		
 		this.fileSercher = new AbsolutFileSearch();
 		this.properties = new Properties();

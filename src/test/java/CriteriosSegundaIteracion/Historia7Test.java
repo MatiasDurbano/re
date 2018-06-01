@@ -6,13 +6,13 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import propertiesTwitter.DataConfig;
-import propertiesTwitter.PropertiesLoader;
+import propertiesTwitter.PropertiesLoaderTwitter;
 
 public class Historia7Test {
 
 	@Test
 	public void test() {
-		PropertiesLoader properties = new PropertiesLoader();
+		PropertiesLoaderTwitter properties = new PropertiesLoaderTwitter();
 		DataConfig data= properties.getDataConfig();
 		assertEquals(true,data.getAccessTokenSecret().equals("bFs1J80brFYaPsvVv2f6c6lFudlYVuFKfUuNKUrcEGN0Z"));
 		assertEquals(true,data.getConsumerKey().equals("PbyHTI9dAwJLY3WZY3ITLgt9i"));
@@ -22,7 +22,7 @@ public class Historia7Test {
 	
 	@Test
 	public void test2() {
-		PropertiesLoader properties = new PropertiesLoader();
+		PropertiesLoaderTwitter properties = new PropertiesLoaderTwitter();
 		properties.setAdress("src/main/java/propertiesTwitter/archivo2.properties");	
 		DataConfig data= properties.getDataConfig();
 		
