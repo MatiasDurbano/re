@@ -22,14 +22,15 @@ public class MenuCreator
 		platos = ranker.ordenar(map);
 	}
 	
-	public Menu crearMenu(int n) {		
+	public Menu crearMenu(int n) {
+		Menu menu2 = new Menu();
 		if(n <= this.platos.size()) {			
 			for( int i=0; i<n;i++) {
-				menu.agregarPlato(platos.get(i));
+				menu2.agregarPlato(platos.get(i));
 			}			
 		}
 		this.platos.clear();
-		return this.menu;
+		return menu2;
 	}
 	
 }
