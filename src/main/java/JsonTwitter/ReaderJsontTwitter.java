@@ -41,7 +41,7 @@ public class ReaderJsontTwitter {
 		if(json1 == null) 	
 			System.out.println("json1 no definido");	
 		
-		System.out.println(json1);
+		
 		data.addJson(json1);
 		
 	}
@@ -50,7 +50,7 @@ public class ReaderJsontTwitter {
 		String json2 = properties.getProperty("json2");
 		if(json2 == null) 	
 			System.out.println("json2 no definido");
-		System.out.println(json2);
+	
         data.addJson(json2);   
 	}
 	
@@ -58,14 +58,14 @@ public class ReaderJsontTwitter {
 		String json3 = properties.getProperty("json3");
 		if(json3 == null) 	
 			System.out.println("json3 no definido");
-		System.out.println(json3);
+		
         data.addJson(json3);   
 	}
 	public void readJson4() {
 		String json4 = properties.getProperty("json4");
 		if(json4 == null) 	
 			System.out.println("json4 no definido");
-		System.out.println(json4);
+		
         data.addJson(json4);   
 	}
 	
