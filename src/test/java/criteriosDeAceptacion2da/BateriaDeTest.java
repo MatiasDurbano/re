@@ -1,4 +1,4 @@
-package criteriosDeAceptacion_2da;
+package criteriosDeAceptacion2da;
 
 
 

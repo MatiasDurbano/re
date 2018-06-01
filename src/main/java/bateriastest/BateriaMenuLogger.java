@@ -1,11 +1,11 @@
-package baterias_test;
+package bateriastest;
 
 import Etiquetado.Tagger;
 import Historial.MenuRecord;
 import Historial.ProxyRecordInterface;
 import Historial.ProxyRecordStub;
 import Historial.ProxyRecordStubVacio;
-import criteriosDeAceptacion_2da.BateriaDeTest;
+import criteriosDeAceptacion2da.BateriaDeTest;
 import modelo.Etiqueta;
 import modelo.Ingrediente;
 

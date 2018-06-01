@@ -1,4 +1,4 @@
-package criteriosDeAceptacion_2da;
+package criteriosDeAceptacion2da;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import Historial.MenuLogger;
 import Historial.MenuRecord;
 import Historial.ProxyRecordStub;
-import baterias_test.BateriaMenuLogger;
+import bateriastest.BateriaMenuLogger;
 
 public class Historia2 {
 	

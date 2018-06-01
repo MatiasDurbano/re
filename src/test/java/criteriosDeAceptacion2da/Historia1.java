@@ -1,4 +1,4 @@
-package criteriosDeAceptacion_2da;
+package criteriosDeAceptacion2da;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import Etiquetado.ProxyEtiquetado;
 import Etiquetado.ProxyEtiquetadoStub;
 import Etiquetado.TagManager;
 import Etiquetado.Tagger;
-import baterias_test.BateriaTagManagger;
+import bateriastest.BateriaTagManagger;
 import modelo.Etiqueta;
 import modelo.Ingrediente;
 

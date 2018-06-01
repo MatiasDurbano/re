@@ -1,4 +1,4 @@
-package criteriosDeAceptacion_2da;
+package criteriosDeAceptacion2da;
 
 import static org.junit.Assert.*;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import baterias_test.BFilter;
+import bateriastest.BFilter;
 
 public class Historia3 
 {

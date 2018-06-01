@@ -1,4 +1,4 @@
-package baterias_test;
+package bateriastest;
 
 import Etiquetado.ProxyEtiquetado;
 import Etiquetado.ProxyEtiquetadoStub;
