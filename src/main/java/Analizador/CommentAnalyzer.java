@@ -7,49 +7,39 @@ import modelo.Plato;
 import twitter4j.Status;
 
 public class CommentAnalyzer {
-
-	List<Plato> platos;	
-	public CommentAnalyzer(List<Plato> arg0) {
-		platos = arg0;
-	}
 	
-	public List<Informant> analizarComentarios(List<Status> arg0){
+	SearchEngineTweets buscador;
+	
+	public CommentAnalyzer(SearchEngineTweets arg0) {		
+		buscador = arg0;
+	} 
+	
+	public Informant analizarComentarios(Plato arg0){
 		List<Informant> InformantIndividual = new ArrayList<Informant>();
 		
-		List<Informant> InformantGrupal = new ArrayList<Informant>();
-		
-		for(Status statues : arg0) {
+		List<Status> twitts = buscador.getStatus();
+		String nombrePlato= arg0.getNombre().toLowerCase();
+		for(Status statues : twitts) {
 			String text = statues.getText().toLowerCase();
 
-			for(Plato plat : platos ){
-				String nombrePlato= plat.getNombre().toLowerCase();
-				
-				if(text.contains(nombrePlato)) {
-					if(puntuador(text)!= null) {
-						InformantIndividual.add(new Informant(plat,puntuador(text)));
+			if(text.contains(nombrePlato)) {
+				if(puntuador(text)!= null) {
+					InformantIndividual.add(new Informant(arg0,puntuador(text)));
 					}
 				}
 			}
+		
+		return new Informant(arg0,calcularPuntaje(InformantIndividual));
 		}
 		
-		for( Informant informants : InformantIndividual) {
-			if(!InformantGrupal.contains(informants)) {
-				InformantGrupal.add(new Informant(informants.getPlato(),calcularPuntaje(informants,InformantIndividual)));
-			}
-		}
-		
-		return InformantGrupal;
-		
-	}
 	
-	private Double calcularPuntaje(Informant arg0, List<Informant> arg1) {
+	
+	private Double calcularPuntaje(List<Informant> arg1) {
 		double ret=0;
 		int cantApar=0;
 		for(Informant informants: arg1) {
-			if(informants.equals(arg0)) {
 				ret= ret+ informants.getPuntaje();
 				cantApar++;
-			}
 		} 
 		return ret/cantApar;
 	}
