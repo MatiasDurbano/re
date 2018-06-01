@@ -17,7 +17,7 @@ public class PropertiesLoaderTest {
 		dConfig = pLoader.getDataConfig();
 		assertTrue(dConfig.getCachesize() == 5);
 		assertFalse(dConfig.getCachesize() == null);
-		assertEquals(dConfig.getFilter(),"10");		
+		assertEquals(dConfig.getFilter(),"11");		
 		
 	}
 

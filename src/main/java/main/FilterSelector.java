@@ -135,4 +135,18 @@ public class FilterSelector
 		Plato plato2 = new Plato(nombre2, receta2);
 		return plato2;
 	}
+	
+	public static Plato polloConPure() {
+		Ingrediente pollo = new Ingrediente("pollo");
+		Ingrediente papa = new Ingrediente("papa");
+		Cantidad uno = new Cantidad(Medicion.Kg, 1);
+		Cantidad tres = new Cantidad(Medicion.Kg,3);
+		Map<Ingrediente, Cantidad> r3 = new HashMap<Ingrediente, Cantidad>();
+		r3.put(pollo, uno);
+		r3.put(papa, tres);
+		Receta re3 = new Receta(r3);
+		String st3 = "pollo con pure";
+		Plato c = new Plato(st3,re3);
+		return c;
+	}
 }
