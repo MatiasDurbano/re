@@ -13,7 +13,7 @@ import org.junit.Test;
 import Stub.ProxyPlatoStub;
 
 public class ProxyPlatoStubTest 
-{
+{ 
 	@Test
 	public void test() 
 	{
