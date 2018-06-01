@@ -15,8 +15,8 @@ import modelo.Receta;
 public class AnalizadorPlatosTest {
 	
 	@Test
-	public void noVacio() {
-		
+	public void noVacio() 
+	{
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente pera = new Ingrediente("pera");
 		Ingrediente cebolla = new Ingrediente("cebolla");
@@ -35,9 +35,10 @@ public class AnalizadorPlatosTest {
 		
 		Assert.assertFalse(ret.isEmpty());
 	}
+	
 	@Test
-	public void dameIngredienteCantidad() {
-		
+	public void dameIngredienteCantidad() 
+	{
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente fideos = new Ingrediente("fideos");
 		Cantidad diez = new Cantidad(Medicion.Kg, 10);
@@ -80,7 +81,8 @@ public class AnalizadorPlatosTest {
 	}
 	
 	@Test
-	public void dameIngrediente() {
+	public void dameIngrediente() 
+	{
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente fideos = new Ingrediente("fideos");
 		Ingrediente queso = new Ingrediente("queso");
@@ -109,7 +111,8 @@ public class AnalizadorPlatosTest {
 	}
 	
 	@Test
-	public void dameIngredienteMal() {
+	public void dameIngredienteMal() 
+	{
 		Ingrediente tomate = new Ingrediente("tomate");
 		Ingrediente fideos = new Ingrediente("fideos");
 		Ingrediente queso = new Ingrediente("queso");

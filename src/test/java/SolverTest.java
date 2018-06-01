@@ -17,10 +17,11 @@ import modelo.Receta;
 import modelo.Solver;
 import modelo.StockCantidad;
 
-public class SolverTest {
+public class SolverTest 
+{
 	@Test
-	public void test() {
-		
+	public void test() 
+	{
 		StockCantidad data= new StockCantidad();
 		
 		Ingrediente fideo = new Ingrediente("fideo");
@@ -56,5 +57,4 @@ public class SolverTest {
 		Integer i = platosYcantidad.get(plato);
 		assertTrue(i <= 1);		
 	}
-
 }

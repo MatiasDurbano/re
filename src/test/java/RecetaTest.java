@@ -13,9 +13,11 @@ import modelo.Ingrediente;
 import modelo.Medicion;
 import modelo.Receta;
 
-public class RecetaTest {
-	public void test() {
-		
+public class RecetaTest 
+{
+	@Test
+	public void test() 
+	{
 		Ingrediente i = new Ingrediente("papa");
 		Ingrediente i2 = new Ingrediente("pollo");
 		Cantidad c = new Cantidad(Medicion.Kg, 10);
@@ -32,9 +34,6 @@ public class RecetaTest {
 		r2 = new Receta(map2);
 		assertFalse(r.equals(r2));
 		r3 = new Receta(r.getReceta());
-		assertTrue(r.equals(r3));
-		
-		
-		
+		assertTrue(r.equals(r3));	
 	}
 }
