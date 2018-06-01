@@ -17,7 +17,7 @@ public class APICacheIngredienteTest {
 		ProxyIngredienteStub stub = new ProxyIngredienteStub();
 		APICacheIngredientes apiCache = new APICacheIngredientes(cache, stub, 10);
 		
-		Cantidad resultado = new Cantidad(Medicion.Kg, 2);
+		Cantidad resultado = new Cantidad(Medicion.Kg, 215);
 		
 		Assert.assertEquals(resultado, apiCache.get(new Ingrediente ("papa")));
 		Assert.assertEquals(resultado, apiCache.get(new Ingrediente ("papa")));
