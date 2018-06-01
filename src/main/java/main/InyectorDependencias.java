@@ -1,6 +1,9 @@
 package main;
 
 import properties.PropertiesLoader;
+import propertiesTwitter.PropertiesLoaderTwitter;
+import mail.MailConfig;
+import mail.MailSender;
 import modelo.ApiDB;
 import modelo.Cantidad;
 import modelo.Collector;
@@ -12,24 +15,35 @@ import modelo.Solver;
 import modelo.Solverfetcher;
 import Cache2.APICacheIngredientes;
 import Cache2.Cache;
+import Filter.FilterAplicator;
+import Filter.GenericFilter;
 import Interface.DataColectorInterface;
 import Stub.ProxyIngredienteStub;
 import Stub.ProxyPlatoStub;
 
 public class InyectorDependencias 
 {
-	public static App crearAPP() 
+	public static App crearAPP() throws InstantiationException, IllegalAccessException 
 	{
 		PropertiesLoader propertyData = new PropertiesLoader();
+		PropertiesLoaderTwitter propertyTwitter = new PropertiesLoaderTwitter();
+		
 		String filtroSeleccionado = propertyData.getDataConfig().getFilter();
-		if (filtroSeleccionado == null)
+		FilterAplicator filterAplicator = new FilterAplicator();
+		String rutaAFiltros = "Filter.";
+		if (filtroSeleccionado != null)
 		{
-			//no Crear Filtro
-		}
-		else
-		{
-			//Crear Filtro Seleccionado
-			//aca se usaria el Class.forname
+			filtroSeleccionado = rutaAFiltros + filtroSeleccionado; 
+			try 
+			{
+				Class clazz = Class.forName(filtroSeleccionado);
+				GenericFilter filter = (GenericFilter) clazz.newInstance();
+				filterAplicator.addFilter(filter);
+			} 
+			catch (Exception e) 
+			{
+				System.out.println("FILTRO NO AGREGADO");
+			}
 		}
 		
 		//Creacion de cache
@@ -48,10 +62,15 @@ public class InyectorDependencias
 		//creacion de Collector
 		DataColectorInterface colector = new Collector(api, apiCache);
 		
-		Solverfetcher fetcher = new Solverfetcher(colector);
-		Solver solver = new Solver();
+		//Creacion de appMail
+		MailConfig mailConfig = new MailConfig();
+		MailSender sender = new MailSender(mailConfig);
+		
+		//MenuCreator
 		MenuCreator menuCreator = new MenuCreator();
-		App app = new App(colector);
+		
+		//Creacion de app
+		App app = new App(colector,menuCreator,filterAplicator,sender);
 		
 		return app;
 	}

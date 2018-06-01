@@ -1,5 +1,7 @@
 package main;
 
+import mail.MailMessage;
+import mail.MailSender;
 import modelo.ApiDB;
 import modelo.Menu;
 import modelo.MenuCreator;
@@ -10,33 +12,41 @@ import modelo.Solverfetcher;
 import java.util.List;
 
 import Cache2.APICacheIngredientes;
+import Filter.FilterAplicator;
 import Interface.DataColectorInterface;
 
 public class App 
 {
 	DataColectorInterface colector;
 	Solverfetcher fetcher;
+	FilterAplicator filterAplicator;
 	Solver solver;
 	MenuCreator menuCreator;
+	MailSender sender;
 	
-	public App(DataColectorInterface colector) 
+	public App(DataColectorInterface colector,MenuCreator menuCreator,FilterAplicator filterAplicator, MailSender sender) 
 	{
 		this.colector = colector;
 		this.fetcher = new Solverfetcher(colector);
+		this.filterAplicator = filterAplicator;
 		this.solver = new Solver();
-		this.menuCreator = new MenuCreator();
+		this.menuCreator = menuCreator;
+		this.sender = sender;
 	}
 
 	public void iniciar() 
 	{
 		fetcher.obtenerPlatos();
-		fetcher.obtenerStock(fetcher.getPlatos());
+		List<Plato> platos = fetcher.getPlatos();
+		filterAplicator.listFiltering(platos);
 		
+		fetcher.obtenerStock(platos);
 		solver.puntuarPlatos(fetcher.getPlatos(), fetcher.getStock());
-		
 		menuCreator.ordenar(solver.getPlatosYcantidad());
 		
 		Menu menu;
-		menu = menuCreator.crearMenu(3);		
+		menu = menuCreator.crearMenu(3);
+		
+		sender.SendMail("Recomendacion de Menu", MailMessage.crearMensaje(menu));
 	}
 }

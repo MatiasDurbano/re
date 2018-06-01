@@ -6,7 +6,7 @@ import org.junit.Test;
 public class InyectorDependenciasTest 
 {
 	@Test
-	public void testArmarInstancia() 
+	public void testArmarInstancia() throws InstantiationException, IllegalAccessException 
 	{
 		Assert.assertNotEquals(null,InyectorDependencias.crearAPP());
 	}

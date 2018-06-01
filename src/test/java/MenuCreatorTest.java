@@ -16,10 +16,10 @@ public class MenuCreatorTest {
 	public void test() {
 		List<Plato> platos = BateriaDeTest.damePlatos();
 		List<Plato> platos2;
-		Map<Plato,Integer> map = new HashMap<Plato,Integer>();
-		map.put(platos.get(0), 1);
-		map.put(platos.get(1), 4);
-		map.put(platos.get(2), 2);		
+		Map<Plato,Double> map = new HashMap<Plato,Double>();
+		map.put(platos.get(0), 1.0);
+		map.put(platos.get(1), 4.0);
+		map.put(platos.get(2), 2.0);		
 		
 		MenuCreator mc = new MenuCreator();
 		mc.ordenar(map);		

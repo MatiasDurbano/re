@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class MenuCreator {
+public class MenuCreator 
+{
 	
 	private Menu menu;
 	private Ranker ranker;
@@ -17,7 +18,7 @@ public class MenuCreator {
 		this.platos = new ArrayList<Plato>();
 	}
 	
-	public void ordenar(Map<Plato,Integer> map) {
+	public void ordenar(Map<Plato, Double> map) {
 		platos = ranker.ordenar(map);
 	}
 	

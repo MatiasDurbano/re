@@ -1,4 +1,4 @@
-package modelo;
+package Puntuador;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,9 +6,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class Puntuador {
+import modelo.Cantidad;
+import modelo.Ingrediente;
+import modelo.Plato;
+import modelo.Receta;
+import modelo.StockCantidad;
+
+public class PuntuadorPorCantidad {
 	
-	public Integer puntuarPlato(Plato plato,StockCantidad stock) {		
+	public double pedirPuntaje(Plato plato,StockCantidad stock) 
+	{		
 		List<Integer> list = new ArrayList<Integer>();
 		Receta r = plato.getReceta();		
 		for (Map.Entry<Ingrediente, Cantidad> entry : r.getReceta().entrySet()) {
@@ -18,10 +25,12 @@ public class Puntuador {
 		return list.indexOf(Collections.min(list));		
 	}
 	
-	public double cantidadIngredienteReceta(Ingrediente i, Plato p) {
+	public double cantidadIngredienteReceta(Ingrediente i, Plato p) 
+	{
 		return p.getReceta().getReceta().get(i).getValor();
 	}	
-	public double stockIngrediente(Ingrediente i,StockCantidad s) {		
+	public double stockIngrediente(Ingrediente i,StockCantidad s) 
+	{		
 		return s.getCantidad(i).getValor();
 	}
 }

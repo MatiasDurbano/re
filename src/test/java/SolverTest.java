@@ -51,10 +51,10 @@ public class SolverTest
 		
 		solver.puntuarPlatos(p,data);
 		
-		Map<Plato,Integer> platosYcantidad = new HashMap<Plato,Integer>();
+		Map<Plato,Double> platosYcantidad = new HashMap<Plato,Double>();
 		platosYcantidad = solver.getPlatosYcantidad();
 		
-		Integer i = platosYcantidad.get(plato);
-		assertTrue(i <= 1);		
+		Double i = platosYcantidad.get(plato);
+		assertTrue(i <= 1.0);		
 	}
 }

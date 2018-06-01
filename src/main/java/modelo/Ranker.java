@@ -5,15 +5,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Ranker {
 	
 	public Ranker() {
 		
 	}
-	public List<Plato> ordenar(Map<Plato,Integer> p) {
+	public List<Plato> ordenar(Map<Plato, Double> map) {
 		List<Plato> ret = new ArrayList<Plato>();
-		Map<Plato,Integer> aux =this.clonar(p);
+		Map<Plato,Double> aux = this.clonar(map);
 		
 		while(!aux.isEmpty()) {
 			Plato maxPlato = Collections.max(aux.entrySet(), Map.Entry.comparingByValue()).getKey();    			
@@ -23,12 +24,13 @@ public class Ranker {
 		return ret;				
 	}
 
-	public Map<Plato,Integer> clonar(Map<Plato,Integer> map){
-		Map<Plato,Integer> aux = new HashMap<Plato,Integer>();
-		for(Map.Entry<Plato, Integer> entry : map.entrySet()) {
+	public Map<Plato, Double> clonar(Map<Plato, Double> map)
+	{
+		Map<Plato,Double> aux = new HashMap<Plato,Double>();
+		for(Entry<Plato, Double> entry : map.entrySet()) 
+		{
 			aux.put(entry.getKey(), entry.getValue());
 		}		
 		return aux;
-		
 	}
 }
