@@ -1,8 +1,9 @@
-package Historial;
+package Stub;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import Historial.ProxyRecordInterface;
 import criteriosDeAceptacion2da.BateriaDeTest;
 import modelo.Menu;
 

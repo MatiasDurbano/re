@@ -1,9 +1,9 @@
-package Historial;
+package Stub;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+import Historial.ProxyRecordInterface;
 import modelo.Menu;
 
 public class ProxyRecordStubVacio implements ProxyRecordInterface {
