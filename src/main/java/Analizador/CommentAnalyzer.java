@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Plato;
+import modelo.TextAnalyzer;
 import twitter4j.Status;
 
 public class CommentAnalyzer {
 	
 	SearchEngineTweets buscador;
-	
+	 
 	public CommentAnalyzer(SearchEngineTweets arg0) {		
 		buscador = arg0;
 	} 
@@ -22,7 +23,7 @@ public class CommentAnalyzer {
 		for(Status statues : twitts) {
 			String text = statues.getText().toLowerCase();
 
-			if(text.contains(nombrePlato)) {
+			if( TextAnalyzer.encontrar(nombrePlato, text)) {
 				if(puntuador(text)!= null) {
 					InformantIndividual.add(new Informant(arg0,puntuador(text)));
 					}

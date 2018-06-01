@@ -16,8 +16,8 @@ public class TwitterConfiguration {
 
 	PropertiesLoader properties ;
 		
-	public TwitterConfiguration() {
-		properties = new PropertiesLoader();
+	public TwitterConfiguration(PropertiesLoader arg0) {
+		properties = arg0;
 		DataConfig data= properties.getDataConfig();
 		
 		config  = new ConfigurationBuilder();

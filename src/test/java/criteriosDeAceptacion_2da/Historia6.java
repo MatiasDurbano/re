@@ -1,4 +1,4 @@
-package TwitterJsonTests;
+package criteriosDeAceptacion_2da;
 
 import static org.junit.Assert.*;
 
@@ -15,7 +15,7 @@ import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;
 
-public class EntryTest {
+public class Historia6 {
 
 	List<String> jsons;
 	List<Status> test1;

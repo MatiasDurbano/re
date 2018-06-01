@@ -1,4 +1,4 @@
-package TwitterJsonTests;
+package criteriosDeAceptacion_2da;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +14,7 @@ import modelo.Plato;
 import twitter4j.TwitterException;
 
 
-public class CommnetAnalizeTest {
+public class Historia8 {
 	
 	Plato fideo;
 	Plato arroz;

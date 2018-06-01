@@ -1,4 +1,4 @@
-package TwitterJsonTests;
+package criteriosDeAceptacion_2da;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -10,7 +10,7 @@ import Puntuador.PuntuadorTwitter;
 import baterias_test.BateriaDeTest;
 import modelo.Plato;
 
-public class PuntuadorTwitterTest {
+public class Historia10 {
 	
 	Plato fideo;
 	Plato arroz;

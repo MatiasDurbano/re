@@ -1,4 +1,4 @@
-package PropertiesTest;
+package criteriosDeAceptacion_2da;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +7,7 @@ import org.junit.Test;
 import propertiesTwitter.DataConfig;
 import propertiesTwitter.PropertiesLoader;
 
-public class PropertiesTwitterTest {
+public class Historia7 {
 
 	@Test
 	public void test() {
