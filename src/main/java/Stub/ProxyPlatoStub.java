@@ -46,7 +46,7 @@ public class ProxyPlatoStub implements ProxyPlatoInterface
 		
 		//platos malos
 		Map<Ingrediente, Cantidad> vacio = new HashMap<Ingrediente, Cantidad>();
-		String st = "PEPEPE";
+		String st = "asd";
 		Plato c = new Plato(st, new Receta(vacio));
 		
 		

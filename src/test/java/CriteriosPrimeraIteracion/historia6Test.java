@@ -14,8 +14,20 @@ import Stub.ProxyPlatoStub;
 
 public class historia6Test 
 { 
+	
+	
+
 	@Test
-	public void test() 
+	public void test1() 
+	{
+		ProxyPlatoStub stub = new ProxyPlatoStub();
+		
+		assertEquals(true,stub.getPlatos().size()==5);
+	}
+	
+	
+	@Test
+	public void test2() 
 	{
 		ProxyPlatoStub stub = new ProxyPlatoStub();
 		
