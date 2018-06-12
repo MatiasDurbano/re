@@ -1,4 +1,4 @@
-package ProxyTest;
+package CriteriosPrimeraIteracion;
 
 import static org.junit.Assert.*;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import modelo.Receta;
 import org.junit.Test;
 import Stub.ProxyPlatoStub;
 
-public class ProxyPlatoStubTest 
+public class historia6Test 
 { 
 	@Test
 	public void test() 

@@ -1,3 +1,4 @@
+package CriteriosPrimeraIteracion;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import modelo.Medicion;
 import modelo.Plato;
 import modelo.Receta;
 
-public class ApiDBTest 
+public class historia3Test 
 {
 	@Test
 	public void test() 
